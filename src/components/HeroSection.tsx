@@ -64,20 +64,22 @@ const HeroSection = () => {
       <div className="container relative mx-auto px-6 lg:px-8">
         {/* Navigation with glass effect */}
         <motion.nav 
-          className="flex items-center justify-between py-6 lg:py-8"
+          className="flex justify-center py-6 lg:py-8"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Logo */}
-          <img 
-            src={logoImage} 
-            alt="KI Schule" 
-            className="h-12 lg:h-14 w-auto"
-          />
-          
-          <div className="hidden md:flex items-center">
-            <div className="glass rounded-full px-2 py-2 flex items-center gap-1">
+          <div className="glass rounded-full px-3 py-2 flex items-center gap-2">
+            {/* Logo */}
+            <div className="flex items-center px-2">
+              <img 
+                src={logoImage} 
+                alt="KI Schule" 
+                className="h-8 lg:h-9 w-auto"
+              />
+            </div>
+            
+            <div className="hidden md:flex items-center gap-1">
               {['Programm', 'Community', 'Erfolge', 'Über uns'].map((item) => (
                 <a 
                   key={item}
@@ -88,11 +90,11 @@ const HeroSection = () => {
                 </a>
               ))}
             </div>
+            
+            <button className="btn-3d btn-primary-3d text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold ml-1">
+              Jetzt starten
+            </button>
           </div>
-          
-          <button className="btn-3d btn-primary-3d text-primary-foreground px-5 py-2.5 rounded-xl text-sm font-semibold">
-            Jetzt starten
-          </button>
         </motion.nav>
 
         {/* Hero content */}
