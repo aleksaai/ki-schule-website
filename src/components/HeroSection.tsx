@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import founderImage from "@/assets/founder.png";
-import logoImage from "@/assets/logo.png";
+
 
 const HeroSection = () => {
   return (
@@ -70,14 +70,6 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="glass rounded-full px-3 py-2 flex items-center gap-2">
-            {/* Logo */}
-            <div className="flex items-center px-2">
-              <img 
-                src={logoImage} 
-                alt="KI Schule" 
-                className="h-8 lg:h-9 w-auto"
-              />
-            </div>
             
             <div className="hidden md:flex items-center gap-1">
               {['Programm', 'Community', 'Erfolge', 'Über uns'].map((item) => (
