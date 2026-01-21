@@ -219,114 +219,128 @@
   }
 
   /* ═══════════════════════════════════════════════════════════
-     TRUE LIQUID GLASS BUTTONS
-     Inspired by Apple's glassmorphism with extreme transparency
+     LIQUID GLASS BUTTONS - For light backgrounds
+     True Apple-style glassmorphism with visible transparency
      ═══════════════════════════════════════════════════════════ */
   
-  .btn-glass-3d {
+  .btn-liquid-glass {
     position: relative;
     isolation: isolate;
-    /* Almost fully transparent - just a hint of white */
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
-    /* Thin glowing white border */
-    border: 1.5px solid rgba(255, 255, 255, 0.35);
-    /* Soft outer glow + inner highlight */
+    /* Very subtle tinted transparency */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0.4) 100%
+    );
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    /* Prominent glowing border */
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    /* Soft shadows for depth + inner glow */
     box-shadow:
-      0 0 30px rgba(255, 255, 255, 0.08),
-      0 0 60px rgba(255, 255, 255, 0.04),
-      inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      0 1px 4px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.03);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
   }
 
-  /* Top specular shine - the key to glass realism */
-  .btn-glass-3d::before {
+  /* Top specular highlight */
+  .btn-liquid-glass::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 10%;
-    right: 10%;
+    left: 5%;
+    right: 5%;
     height: 1px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.7) 20%,
-      rgba(255, 255, 255, 0.9) 50%,
-      rgba(255, 255, 255, 0.7) 80%,
+      rgba(255, 255, 255, 0.95) 30%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.95) 70%,
       transparent 100%
     );
     pointer-events: none;
     z-index: 1;
   }
 
-  /* Inner glow layer */
-  .btn-glass-3d::after {
+  /* Inner light refraction */
+  .btn-liquid-glass::after {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
     background: radial-gradient(
-      ellipse 60% 40% at 50% 0%,
-      rgba(255, 255, 255, 0.12) 0%,
-      transparent 70%
+      ellipse 80% 50% at 50% -10%,
+      rgba(255, 255, 255, 0.4) 0%,
+      transparent 60%
     );
     pointer-events: none;
     z-index: 0;
   }
 
-  .btn-glass-3d:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.5);
+  .btn-liquid-glass:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0.55) 100%
+    );
+    border-color: rgba(255, 255, 255, 1);
     box-shadow:
-      0 0 40px rgba(255, 255, 255, 0.12),
-      0 0 80px rgba(255, 255, 255, 0.06),
-      inset 0 1px 2px rgba(255, 255, 255, 0.35);
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+    transform: translateY(-1px);
   }
 
   /* ═══════════════════════════════════════════════════════════
-     ACCENT VERSION - with subtle purple caustics
+     ACCENT VERSION - with purple glow for primary CTAs
      ═══════════════════════════════════════════════════════════ */
   
-  .btn-glass-3d-accent {
+  .btn-liquid-glass-accent {
     position: relative;
     isolation: isolate;
-    /* Almost fully transparent with hint of purple */
+    /* Subtle purple-tinted glass */
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(138, 92, 246, 0.03) 50%,
-      rgba(255, 255, 255, 0.04) 100%
+      rgba(255, 255, 255, 0.65) 0%,
+      rgba(138, 92, 246, 0.08) 50%,
+      rgba(255, 255, 255, 0.45) 100%
     );
-    backdrop-filter: blur(28px) saturate(160%);
-    -webkit-backdrop-filter: blur(28px) saturate(160%);
-    /* Glowing white border with purple tint */
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
-    /* Purple-tinted outer glow */
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    /* White border with purple undertone */
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    /* Purple-tinted glow */
     box-shadow:
-      0 0 40px rgba(138, 92, 246, 0.12),
-      0 0 80px rgba(138, 92, 246, 0.06),
-      0 0 20px rgba(255, 255, 255, 0.05),
-      inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      0 4px 24px rgba(138, 92, 246, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(138, 92, 246, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.02);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
   }
 
   /* Top specular shine */
-  .btn-glass-3d-accent::before {
+  .btn-liquid-glass-accent::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 8%;
-    right: 8%;
+    left: 5%;
+    right: 5%;
     height: 1px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.6) 15%,
-      rgba(255, 255, 255, 0.95) 50%,
-      rgba(255, 255, 255, 0.6) 85%,
+      rgba(255, 255, 255, 0.9) 25%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.9) 75%,
       transparent 100%
     );
     pointer-events: none;
@@ -334,38 +348,40 @@
   }
 
   /* Inner glow with purple caustic */
-  .btn-glass-3d-accent::after {
+  .btn-liquid-glass-accent::after {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
     background: 
       radial-gradient(
-        ellipse 70% 50% at 50% 0%,
-        rgba(255, 255, 255, 0.15) 0%,
-        transparent 60%
+        ellipse 80% 50% at 50% -10%,
+        rgba(255, 255, 255, 0.5) 0%,
+        transparent 55%
       ),
       radial-gradient(
-        ellipse 80% 60% at 80% 100%,
-        rgba(138, 92, 246, 0.08) 0%,
-        transparent 60%
+        ellipse 100% 80% at 80% 120%,
+        rgba(138, 92, 246, 0.1) 0%,
+        transparent 50%
       );
     pointer-events: none;
     z-index: 0;
   }
 
-  .btn-glass-3d-accent:hover {
+  .btn-liquid-glass-accent:hover {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(138, 92, 246, 0.05) 50%,
-      rgba(255, 255, 255, 0.06) 100%
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(138, 92, 246, 0.12) 50%,
+      rgba(255, 255, 255, 0.6) 100%
     );
-    border-color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 1);
     box-shadow:
-      0 0 50px rgba(138, 92, 246, 0.18),
-      0 0 100px rgba(138, 92, 246, 0.08),
-      0 0 30px rgba(255, 255, 255, 0.08),
-      inset 0 1px 2px rgba(255, 255, 255, 0.4);
+      0 8px 40px rgba(138, 92, 246, 0.2),
+      0 4px 16px rgba(0, 0, 0, 0.06),
+      0 0 0 1px rgba(138, 92, 246, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+    transform: translateY(-2px);
   }
 }
