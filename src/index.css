@@ -111,38 +111,84 @@
   }
 }
 
-/* Liquid Glass Effects */
+/* ═══════════════════════════════════════════════════════════
+   TRUE LIQUID GLASS EFFECTS - Apple-style glassmorphism
+   ═══════════════════════════════════════════════════════════ */
 @layer components {
+  /* Base glass - navigation, badges, small elements */
   .glass {
+    position: relative;
+    isolation: isolate;
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.6) 50%,
-      rgba(255, 255, 255, 0.8) 100%
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0.4) 100%
     );
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      0 1px 4px rgba(0, 0, 0, 0.03),
       inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+      inset 0 -1px 0 rgba(0, 0, 0, 0.02);
   }
 
+  /* Glass card - larger floating elements, image frames */
   .glass-card {
+    position: relative;
+    isolation: isolate;
     background: linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.7) 100%
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.45) 100%
     );
-    backdrop-filter: blur(24px) saturate(200%);
-    -webkit-backdrop-filter: blur(24px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.06),
-      0 8px 16px rgba(0, 0, 0, 0.04),
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.07),
+      0 4px 16px rgba(0, 0, 0, 0.04),
       inset 0 2px 0 rgba(255, 255, 255, 1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+      inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+  }
+
+  /* Top specular highlight for glass-card */
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.95) 30%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.95) 70%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Inner light refraction for glass-card */
+  .glass-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(255, 255, 255, 0.35) 0%,
+      transparent 55%
+    );
+    pointer-events: none;
+    z-index: 0;
   }
 
   .btn-3d {
