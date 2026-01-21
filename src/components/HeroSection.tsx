@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import founderImage from "@/assets/founder.png";
+import kiIcon from "@/assets/ki-icon.png";
 
 
 const HeroSection = () => {
@@ -197,8 +198,8 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <div className="flex items-center gap-2 lg:gap-3 mb-1.5 lg:mb-2">
-                  <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-xl bg-gradient-to-br from-[hsl(var(--brand-accent))] to-[hsl(var(--brand-accent-light))] flex items-center justify-center shadow-lg shadow-[hsl(var(--brand-accent)/0.3)]">
-                    <span className="text-white text-xs lg:text-sm font-bold">✓</span>
+                  <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-xl bg-gradient-to-br from-[hsl(var(--brand-accent))] to-[hsl(var(--brand-accent-light))] flex items-center justify-center shadow-lg shadow-[hsl(var(--brand-accent)/0.3)] p-1.5">
+                    <img src={kiIcon} alt="" className="w-full h-full object-contain" />
                   </div>
                   <span className="text-xs lg:text-sm font-bold text-foreground">100% Praxisnah</span>
                 </div>
