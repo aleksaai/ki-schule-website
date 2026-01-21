@@ -109,13 +109,11 @@ const HeroSection = () => {
 
             {/* Headline with mixed typography */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-[1.1] mb-5">
-              Baue deine
+              Starte Heute dein
               <br />
               <span className="font-serif italic text-[hsl(var(--brand-accent))] font-normal">
-                KI-Agentur
+                KI-Business.
               </span>
-              <br />
-              in 90 Tagen auf
             </h1>
 
             {/* Subheadline */}
