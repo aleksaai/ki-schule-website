@@ -1,113 +1,144 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, Zap } from "lucide-react";
-import { Suspense, lazy } from "react";
-
-const Logo3D = lazy(() => import("./Logo3D"));
+import { ArrowRight, Play } from "lucide-react";
+import founderImage from "@/assets/founder.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[hsl(220,25%,97%)] via-background to-[hsl(330,30%,97%)]">
-      {/* Subtle background pattern */}
+    <section className="relative min-h-screen bg-background overflow-hidden">
+      {/* Subtle grid pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
+          backgroundImage: `
+            linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
         }}
       />
+      
+      {/* Gradient orb - subtle and premium */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--brand-accent)/0.15)] via-[hsl(var(--brand-accent-light)/0.08)] to-transparent blur-3xl" />
+      </div>
 
-      <div className="container relative mx-auto px-4 py-12 lg:py-20">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
-          {/* Left column - Content */}
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1">
+      <div className="container relative mx-auto px-6 lg:px-8">
+        {/* Navigation */}
+        <nav className="flex items-center justify-between py-6 lg:py-8">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-lg bg-foreground flex items-center justify-center">
+              <span className="text-background font-bold text-sm">KI</span>
+            </div>
+            <span className="font-semibold text-lg tracking-tight">KI-Schule</span>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Programm</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Community</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Erfolge</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Über uns</a>
+          </div>
+          
+          <Button size="sm" className="font-medium">
+            Jetzt starten
+          </Button>
+        </nav>
+
+        {/* Hero content */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-12 lg:pt-24 pb-20">
+          {/* Left - Text content */}
+          <div className="max-w-xl">
             {/* Badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-[hsl(var(--border))] px-4 py-2 shadow-sm">
-              <span className="flex h-2 w-2">
-                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-[hsl(var(--brand-green))] opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[hsl(var(--brand-green))]"></span>
-              </span>
-              <span className="text-sm font-medium text-muted-foreground">
-                #1 KI-Community im DACH-Raum
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1.5 mb-8">
+              <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--brand-accent))]" />
+              <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                #1 KI-Community DACH
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Starte dein{" "}
-              <span className="bg-gradient-to-r from-[hsl(var(--brand-pink))] via-[hsl(var(--brand-yellow))] to-[hsl(var(--brand-cyan))] bg-clip-text text-transparent">
-                KI-Business
-              </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
+              Baue deine
               <br />
-              mit der KI-Schule
+              <span className="text-[hsl(var(--brand-accent))]">KI-Agentur</span>
+              <br />
+              in 90 Tagen auf
             </h1>
 
             {/* Subheadline */}
-            <p className="mb-8 max-w-xl text-lg text-muted-foreground">
-              Werde Teil der größten KI-Community im DACH-Raum und lerne, wie du 
-              auch ohne Vorerfahrung eine profitable KI-Agentur aufbauen kannst.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
+              Lerne von Praktikern, wie du auch ohne technisches Vorwissen 
+              ein profitables KI-Business aufbaust.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col gap-4 sm:flex-row">
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Button 
                 size="lg" 
-                className="group relative overflow-hidden bg-gradient-to-r from-[hsl(var(--brand-pink))] to-[hsl(330,85%,50%)] px-8 text-lg font-semibold shadow-xl shadow-[hsl(var(--brand-pink)/0.25)] transition-all duration-300 hover:shadow-2xl hover:shadow-[hsl(var(--brand-pink)/0.35)] hover:scale-[1.02]"
+                className="group bg-foreground text-background hover:bg-foreground/90 px-6 h-12 text-base font-medium"
               >
-                Jetzt starten
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                Kostenlos starten
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-8 text-lg font-semibold bg-white/50 backdrop-blur-sm border-2 hover:bg-white/80 transition-all duration-300"
-              >
-                Mehr erfahren
-              </Button>
+              
+              <button className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background group-hover:border-foreground/20 transition-colors">
+                  <Play className="h-4 w-4 ml-0.5" />
+                </span>
+                <span className="text-sm font-medium">Video ansehen</span>
+              </button>
             </div>
 
-            {/* Social proof */}
-            <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-10">
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--brand-cyan))] to-[hsl(190,85%,40%)] shadow-lg shadow-[hsl(var(--brand-cyan)/0.25)]">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-left">
-                  <span className="block text-xl font-bold text-foreground">500+</span>
-                  <span className="text-sm text-muted-foreground">Mitglieder</span>
-                </div>
+            {/* Stats */}
+            <div className="flex items-center gap-8 mt-12 pt-8 border-t border-border">
+              <div>
+                <div className="text-2xl font-bold text-foreground">500+</div>
+                <div className="text-sm text-muted-foreground">Mitglieder</div>
               </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--brand-green))] to-[hsl(145,65%,35%)] shadow-lg shadow-[hsl(var(--brand-green)/0.25)]">
-                  <Sparkles className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-left">
-                  <span className="block text-xl font-bold text-foreground">6</span>
-                  <span className="text-sm text-muted-foreground">Business Ideen</span>
-                </div>
+              <div className="h-8 w-px bg-border" />
+              <div>
+                <div className="text-2xl font-bold text-foreground">€2M+</div>
+                <div className="text-sm text-muted-foreground">Umsatz generiert</div>
               </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--brand-yellow))] to-[hsl(45,95%,45%)] shadow-lg shadow-[hsl(var(--brand-yellow)/0.25)]">
-                  <Zap className="h-6 w-6 text-white" />
-                </div>
-                <div className="text-left">
-                  <span className="block text-xl font-bold text-foreground">100%</span>
-                  <span className="text-sm text-muted-foreground">Praxisnah</span>
-                </div>
+              <div className="h-8 w-px bg-border" />
+              <div>
+                <div className="text-2xl font-bold text-foreground">4.9★</div>
+                <div className="text-sm text-muted-foreground">Bewertung</div>
               </div>
             </div>
           </div>
 
-          {/* Right column - 3D Logo */}
-          <div className="order-1 lg:order-2">
-            <Suspense fallback={
-              <div className="h-[400px] lg:h-[500px] flex items-center justify-center">
-                <div className="h-32 w-32 rounded-3xl bg-gradient-to-br from-secondary to-muted animate-pulse" />
+          {/* Right - Image */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Decorative elements */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-[hsl(var(--brand-accent)/0.1)] to-transparent rounded-3xl blur-2xl" />
+              
+              {/* Main image container */}
+              <div className="relative rounded-2xl overflow-hidden bg-secondary">
+                <img 
+                  src={founderImage} 
+                  alt="Gründer der KI-Schule"
+                  className="relative w-full max-w-md aspect-square object-cover"
+                />
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 via-transparent to-transparent" />
               </div>
-            }>
-              <Logo3D />
-            </Suspense>
+              
+              {/* Floating card */}
+              <div className="absolute -bottom-4 -left-4 bg-background rounded-xl border border-border shadow-xl p-4 max-w-[200px]">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="h-8 w-8 rounded-full bg-[hsl(var(--brand-accent))] flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">✓</span>
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">Praxisnah</span>
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  Echte Projekte, echte Ergebnisse
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -58,10 +58,8 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         brand: {
-          cyan: "hsl(var(--brand-cyan))",
-          green: "hsl(var(--brand-green))",
-          yellow: "hsl(var(--brand-yellow))",
-          pink: "hsl(var(--brand-pink))",
+          accent: "hsl(var(--brand-accent))",
+          "accent-light": "hsl(var(--brand-accent-light))",
         },
       },
       borderRadius: {
