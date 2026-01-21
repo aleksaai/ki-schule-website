@@ -73,7 +73,7 @@ const HeroSection = () => {
           <img 
             src={logoImage} 
             alt="KI Schule" 
-            className="h-10 lg:h-12 w-auto"
+            className="h-12 lg:h-14 w-auto"
           />
           
           <div className="hidden md:flex items-center">
