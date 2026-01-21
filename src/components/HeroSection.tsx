@@ -187,7 +187,7 @@ const HeroSection = () => {
                   <img 
                     src={founderImage} 
                     alt="Gründer der KI-Schule"
-                    className="relative w-full max-w-md aspect-[4/5] object-cover object-top"
+                    className="relative w-full max-w-md aspect-[4/3] object-cover object-top"
                   />
                   
                   {/* Subtle overlay */}
