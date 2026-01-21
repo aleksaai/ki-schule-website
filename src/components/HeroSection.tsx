@@ -84,7 +84,7 @@ const HeroSection = () => {
               ))}
             </div>
             
-            <button className="btn-3d btn-primary-3d text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold ml-1">
+            <button className="btn-glass-3d text-foreground px-4 py-2 rounded-full text-sm font-semibold ml-1">
               Jetzt starten
             </button>
           </div>
@@ -125,7 +125,7 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <motion.button 
-                className="btn-3d btn-primary-3d text-primary-foreground px-7 py-4 rounded-2xl text-base font-semibold flex items-center gap-2 group"
+                className="btn-glass-3d-accent text-foreground px-7 py-4 rounded-2xl text-base font-semibold flex items-center gap-2 group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
