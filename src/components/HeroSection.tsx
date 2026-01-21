@@ -1,6 +1,7 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import founderImage from "@/assets/founder.png";
+import logoImage from "@/assets/logo.png";
 
 const HeroSection = () => {
   return (
@@ -56,12 +57,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-foreground flex items-center justify-center shadow-lg">
-              <span className="text-background font-bold text-base">KI</span>
-            </div>
-            <span className="font-semibold text-xl tracking-tight">KI-Schule</span>
-          </div>
+          {/* Logo */}
+          <img 
+            src={logoImage} 
+            alt="KI Schule" 
+            className="h-10 lg:h-12 w-auto"
+          />
           
           <div className="hidden md:flex items-center">
             <div className="glass rounded-full px-2 py-2 flex items-center gap-1">
@@ -128,35 +129,32 @@ const HeroSection = () => {
               </motion.button>
               
               <motion.button 
-                className="btn-3d btn-glass flex items-center gap-3 text-foreground px-5 py-3.5 rounded-2xl group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="group flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors px-2 py-2"
+                whileHover={{ x: 4 }}
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground/5 group-hover:bg-foreground/10 transition-colors">
-                  <Play className="h-3.5 w-3.5 ml-0.5 text-foreground" fill="currentColor" />
+                <span className="text-sm font-medium underline underline-offset-4 decoration-foreground/30 group-hover:decoration-foreground/60 transition-colors">
+                  Video ansehen
                 </span>
-                <span className="text-sm font-semibold">Video ansehen</span>
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </motion.button>
             </div>
 
-            {/* Stats with glass cards */}
-            <div className="flex items-center gap-4 mt-14">
-              {[
-                { value: '500+', label: 'Mitglieder' },
-                { value: '€2M+', label: 'Umsatz generiert' },
-                { value: '4.9★', label: 'Bewertung' },
-              ].map((stat, index) => (
-                <motion.div 
-                  key={stat.label}
-                  className="glass-card rounded-2xl px-5 py-4 text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                >
-                  <div className="text-xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{stat.label}</div>
-                </motion.div>
-              ))}
+            {/* Stats - Clean inline style */}
+            <div className="flex items-center gap-6 mt-14 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-foreground">500+</span>
+                <span className="text-muted-foreground">Mitglieder</span>
+              </div>
+              <span className="text-border">•</span>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-foreground">€2M+</span>
+                <span className="text-muted-foreground">Umsatz</span>
+              </div>
+              <span className="text-border">•</span>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-foreground">4.9★</span>
+                <span className="text-muted-foreground">Bewertung</span>
+              </div>
             </div>
           </motion.div>
 
