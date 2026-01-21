@@ -6,7 +6,7 @@ import kiIcon from "@/assets/ki-icon.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[hsl(240,20%,98%)] via-background to-[hsl(262,30%,97%)] overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-[hsl(220,60%,75%)] via-[hsl(262,50%,78%)] to-[hsl(320,50%,80%)] overflow-hidden">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
@@ -84,7 +84,7 @@ const HeroSection = () => {
               ))}
             </div>
             
-            <button className="btn-glass-3d text-foreground px-4 py-2 rounded-full text-sm font-semibold ml-1">
+            <button className="btn-glass-3d text-white px-4 py-2 rounded-full text-sm font-semibold ml-1">
               Jetzt starten
             </button>
           </div>
@@ -125,7 +125,7 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <motion.button 
-                className="btn-glass-3d-accent text-foreground px-7 py-4 rounded-2xl text-base font-semibold flex items-center gap-2 group"
+                className="btn-glass-3d-accent text-white px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
