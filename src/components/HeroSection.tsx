@@ -103,7 +103,7 @@ const HeroSection = () => {
             <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
               <span className="h-2 w-2 rounded-full bg-[hsl(var(--brand-accent))] shadow-[0_0_8px_hsl(var(--brand-accent))]" />
               <span className="text-xs font-semibold text-foreground/80 uppercase tracking-wider">
-                #1 KI-Community DACH
+                KI-Schule | Coaching & Community
               </span>
             </div>
 
