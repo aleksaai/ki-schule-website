@@ -92,9 +92,9 @@ const HeroSection = () => {
       />
 
       <div className="container relative mx-auto px-6 lg:px-8">
-        {/* Navigation with glass effect */}
+        {/* Sticky Navigation with glass effect */}
         <motion.nav 
-          className="flex justify-center py-6 lg:py-8"
+          className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex justify-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -113,10 +113,13 @@ const HeroSection = () => {
             </div>
             
             <button className="btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1">
-              Jetzt starten
+              Login
             </button>
           </div>
         </motion.nav>
+        
+        {/* Spacer for fixed nav */}
+        <div className="h-16 lg:h-20" />
 
         {/* Hero content */}
         <div className="grid lg:grid-cols-[1fr,1.1fr] gap-10 lg:gap-12 items-center pt-8 lg:pt-12 pb-16">
