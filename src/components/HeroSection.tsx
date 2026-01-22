@@ -175,18 +175,18 @@ const HeroSection = () => {
             {/* Stats - Clean inline style */}
             <div className="flex items-center gap-6 mt-10 text-sm">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-white">500+</span>
+                <span className="font-bold text-white">87</span>
                 <span className="text-white/50">Mitglieder</span>
               </div>
               <span className="text-white/20">•</span>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-white">€2M+</span>
-                <span className="text-white/50">Umsatz</span>
+                <span className="font-bold text-white">5.0★</span>
+                <span className="text-white/50">Bewertung</span>
               </div>
               <span className="text-white/20">•</span>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-white">4.9★</span>
-                <span className="text-white/50">Bewertung</span>
+                <span className="font-bold text-white">5</span>
+                <span className="text-white/50">Premium Kurse</span>
               </div>
             </div>
           </motion.div>
