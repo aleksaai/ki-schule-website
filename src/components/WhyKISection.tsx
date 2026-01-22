@@ -6,14 +6,17 @@ const features = [
   {
     title: "Blue-Ocean Markt",
     description: "KI ist eine neue Innovation und es gibt am Markt mehr Anfragen als Angebote!",
+    lottieUrl: "https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie",
   },
   {
     title: "High-Income Skill",
     description: "Du arbeitest in einem zukunftssicheren Bereich und verkaufst hochpreisig.",
+    lottieUrl: "https://lottie.host/191b8763-e12d-484c-9d10-719b04213c5b/tKCjWY8Cnz.lottie",
   },
   {
     title: "Automation ist gefragt!",
     description: "Nahezu alle Branchen benötigen Unterstützung im Bereich KI!",
+    lottieUrl: "https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie",
   },
 ];
 
@@ -105,7 +108,7 @@ const WhyKISection = () => {
               {/* Lottie Animation */}
               <div className="relative mb-5 h-16 w-16">
                 <DotLottieReact
-                  src="https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie"
+                  src={feature.lottieUrl}
                   loop
                   autoplay
                 />
