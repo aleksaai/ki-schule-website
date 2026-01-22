@@ -149,8 +149,8 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-md">
-              Lerne von Praktikern, wie du auch ohne technisches Vorwissen 
-              ein profitables KI-Business aufbaust.
+              In 30 Tagen zur eigenen KI-Agentur — mit bewährtem System, 
+              starker Community und persönlicher Begleitung.
             </p>
 
             {/* CTA Buttons */}
