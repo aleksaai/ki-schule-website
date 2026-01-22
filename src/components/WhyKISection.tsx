@@ -1,19 +1,17 @@
-import { PieChart, BarChart3, Network, ArrowUpRight, Crown } from "lucide-react";
+import { ArrowUpRight, Crown } from "lucide-react";
 import { motion } from "framer-motion";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const features = [
   {
-    icon: PieChart,
     title: "Blue-Ocean Markt",
     description: "KI ist eine neue Innovation und es gibt am Markt mehr Anfragen als Angebote!",
   },
   {
-    icon: BarChart3,
     title: "High-Income Skill",
     description: "Du arbeitest in einem zukunftssicheren Bereich und verkaufst hochpreisig.",
   },
   {
-    icon: Network,
     title: "Automation ist gefragt!",
     description: "Nahezu alle Branchen benötigen Unterstützung im Bereich KI!",
   },
@@ -104,12 +102,13 @@ const WhyKISection = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -8, scale: 1.02 }}
             >
-              {/* Icon with glow */}
-              <div className="relative mb-5">
-                <div className="absolute inset-0 bg-white/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
-                  <feature.icon className="h-6 w-6 text-white/80" />
-                </div>
+              {/* Lottie Animation */}
+              <div className="relative mb-5 h-16 w-16">
+                <DotLottieReact
+                  src="https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie"
+                  loop
+                  autoplay
+                />
               </div>
 
               {/* Title */}
