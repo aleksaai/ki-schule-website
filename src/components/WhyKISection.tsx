@@ -16,7 +16,7 @@ const features = [
   {
     title: "Automation ist gefragt!",
     description: "Nahezu alle Branchen benötigen Unterstützung im Bereich KI!",
-    lottieUrl: "https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie",
+    lottieUrl: "https://lottie.host/da29d773-bcba-40bc-942a-1508bdaaa0f0/xKLfO86OyH.lottie",
   },
 ];
 
