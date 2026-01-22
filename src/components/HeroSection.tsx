@@ -94,7 +94,7 @@ const HeroSection = () => {
       <div className="container relative mx-auto px-6 lg:px-8">
         {/* Sticky Navigation with glass effect */}
         <motion.nav 
-          className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex justify-center"
+          className="fixed top-4 left-0 right-0 z-50 flex justify-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -149,8 +149,7 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-md">
-              In 30 Tagen zur eigenen KI-Agentur — mit bewährtem System, 
-              starker Community und persönlicher Begleitung.
+              In 30 Tagen zur eigenen KI-Agentur. Mit bewährtem System und starker Community.
             </p>
 
             {/* CTA Buttons */}
