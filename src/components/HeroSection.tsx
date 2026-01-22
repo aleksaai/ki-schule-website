@@ -1,9 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import kiIcon from "@/assets/ki-icon.png";
-
-// Placeholder until new founder image is uploaded
-const founderImage = "/placeholder.svg";
+import founderImage from "@/assets/founder.png";
 
 const HeroSection = () => {
   return (
