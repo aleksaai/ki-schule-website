@@ -83,12 +83,12 @@ const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
 
       {/* Content */}
       <div className={benefit.isLarge ? "flex-1" : ""}>
-        <h3 className={`font-bold text-white mb-3 ${
+        <h3 className={`font-bold text-foreground mb-3 ${
           benefit.isLarge ? "text-2xl md:text-3xl" : "text-lg"
         }`}>
           {benefit.title}
         </h3>
-        <p className={`text-white/50 leading-relaxed ${
+        <p className={`text-muted-foreground leading-relaxed ${
           benefit.isLarge ? "text-base md:text-lg" : "text-sm"
         }`}>
           {benefit.description}
@@ -113,16 +113,16 @@ const BenefitsSection = () => {
           <source src={benefitsBgVideo} type="video/mp4" />
         </video>
         
-        {/* Dark overlay */}
+        {/* Light overlay for light mode */}
         <div 
-          className="absolute inset-0 bg-black/70"
+          className="absolute inset-0 bg-white/80"
         />
         
-        {/* Gradient overlay for smooth edges */}
+        {/* Gradient overlay with accent tint */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, rgba(26, 26, 31, 0.9) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.5) 80%, rgba(26, 26, 31, 0.9) 100%)',
+            background: 'linear-gradient(180deg, hsla(220, 20%, 97%, 0.95) 0%, hsla(216, 100%, 70%, 0.08) 20%, hsla(216, 100%, 70%, 0.08) 80%, hsla(220, 20%, 97%, 0.95) 100%)',
           }}
         />
       </div>
@@ -138,22 +138,22 @@ const BenefitsSection = () => {
         >
           {/* Badge */}
           <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
-            <Sparkles className="h-4 w-4 text-white fill-white" />
-            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
+            <Sparkles className="h-4 w-4 text-primary fill-primary" />
+            <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
               Deine Vorteile
             </span>
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15] mb-4">
             Was dich
-            <span className="font-serif italic text-white/90 font-normal ml-2 sm:ml-3">
+            <span className="font-serif italic text-primary font-normal ml-2 sm:ml-3">
               erwartet
             </span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-lg text-white/50 max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Alles was du brauchst, um deine KI-Agentur erfolgreich aufzubauen
           </p>
         </motion.div>
