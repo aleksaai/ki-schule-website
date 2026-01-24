@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import kiIcon from "@/assets/ki-icon.png";
-import founderImage from "@/assets/founder.png";
+import founderImage from "@/assets/founder-new.png";
 
 const HeroSection = () => {
   return (
@@ -74,12 +74,15 @@ const HeroSection = () => {
         />
       </div>
       
-      {/* Dot grid pattern - subtle tech/notebook aesthetic */}
+      {/* Grid pattern - subtle tech aesthetic */}
       <div 
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
-          backgroundImage: `radial-gradient(circle, hsl(220 15% 50%) 1px, transparent 1px)`,
-          backgroundSize: '32px 32px',
+          backgroundImage: `
+            linear-gradient(to right, hsl(220 15% 70%) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(220 15% 70%) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
         }}
       />
 
