@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import kiIcon from "@/assets/ki-icon.png";
-import founderImage from "@/assets/founder-new.png";
+import kiIcon from "@/assets/ki-icon-new.png";
+import founderImage from "@/assets/founder.png";
 
 const HeroSection = () => {
   return (
