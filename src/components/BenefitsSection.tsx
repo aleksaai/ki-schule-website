@@ -66,30 +66,19 @@ const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       {/* Icon */}
-      <motion.div 
+      <div 
         className={`relative mb-6 flex items-center justify-center ${
           benefit.isLarge 
             ? "h-48 w-48 md:h-56 md:w-56 md:mb-0 flex-shrink-0" 
             : "h-32 w-32"
         }`}
-        whileHover={{ scale: 1.08 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <motion.img 
+        <img 
           src={benefit.icon} 
           alt={benefit.title}
           className="w-full h-full object-contain"
-          animate={{
-            y: [0, -6, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: index * 0.2,
-          }}
         />
-      </motion.div>
+      </div>
 
       {/* Content */}
       <div className={benefit.isLarge ? "flex-1" : ""}>
