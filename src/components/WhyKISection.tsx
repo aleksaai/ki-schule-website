@@ -11,7 +11,7 @@ const features = [
   {
     title: "High-Income Skill",
     description: "Du arbeitest in einem zukunftssicheren Bereich und verkaufst hochpreisig.",
-    lottieUrl: "https://lottie.host/191b8763-e12d-484c-9d10-719b04213c5b/tKCjWY8Cnz.lottie",
+    lottieUrl: "https://lottie.host/4bf0c77c-d9e9-4028-a735-b088d88a19b0/XZjd8n7giP.lottie",
   },
   {
     title: "Automation ist gefragt!",
