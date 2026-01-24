@@ -1,5 +1,6 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import benefitsBgVideo from "@/assets/benefits-bg.mp4";
 
 // Import icons
 import certificateIcon from "@/assets/icons/certificate-icon.png";
@@ -99,40 +100,29 @@ const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
 
 const BenefitsSection = () => {
   return (
-    <section className="relative py-24 lg:py-32 bg-[#1a1a1f] overflow-hidden">
-      {/* Background elements */}
+    <section className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Video Background */}
       <div className="absolute inset-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={benefitsBgVideo} type="video/mp4" />
+        </video>
+        
+        {/* Dark overlay */}
+        <div 
+          className="absolute inset-0 bg-black/70"
+        />
+        
+        {/* Gradient overlay for smooth edges */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, #1a1a1f 0%, #16161a 50%, #1a1a1f 100%)',
-          }}
-        />
-        
-        {/* Dot grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px)`,
-            backgroundSize: '40px 40px',
-          }}
-        />
-        
-        {/* Ambient glow */}
-        <motion.div 
-          className="absolute top-1/3 left-1/4 w-[60%] h-[60%]"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(60, 60, 70, 0.2) 0%, transparent 70%)',
-            filter: 'blur(100px)',
-          }}
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
+            background: 'linear-gradient(180deg, rgba(26, 26, 31, 0.9) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.5) 80%, rgba(26, 26, 31, 0.9) 100%)',
           }}
         />
       </div>
