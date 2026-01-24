@@ -1,6 +1,7 @@
 import { ArrowUpRight, Crown } from "lucide-react";
 import { motion } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useState } from "react";
 
 const features = [
   {
@@ -19,6 +20,46 @@ const features = [
     lottieUrl: "https://lottie.host/da29d773-bcba-40bc-942a-1508bdaaa0f0/xKLfO86OyH.lottie",
   },
 ];
+
+interface FeatureCardProps {
+  feature: typeof features[0];
+  index: number;
+}
+
+const FeatureCard = ({ feature, index }: FeatureCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      className="glass-card rounded-2xl p-6 lg:p-8 cursor-default"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Lottie Animation - Larger size */}
+      <div className="relative mb-6 h-28 w-28">
+        <DotLottieReact
+          src={feature.lottieUrl}
+          loop
+          autoplay={isHovered}
+        />
+      </div>
+
+      {/* Title */}
+      <h3 className="text-xl font-bold text-white mb-3">
+        {feature.title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-sm text-white/50 leading-relaxed">
+        {feature.description}
+      </p>
+    </motion.div>
+  );
+};
 
 const WhyKISection = () => {
   return (
@@ -96,34 +137,7 @@ const WhyKISection = () => {
         {/* Feature Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-14">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              className="glass-card rounded-2xl p-6 lg:p-8 group cursor-default"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-            >
-              {/* Lottie Animation */}
-              <div className="relative mb-5 h-16 w-16">
-                <DotLottieReact
-                  src={feature.lottieUrl}
-                  loop
-                  autoplay
-                />
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-3">
-                {feature.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-white/50 leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
+            <FeatureCard key={feature.title} feature={feature} index={index} />
           ))}
         </div>
 
