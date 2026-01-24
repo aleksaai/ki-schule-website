@@ -6,12 +6,12 @@ const features = [
   {
     title: "Blue-Ocean Markt",
     description: "KI ist eine neue Innovation und es gibt am Markt mehr Anfragen als Angebote!",
-    lottieUrl: "https://lottie.host/f945bc68-92f4-4645-81ba-63d4948aba77/rBIQF3tMmW.lottie",
+    lottieUrl: "https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie",
   },
   {
     title: "High-Income Skill",
     description: "Du arbeitest in einem zukunftssicheren Bereich und verkaufst hochpreisig.",
-    lottieUrl: "https://lottie.host/4bf0c77c-d9e9-4028-a735-b088d88a19b0/XZjd8n7giP.lottie",
+    lottieUrl: "https://lottie.host/191b8763-e12d-484c-9d10-719b04213c5b/tKCjWY8Cnz.lottie",
   },
   {
     title: "Automation ist gefragt!",
