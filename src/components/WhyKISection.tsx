@@ -64,12 +64,12 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-bold text-white mb-3">
+      <h3 className="text-xl font-bold text-foreground mb-3">
         {feature.title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-white/50 leading-relaxed">
+      <p className="text-sm text-muted-foreground leading-relaxed">
         {feature.description}
       </p>
     </motion.div>
@@ -78,30 +78,30 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 
 const WhyKISection = () => {
   return (
-    <section className="relative py-24 lg:py-32 bg-[#1a1a1f] overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, #1f1f24 0%, #1a1a1f 50%, #1a1a1f 100%)',
+            background: 'linear-gradient(180deg, hsl(220 20% 96%) 0%, hsl(220 20% 97%) 50%, hsl(220 20% 97%) 100%)',
           }}
         />
         
         {/* Dot grid pattern */}
         <div 
-          className="absolute inset-0 opacity-[0.12]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle, hsl(220 15% 50%) 1px, transparent 1px)`,
             backgroundSize: '32px 32px',
           }}
         />
         
-        {/* Subtle organic shape */}
+        {/* Subtle organic shape with accent color */}
         <motion.div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[80%]"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(50, 50, 58, 0.25) 0%, transparent 60%)',
+            background: 'radial-gradient(ellipse at center, hsla(216, 100%, 70%, 0.08) 0%, transparent 60%)',
             borderRadius: '50%',
             filter: 'blur(80px)',
           }}
@@ -128,23 +128,23 @@ const WhyKISection = () => {
         >
           {/* Badge */}
           <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
-            <Crown className="h-4 w-4 text-white fill-white" />
-            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
+            <Crown className="h-4 w-4 text-primary fill-primary" />
+            <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
               Deine Chance
             </span>
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15] mb-4">
             Warum ein
             <br className="sm:hidden" />
-            <span className="font-serif italic text-white/90 font-normal ml-2 sm:ml-3">
+            <span className="font-serif italic text-primary font-normal ml-2 sm:ml-3">
               KI-Agentur?
             </span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-lg text-white/50 max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Weshalb du sogar ohne Vorerfahrung eine KI-Agentur starten solltest!
           </p>
         </motion.div>
