@@ -1,21 +1,27 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { Suspense, useState } from "react";
+import CertificateModel from "./3d/CertificateModel";
+import AITeamModel from "./3d/AITeamModel";
+import BlueprintModel from "./3d/BlueprintModel";
+import VideoTutorialModel from "./3d/VideoTutorialModel";
+import LiveCallModel from "./3d/LiveCallModel";
 
 const benefits = [
   {
     id: 1,
     title: "KI-Zertifikate",
     description: "Erhalte anerkannte Zertifikate für deine KI-Kompetenzen und etabliere dich als Experte in deinem Bereich.",
-    lottieUrl: "https://lottie.host/e63bb006-ddc5-4524-a498-53a6e0279658/TgKvPcXfYK.lottie",
+    model: "certificate",
     colSpan: 1,
   },
   {
     id: 2,
     title: "Zugang zu deinen eigenen KI-Mitarbeitern",
     description: "Du bekommst Zugang zu unserem digitalen KI-Cockpit, bei welchem deine zukünftigen KI-Mitarbeiter bereits auf dich warten! Dein eigenes Team ab Day 1!",
-    lottieUrl: "https://lottie.host/f0e4e78a-117f-11ee-a561-9f6d0ded2937/u3HyS9kfe7.lottie",
+    model: "aiTeam",
     colSpan: 2,
     isLarge: true,
   },
@@ -23,24 +29,46 @@ const benefits = [
     id: 3,
     title: "Blueprints & Ressourcen",
     description: "Nutze n8n & make.com Templates sowie Vertragsvorlagen & mehr!",
-    lottieUrl: "https://lottie.host/4b48f08e-1169-11ee-815c-8381991ac10f/m51vh2vCY8.lottie",
+    model: "blueprint",
     colSpan: 1,
   },
   {
     id: 4,
     title: "Kurs- & Videomaterial",
     description: "Bei uns findest du ausführliche Tutorials zu KI & Automation Themen.",
-    lottieUrl: "https://lottie.host/cc05dba5-f540-4c38-89f1-6c1881acbd33/aPxlgBvhQV.lottie",
+    model: "video",
     colSpan: 1,
   },
   {
     id: 5,
     title: "4 Live Calls pro Woche!",
     description: "Bei den Live Calls kannst du deine Fragen stellen und unterstützt werden!",
-    lottieUrl: "https://lottie.host/02f0e704-83bc-11ee-9968-27435e10e401/bs1OufGCAm.lottie",
+    model: "liveCall",
     colSpan: 1,
   },
 ];
+
+interface Model3DProps {
+  modelType: string;
+  isHovered: boolean;
+}
+
+const Model3D = ({ modelType, isHovered }: Model3DProps) => {
+  switch (modelType) {
+    case "certificate":
+      return <CertificateModel isHovered={isHovered} />;
+    case "aiTeam":
+      return <AITeamModel isHovered={isHovered} />;
+    case "blueprint":
+      return <BlueprintModel isHovered={isHovered} />;
+    case "video":
+      return <VideoTutorialModel isHovered={isHovered} />;
+    case "liveCall":
+      return <LiveCallModel isHovered={isHovered} />;
+    default:
+      return null;
+  }
+};
 
 interface BenefitCardProps {
   benefit: typeof benefits[0];
@@ -48,19 +76,7 @@ interface BenefitCardProps {
 }
 
 const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
-  const dotLottieRef = useRef<any>(null);
-
-  const handleMouseEnter = () => {
-    if (dotLottieRef.current) {
-      dotLottieRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (dotLottieRef.current) {
-      dotLottieRef.current.pause();
-    }
-  };
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
@@ -73,23 +89,30 @@ const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Lottie Animation */}
+      {/* 3D Model Canvas */}
       <div className={`relative mb-6 ${
         benefit.isLarge 
-          ? "h-40 w-40 md:h-48 md:w-48 md:mb-0 flex-shrink-0" 
-          : "h-24 w-24"
+          ? "h-48 w-48 md:h-56 md:w-56 md:mb-0 flex-shrink-0" 
+          : "h-32 w-32"
       }`}>
-        <DotLottieReact
-          src={benefit.lottieUrl}
-          loop
-          autoplay={false}
-          dotLottieRefCallback={(ref) => {
-            dotLottieRef.current = ref;
-          }}
-        />
+        <Canvas>
+          <PerspectiveCamera makeDefault position={[0, 0, 3]} fov={45} />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
+          <pointLight position={[-5, -5, 5]} intensity={0.5} color="#8b5cf6" />
+          <Suspense fallback={null}>
+            <Model3D modelType={benefit.model} isHovered={isHovered} />
+          </Suspense>
+          <OrbitControls 
+            enableZoom={false} 
+            enablePan={false} 
+            autoRotate={false}
+            enableRotate={false}
+          />
+        </Canvas>
       </div>
 
       {/* Content */}
