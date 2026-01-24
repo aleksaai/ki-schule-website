@@ -20,7 +20,7 @@ const benefits = [
     id: 2,
     title: "Zugang zu deinen eigenen KI-Mitarbeitern",
     description: "Du bekommst Zugang zu unserem digitalen KI-Cockpit, bei welchem deine zukünftigen KI-Mitarbeiter bereits auf dich warten! Dein eigenes Team ab Day 1!",
-    icon: aiTeamIcon,
+    icon: livecallIcon,
     colSpan: 2,
     isLarge: true,
   },
@@ -42,7 +42,7 @@ const benefits = [
     id: 5,
     title: "4 Live Calls pro Woche!",
     description: "Bei den Live Calls kannst du deine Fragen stellen und unterstützt werden!",
-    icon: livecallIcon,
+    icon: aiTeamIcon,
     colSpan: 1,
   },
 ];
