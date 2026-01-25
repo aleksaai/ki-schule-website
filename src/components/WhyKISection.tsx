@@ -1,9 +1,8 @@
 import { ArrowUpRight, Crown } from "lucide-react";
 import { motion } from "framer-motion";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { useRef } from "react";
 import blueOceanIcon from "@/assets/blue-ocean-icon.png";
 import highIncomeIcon from "@/assets/high-income-icon.png";
+import automationIcon from "@/assets/automation-icon.png";
 
 const features = [
   {
@@ -19,7 +18,7 @@ const features = [
   {
     title: "Automation ist gefragt!",
     description: "Nahezu alle Branchen benötigen Unterstützung im Bereich KI!",
-    lottieUrl: "https://lottie.host/da29d773-bcba-40bc-942a-1508bdaaa0f0/xKLfO86OyH.lottie",
+    imageUrl: automationIcon,
   },
 ];
 
@@ -28,28 +27,7 @@ interface FeatureCardProps {
   index: number;
 }
 
-type Feature = {
-  title: string;
-  description: string;
-  lottieUrl?: string;
-  imageUrl?: string;
-};
-
 const FeatureCard = ({ feature, index }: FeatureCardProps) => {
-  const dotLottieRef = useRef<any>(null);
-
-  const handleMouseEnter = () => {
-    if (dotLottieRef.current) {
-      dotLottieRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (dotLottieRef.current) {
-      dotLottieRef.current.pause();
-    }
-  };
-
   return (
     <motion.div
       className="glass-card rounded-2xl p-6 lg:p-8 cursor-default text-center flex flex-col items-center"
@@ -57,27 +35,14 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
-      {/* Animation or Image - Larger size, centered */}
+      {/* Image - Larger size, centered */}
       <div className="relative mb-6 h-28 w-28">
-        {feature.imageUrl ? (
-          <img 
-            src={feature.imageUrl} 
-            alt={feature.title}
-            className="w-full h-full object-contain"
-          />
-        ) : (
-          <DotLottieReact
-            src={feature.lottieUrl!}
-            loop
-            autoplay={false}
-            dotLottieRefCallback={(ref) => {
-              dotLottieRef.current = ref;
-            }}
-          />
-        )}
+        <img 
+          src={feature.imageUrl} 
+          alt={feature.title}
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* Title */}
