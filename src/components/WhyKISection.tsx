@@ -2,12 +2,13 @@ import { ArrowUpRight, Crown } from "lucide-react";
 import { motion } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useRef } from "react";
+import blueOceanIcon from "@/assets/blue-ocean-icon.png";
 
 const features = [
   {
     title: "Blue-Ocean Markt",
     description: "KI ist eine neue Innovation und es gibt am Markt mehr Anfragen als Angebote!",
-    lottieUrl: "https://lottie.host/41ecc2de-8106-4da4-a648-6e8f9669cf7c/O0ElGjYk1c.lottie",
+    imageUrl: blueOceanIcon,
   },
   {
     title: "High-Income Skill",
@@ -25,6 +26,13 @@ interface FeatureCardProps {
   feature: typeof features[0];
   index: number;
 }
+
+type Feature = {
+  title: string;
+  description: string;
+  lottieUrl?: string;
+  imageUrl?: string;
+};
 
 const FeatureCard = ({ feature, index }: FeatureCardProps) => {
   const dotLottieRef = useRef<any>(null);
@@ -51,16 +59,24 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Lottie Animation - Larger size, centered */}
+      {/* Animation or Image - Larger size, centered */}
       <div className="relative mb-6 h-28 w-28">
-        <DotLottieReact
-          src={feature.lottieUrl}
-          loop
-          autoplay={false}
-          dotLottieRefCallback={(ref) => {
-            dotLottieRef.current = ref;
-          }}
-        />
+        {feature.imageUrl ? (
+          <img 
+            src={feature.imageUrl} 
+            alt={feature.title}
+            className="w-full h-full object-contain"
+          />
+        ) : (
+          <DotLottieReact
+            src={feature.lottieUrl!}
+            loop
+            autoplay={false}
+            dotLottieRefCallback={(ref) => {
+              dotLottieRef.current = ref;
+            }}
+          />
+        )}
       </div>
 
       {/* Title */}
