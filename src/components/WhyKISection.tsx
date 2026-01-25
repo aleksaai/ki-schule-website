@@ -30,12 +30,42 @@ interface FeatureCardProps {
 const FeatureCard = ({ feature, index }: FeatureCardProps) => {
   return (
     <motion.div
-      className="glass-card rounded-2xl p-6 lg:p-8 cursor-default text-center flex flex-col items-center"
+      className="relative rounded-2xl p-6 lg:p-8 cursor-default text-center flex flex-col items-center overflow-hidden"
+      style={{
+        background: 'rgba(255, 255, 255, 0.65)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        boxShadow: `
+          0 8px 32px rgba(0, 0, 0, 0.06),
+          0 2px 8px rgba(0, 0, 0, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.3)
+        `,
+        border: '1px solid rgba(255, 255, 255, 0.7)',
+      }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
+      whileHover={{ 
+        scale: 1.02,
+        boxShadow: `
+          0 12px 40px rgba(102, 164, 255, 0.15),
+          0 4px 12px rgba(0, 0, 0, 0.06),
+          inset 0 1px 0 rgba(255, 255, 255, 1),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.4)
+        `,
+      }}
     >
+      {/* Subtle blue glow accent */}
+      <div 
+        className="absolute -top-12 -right-12 w-32 h-32 opacity-20 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, hsla(216, 100%, 70%, 0.5) 0%, transparent 70%)',
+          filter: 'blur(20px)',
+        }}
+      />
+      
       {/* Image - Larger size, centered */}
       <div className="relative mb-6 h-28 w-28">
         <img 
@@ -63,38 +93,24 @@ const WhyKISection = () => {
     <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
+        {/* Main gradient background */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, hsl(220 20% 96%) 0%, hsl(220 20% 97%) 50%, hsl(220 20% 97%) 100%)',
+            background: `
+              radial-gradient(ellipse 80% 60% at 50% 40%, hsla(216, 100%, 70%, 0.12) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 80% 70%, hsla(216, 100%, 75%, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 40% at 20% 60%, hsla(216, 100%, 75%, 0.08) 0%, transparent 50%),
+              linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 25% 96%) 50%, hsl(220 20% 97%) 100%)
+            `,
           }}
         />
         
-        {/* Dot grid pattern */}
+        {/* Subtle noise texture overlay */}
         <div 
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
-            backgroundImage: `radial-gradient(circle, hsl(220 15% 50%) 1px, transparent 1px)`,
-            backgroundSize: '32px 32px',
-          }}
-        />
-        
-        {/* Subtle organic shape with accent color */}
-        <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[80%]"
-          style={{
-            background: 'radial-gradient(ellipse at center, hsla(216, 100%, 70%, 0.08) 0%, transparent 60%)',
-            borderRadius: '50%',
-            filter: 'blur(80px)',
-          }}
-          animate={{
-            scale: [1, 1.05, 1],
-            opacity: [0.3, 0.4, 0.3],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           }}
         />
       </div>
