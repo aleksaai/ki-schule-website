@@ -7,7 +7,7 @@ import certificateIcon from "@/assets/icons/certificate-icon-new.png";
 import aiTeamIcon from "@/assets/icons/ai-team-icon.png";
 import blueprintIcon from "@/assets/icons/blueprint-icon.png";
 import videoIcon from "@/assets/icons/video-icon.png";
-import livecallIcon from "@/assets/icons/livecall-icon.png";
+import kiMitarbeiterIcon from "@/assets/icons/ki-mitarbeiter-icon.png";
 
 const benefits = [
   {
@@ -21,7 +21,7 @@ const benefits = [
     id: 2,
     title: "Zugang zu deinen eigenen KI-Mitarbeitern",
     description: "Du bekommst Zugang zu unserem digitalen KI-Cockpit, bei welchem deine zukünftigen KI-Mitarbeiter bereits auf dich warten! Dein eigenes Team ab Day 1!",
-    icon: livecallIcon,
+    icon: kiMitarbeiterIcon,
     colSpan: 2,
     isLarge: true,
   },
