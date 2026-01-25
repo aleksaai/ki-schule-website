@@ -5,7 +5,7 @@ import benefitsBgVideo from "@/assets/benefits-bg.mp4";
 // Import icons
 import certificateIcon from "@/assets/icons/certificate-icon-new.png";
 import aiTeamIcon from "@/assets/icons/ai-team-icon.png";
-import blueprintIcon from "@/assets/icons/blueprint-icon.png";
+import blueprintIcon from "@/assets/icons/blueprint-icon-new.png";
 import videoIcon from "@/assets/icons/video-icon.png";
 import kiMitarbeiterIcon from "@/assets/icons/ki-mitarbeiter-icon.png";
 
