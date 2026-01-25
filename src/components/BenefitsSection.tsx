@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import benefitsBgVideo from "@/assets/benefits-bg.mp4";
 
 // Import icons
-import certificateIcon from "@/assets/icons/certificate-icon.png";
+import certificateIcon from "@/assets/icons/certificate-icon-new.png";
 import aiTeamIcon from "@/assets/icons/ai-team-icon.png";
 import blueprintIcon from "@/assets/icons/blueprint-icon.png";
 import videoIcon from "@/assets/icons/video-icon.png";
