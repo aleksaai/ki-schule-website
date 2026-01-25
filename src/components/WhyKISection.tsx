@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useRef } from "react";
 import blueOceanIcon from "@/assets/blue-ocean-icon.png";
+import highIncomeIcon from "@/assets/high-income-icon.png";
 
 const features = [
   {
@@ -13,7 +14,7 @@ const features = [
   {
     title: "High-Income Skill",
     description: "Du arbeitest in einem zukunftssicheren Bereich und verkaufst hochpreisig.",
-    lottieUrl: "https://lottie.host/4bf0c77c-d9e9-4028-a735-b088d88a19b0/XZjd8n7giP.lottie",
+    imageUrl: highIncomeIcon,
   },
   {
     title: "Automation ist gefragt!",
