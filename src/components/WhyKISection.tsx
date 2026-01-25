@@ -103,6 +103,34 @@ const WhyKISection = () => {
       </div>
 
       <div className="container relative mx-auto px-6 lg:px-8">
+        {/* Blur elements behind boxes to make glass effect visible */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Left box blur orb */}
+          <div 
+            className="absolute top-1/2 left-[16%] w-64 h-64 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              background: 'radial-gradient(circle, hsla(216, 100%, 70%, 0.3) 0%, hsla(200, 100%, 65%, 0.15) 40%, transparent 70%)',
+              filter: 'blur(40px)',
+            }}
+          />
+          {/* Center box blur orb */}
+          <div 
+            className="absolute top-1/2 left-1/2 w-64 h-64 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              background: 'radial-gradient(circle, hsla(280, 80%, 65%, 0.25) 0%, hsla(260, 90%, 70%, 0.12) 40%, transparent 70%)',
+              filter: 'blur(40px)',
+            }}
+          />
+          {/* Right box blur orb */}
+          <div 
+            className="absolute top-1/2 left-[84%] w-64 h-64 -translate-x-1/2 -translate-y-1/2"
+            style={{
+              background: 'radial-gradient(circle, hsla(340, 85%, 70%, 0.25) 0%, hsla(320, 90%, 65%, 0.12) 40%, transparent 70%)',
+              filter: 'blur(40px)',
+            }}
+          />
+        </div>
+
         {/* Header */}
         <motion.div 
           className="text-center mb-16"
