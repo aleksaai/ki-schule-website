@@ -161,11 +161,7 @@ const ProcessSection = () => {
               <motion.button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
-                className={`relative px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
-                  activeStep === index
-                    ? "text-primary-foreground"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
+                className="relative px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden text-white"
                 style={{
                   background: activeStep === index
                     ? "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(216 100% 60%) 100%)"
