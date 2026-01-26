@@ -115,7 +115,7 @@ const BenefitsSection = () => {
         
         {/* Light overlay for light mode */}
         <div 
-          className="absolute inset-0 bg-white/40"
+          className="absolute inset-0 bg-white/20"
         />
         
         {/* Gradient overlay - stronger at top for text readability */}
