@@ -109,6 +109,7 @@ const BenefitsSection = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          ref={(el) => { if (el) el.playbackRate = 0.8; }}
         >
           <source src={benefitsBgVideo} type="video/mp4" />
         </video>
