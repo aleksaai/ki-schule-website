@@ -104,58 +104,95 @@ const ProcessSection = () => {
 
         {/* Main Glass Container */}
         <motion.div
-          className="relative isolate rounded-3xl p-6 lg:p-10 mb-14 max-w-5xl mx-auto overflow-hidden"
+          className="relative isolate rounded-3xl p-8 lg:p-12 mb-14 max-w-5xl mx-auto overflow-hidden"
           style={{
             background:
-              "linear-gradient(145deg, hsl(var(--card) / 0.16) 0%, hsl(var(--card) / 0.06) 55%, hsl(var(--card) / 0.12) 100%)",
-            backdropFilter: "blur(30px)",
-            WebkitBackdropFilter: "blur(30px)",
-            border: "1px solid hsl(var(--card) / 0.40)",
+              "linear-gradient(145deg, hsl(var(--card) / 0.22) 0%, hsl(var(--card) / 0.08) 50%, hsl(var(--card) / 0.16) 100%)",
+            backdropFilter: "blur(40px) saturate(180%)",
+            WebkitBackdropFilter: "blur(40px) saturate(180%)",
+            border: "1.5px solid hsl(var(--card) / 0.50)",
             boxShadow: `
-              0 18px 52px hsl(var(--foreground) / 0.10),
-              0 6px 18px hsl(var(--foreground) / 0.06),
-              inset 0 1px 0 hsl(var(--card) / 0.85),
-              inset 0 -1px 0 hsl(var(--foreground) / 0.07)
+              0 24px 64px hsl(var(--foreground) / 0.12),
+              0 8px 24px hsl(var(--foreground) / 0.08),
+              0 0 0 1px hsl(var(--card) / 0.3),
+              inset 0 1px 0 hsl(var(--card) / 0.9),
+              inset 0 -1px 0 hsl(var(--foreground) / 0.08)
             `,
           }}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          {/* Inner refraction layer */}
+          {/* Premium refraction layers */}
           <div
             className="pointer-events-none absolute inset-0 z-0"
             style={{
-              background:
-                "radial-gradient(ellipse 140% 90% at 18% 0%, hsl(var(--card) / 0.55) 0%, transparent 58%), radial-gradient(ellipse 120% 80% at 92% 18%, hsl(var(--card) / 0.22) 0%, transparent 62%), linear-gradient(180deg, transparent 0%, hsl(var(--foreground) / 0.05) 100%)",
-              opacity: 0.35,
+              background: `
+                radial-gradient(ellipse 150% 100% at 15% -10%, hsl(var(--card) / 0.6) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 70% at 95% 20%, hsl(var(--card) / 0.3) 0%, transparent 55%),
+                radial-gradient(ellipse 80% 50% at 50% 100%, hsl(var(--primary) / 0.05) 0%, transparent 60%),
+                linear-gradient(180deg, transparent 0%, hsl(var(--foreground) / 0.03) 100%)
+              `,
             }}
           />
 
-          {/* Top edge highlight */}
+          {/* Top edge highlight - premium shine */}
           <div
-            className="absolute top-0 left-0 right-0 z-20 h-px"
+            className="absolute top-0 left-0 right-0 z-20 h-[2px]"
             style={{
               background:
-                "linear-gradient(90deg, transparent, hsl(var(--card) / 0.75) 50%, transparent)",
+                "linear-gradient(90deg, transparent 5%, hsl(var(--card) / 0.8) 30%, hsl(var(--card) / 1) 50%, hsl(var(--card) / 0.8) 70%, transparent 95%)",
             }}
           />
 
-          {/* Step Tabs */}
-          <div className="relative z-10 flex flex-wrap justify-center gap-3 mb-10">
+          {/* Subtle ambient glow */}
+          <div
+            className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[60%] h-32 z-0"
+            style={{
+              background: "radial-gradient(ellipse at center, hsl(var(--primary) / 0.08) 0%, transparent 70%)",
+              filter: "blur(40px)",
+            }}
+          />
+
+          {/* Step Tabs - Premium Style */}
+          <div className="relative z-10 flex flex-wrap justify-center gap-3 mb-12">
             {steps.map((step, index) => (
-              <button
+              <motion.button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
-                className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`relative px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
                   activeStep === index
-                    ? "bg-primary text-primary-foreground shadow-lg"
-                    : "bg-background/50 text-muted-foreground hover:bg-background/80 hover:text-foreground"
+                    ? "text-primary-foreground shadow-xl"
+                    : "bg-background/60 text-muted-foreground hover:bg-background/90 hover:text-foreground border border-border/50"
                 }`}
+                style={
+                  activeStep === index
+                    ? {
+                        background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(216 100% 60%) 100%)",
+                        boxShadow: `
+                          0 0 20px hsl(var(--primary) / 0.4),
+                          0 8px 24px hsl(var(--primary) / 0.3),
+                          inset 0 1px 0 rgba(255, 255, 255, 0.3)
+                        `,
+                      }
+                    : {}
+                }
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {step.label}
-              </button>
+                {/* Active tab shine effect */}
+                {activeStep === index && (
+                  <div
+                    className="absolute inset-0 z-0"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)",
+                    }}
+                  />
+                )}
+                <span className="relative z-10">{step.label}</span>
+              </motion.button>
             ))}
           </div>
 
@@ -163,23 +200,45 @@ const ProcessSection = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeStep}
-              className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+              initial={{ opacity: 0, y: 25, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.98 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {/* Icon/Graphic */}
-              <div className="flex-shrink-0 flex items-center justify-center w-32 h-32 lg:w-44 lg:h-44 rounded-2xl bg-primary/10">
-                <Icon className="w-16 h-16 lg:w-24 lg:h-24 text-primary" strokeWidth={1.5} />
+              {/* Icon/Graphic - Premium Glass Circle */}
+              <div className="flex-shrink-0 relative">
+                {/* Glow behind icon */}
+                <div
+                  className="absolute inset-0 z-0"
+                  style={{
+                    background: "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
+                    filter: "blur(30px)",
+                    transform: "scale(1.5)",
+                  }}
+                />
+                <div
+                  className="relative z-10 flex items-center justify-center w-36 h-36 lg:w-48 lg:h-48 rounded-3xl"
+                  style={{
+                    background: "linear-gradient(145deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.08) 100%)",
+                    border: "1.5px solid hsl(var(--primary) / 0.25)",
+                    boxShadow: `
+                      0 12px 40px hsl(var(--primary) / 0.15),
+                      inset 0 1px 0 hsl(var(--card) / 0.6),
+                      inset 0 -1px 0 hsl(var(--foreground) / 0.05)
+                    `,
+                  }}
+                >
+                  <Icon className="w-16 h-16 lg:w-24 lg:h-24 text-primary" strokeWidth={1.2} />
+                </div>
               </div>
 
               {/* Text Content */}
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                <h3 className="text-2xl lg:text-4xl font-bold text-foreground mb-5 tracking-tight">
                   {currentStep.title}
                 </h3>
-                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl">
                   {currentStep.description}
                 </p>
               </div>
