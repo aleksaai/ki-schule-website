@@ -56,7 +56,7 @@ interface BenefitCardProps {
 const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
   return (
     <motion.div
-      className={`glass-card rounded-2xl p-6 lg:p-8 cursor-default flex flex-col ${
+      className={`glass rounded-2xl p-6 lg:p-8 cursor-default flex flex-col ${
         benefit.isLarge 
           ? "md:col-span-2 md:flex-row md:items-center md:gap-8" 
           : "items-center text-center"
@@ -115,14 +115,14 @@ const BenefitsSection = () => {
         
         {/* Light overlay for light mode */}
         <div 
-          className="absolute inset-0 bg-white/80"
+          className="absolute inset-0 bg-white/30"
         />
         
         {/* Gradient overlay with accent tint */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, hsla(220, 20%, 97%, 0.95) 0%, hsla(216, 100%, 70%, 0.08) 20%, hsla(216, 100%, 70%, 0.08) 80%, hsla(220, 20%, 97%, 0.95) 100%)',
+            background: 'linear-gradient(180deg, hsla(220, 20%, 97%, 0.7) 0%, hsla(216, 100%, 70%, 0.05) 20%, hsla(216, 100%, 70%, 0.05) 80%, hsla(220, 20%, 97%, 0.7) 100%)',
           }}
         />
       </div>
