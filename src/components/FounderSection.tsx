@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import aleksaImage from "@/assets/aleksa-founder.jpg";
 
 const FounderSection = () => {
@@ -52,16 +54,50 @@ const FounderSection = () => {
         >
           <div className="glass-card rounded-3xl p-6 lg:p-10">
             <div className="grid lg:grid-cols-[1fr,1.2fr] gap-8 lg:gap-12 items-center">
-              {/* Image */}
+              {/* Image with Glass Frame - Same style as ProcessSection */}
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-3xl blur-2xl" />
-                <div className="relative rounded-2xl overflow-hidden">
-                  <img 
-                    src={aleksaImage} 
-                    alt="Aleksa Spalevic - Gründer der KI-Schule"
-                    className="w-full aspect-[4/3] object-cover object-top"
+                {/* Glow behind image */}
+                <div
+                  className="absolute inset-0 z-0 pointer-events-none"
+                  style={{
+                    background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
+                    filter: "blur(40px)",
+                    transform: "scale(1.5)",
+                  }}
+                />
+                
+                {/* Glass Frame Container */}
+                <div
+                  className="relative z-10 rounded-2xl overflow-hidden"
+                  style={{
+                    background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1.5px solid hsl(var(--card) / 0.6)",
+                    boxShadow: `
+                      0 16px 48px hsl(var(--foreground) / 0.12),
+                      0 4px 16px hsl(var(--foreground) / 0.06),
+                      inset 0 1px 0 hsl(var(--card) / 0.9),
+                      inset 0 -1px 0 hsl(var(--foreground) / 0.04)
+                    `,
+                    padding: "8px",
+                  }}
+                >
+                  {/* Top edge shine */}
+                  <div
+                    className="absolute top-0 left-[10%] right-[10%] h-px z-20"
+                    style={{
+                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/5" />
+                  
+                  <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                    <img 
+                      src={aleksaImage} 
+                      alt="Aleksa Spalevic - Gründer der KI-Schule"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </AspectRatio>
                 </div>
               </div>
 
@@ -80,17 +116,15 @@ const FounderSection = () => {
                   Unser Communityleiter, Aleksa, geht mit tollem Beispiel voran! Er gründete mit der DestinyMedia GmbH eine der ersten KI-Agenturen in Deutschland und hat sich nun mit Spalevic Consulting zu den führenden Anbietern im DACH-Raum etabliert.
                 </p>
 
-                {/* Optional: Stats or highlights */}
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <div className="glass rounded-xl px-4 py-3">
-                    <span className="text-sm text-muted-foreground">Gründer</span>
-                    <p className="font-semibold text-foreground">DestinyMedia GmbH</p>
-                  </div>
-                  <div className="glass rounded-xl px-4 py-3">
-                    <span className="text-sm text-muted-foreground">Consulting</span>
-                    <p className="font-semibold text-foreground">Spalevic Consulting</p>
-                  </div>
-                </div>
+                {/* CTA Button */}
+                <motion.button
+                  className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="relative z-10">Jetzt der Community beitreten</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
+                </motion.button>
               </div>
             </div>
           </div>
