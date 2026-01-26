@@ -228,7 +228,7 @@ const ProcessSection = () => {
                 
                 {/* Glass Frame Container */}
                 <div
-                  className="relative z-10 w-56 lg:w-80 rounded-2xl overflow-hidden"
+                  className="relative z-10 w-64 lg:w-96 rounded-2xl overflow-hidden"
                   style={{
                     background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
                     backdropFilter: "blur(20px)",
