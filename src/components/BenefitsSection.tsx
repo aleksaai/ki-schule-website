@@ -109,21 +109,21 @@ const BenefitsSection = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          ref={(el) => { if (el) el.playbackRate = 0.8; }}
+          ref={(el) => { if (el) el.playbackRate = 0.5; }}
         >
           <source src={benefitsBgVideo} type="video/mp4" />
         </video>
         
         {/* Light overlay for light mode */}
         <div 
-          className="absolute inset-0 bg-white/30"
+          className="absolute inset-0 bg-white/40"
         />
         
-        {/* Gradient overlay with accent tint */}
+        {/* Gradient overlay - stronger at top for text readability */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(180deg, hsla(220, 20%, 97%, 0.7) 0%, hsla(216, 100%, 70%, 0.05) 20%, hsla(216, 100%, 70%, 0.05) 80%, hsla(220, 20%, 97%, 0.7) 100%)',
+            background: 'linear-gradient(180deg, hsla(220, 20%, 97%, 0.95) 0%, hsla(220, 20%, 97%, 0.85) 15%, hsla(220, 20%, 97%, 0.4) 40%, hsla(220, 20%, 97%, 0.3) 70%, hsla(220, 20%, 97%, 0.85) 100%)',
           }}
         />
       </div>
