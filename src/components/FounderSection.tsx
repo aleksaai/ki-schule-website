@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, User } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import aleksaImage from "@/assets/aleksa-founder.jpg";
 
@@ -29,7 +29,7 @@ const FounderSection = () => {
         >
           {/* Badge */}
           <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
-            <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsla(216,100%,70%,0.5)]" />
+            <User className="h-4 w-4 text-primary fill-primary" />
             <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
               Unser Community Founder
             </span>

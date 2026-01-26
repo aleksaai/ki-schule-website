@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Compass, TrendingUp, Rocket } from "lucide-react";
+import { ArrowUpRight, Compass, TrendingUp, Rocket, Route } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import onboardingVideo from "@/assets/onboarding-video.mov";
@@ -86,7 +86,7 @@ const ProcessSection = () => {
         >
           {/* Badge */}
           <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
-            <Compass className="h-4 w-4 text-primary fill-primary" />
+            <Route className="h-4 w-4 text-primary fill-primary" />
             <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
               Dein Weg
             </span>
