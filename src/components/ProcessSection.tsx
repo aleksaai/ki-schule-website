@@ -263,6 +263,7 @@ const ProcessSection = () => {
                         muted
                         playsInline
                         className="w-full h-full object-cover"
+                        style={{ transform: "scale(1.3)", objectPosition: "center center" }}
                       />
                     </AspectRatio>
                   ) : activeStep === 1 ? (
