@@ -155,29 +155,36 @@ const ProcessSection = () => {
             }}
           />
 
-          {/* Step Tabs - Premium Dark Style with White Text */}
+          {/* Step Tabs - Glass Style */}
           <div className="relative z-10 flex flex-wrap justify-center gap-4 mb-16">
             {steps.map((step, index) => (
               <motion.button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
-                className="relative px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden text-white"
+                className={`relative px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
+                  activeStep === index
+                    ? "text-primary-foreground"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
                 style={{
                   background: activeStep === index
-                    ? "linear-gradient(135deg, hsl(220 15% 15%) 0%, hsl(220 15% 8%) 100%)"
-                    : "linear-gradient(135deg, hsl(220 15% 20%) 0%, hsl(220 15% 12%) 100%)",
+                    ? "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(216 100% 60%) 100%)"
+                    : "linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.65) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
                   border: activeStep === index
-                    ? "1.5px solid hsl(var(--primary) / 0.5)"
-                    : "1px solid hsl(220 15% 30%)",
+                    ? "1.5px solid hsl(var(--primary) / 0.6)"
+                    : "1px solid rgba(255, 255, 255, 0.9)",
                   boxShadow: activeStep === index
                     ? `
-                        0 0 24px hsl(var(--primary) / 0.3),
-                        0 8px 24px hsl(220 15% 5% / 0.4),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                        0 0 20px hsl(var(--primary) / 0.35),
+                        0 8px 24px hsl(var(--primary) / 0.25),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.35)
                       `
                     : `
-                        0 4px 16px hsl(220 15% 5% / 0.2),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.05)
+                        0 4px 16px rgba(0, 0, 0, 0.06),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+                        inset 0 -1px 0 rgba(0, 0, 0, 0.03)
                       `,
                 }}
                 whileHover={{ scale: 1.03 }}
@@ -187,7 +194,9 @@ const ProcessSection = () => {
                 <div
                   className="absolute top-0 left-[10%] right-[10%] h-px z-0"
                   style={{
-                    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2) 50%, transparent)",
+                    background: activeStep === index
+                      ? "linear-gradient(90deg, transparent, rgba(255,255,255,0.5) 50%, transparent)"
+                      : "linear-gradient(90deg, transparent, rgba(255,255,255,0.9) 50%, transparent)",
                   }}
                 />
                 <span className="relative z-10">{step.label}</span>
@@ -205,39 +214,39 @@ const ProcessSection = () => {
               exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {/* Icon/Graphic - Premium Glass Circle */}
+              {/* Icon/Graphic - Larger Premium Glass */}
               <div className="flex-shrink-0 relative">
                 {/* Glow behind icon */}
                 <div
                   className="absolute inset-0 z-0"
                   style={{
-                    background: "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
-                    filter: "blur(30px)",
-                    transform: "scale(1.5)",
+                    background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
+                    filter: "blur(40px)",
+                    transform: "scale(1.8)",
                   }}
                 />
                 <div
-                  className="relative z-10 flex items-center justify-center w-36 h-36 lg:w-48 lg:h-48 rounded-3xl"
+                  className="relative z-10 flex items-center justify-center w-48 h-48 lg:w-72 lg:h-72 rounded-3xl"
                   style={{
-                    background: "linear-gradient(145deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.08) 100%)",
-                    border: "1.5px solid hsl(var(--primary) / 0.25)",
+                    background: "linear-gradient(145deg, hsl(var(--primary) / 0.12) 0%, hsl(var(--primary) / 0.06) 100%)",
+                    border: "1.5px solid hsl(var(--primary) / 0.2)",
                     boxShadow: `
-                      0 12px 40px hsl(var(--primary) / 0.15),
-                      inset 0 1px 0 hsl(var(--card) / 0.6),
-                      inset 0 -1px 0 hsl(var(--foreground) / 0.05)
+                      0 16px 48px hsl(var(--primary) / 0.12),
+                      inset 0 1px 0 hsl(var(--card) / 0.7),
+                      inset 0 -1px 0 hsl(var(--foreground) / 0.04)
                     `,
                   }}
                 >
-                  <Icon className="w-16 h-16 lg:w-24 lg:h-24 text-primary" strokeWidth={1.2} />
+                  <Icon className="w-24 h-24 lg:w-36 lg:h-36 text-primary" strokeWidth={1} />
                 </div>
               </div>
 
-              {/* Text Content */}
+              {/* Text Content - Smaller */}
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-2xl lg:text-4xl font-bold text-foreground mb-5 tracking-tight">
+                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-4 tracking-tight">
                   {currentStep.title}
                 </h3>
-                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl">
+                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed max-w-md">
                   {currentStep.description}
                 </p>
               </div>
