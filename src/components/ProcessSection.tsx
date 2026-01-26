@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowUpRight, Compass, TrendingUp, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import onboardingImage from "@/assets/onboarding-image.png";
 
 const steps = [
   {
@@ -212,30 +214,64 @@ const ProcessSection = () => {
               exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {/* Icon/Graphic - Larger Premium Glass */}
+              {/* Image/Graphic - Premium Glass Frame */}
               <div className="flex-shrink-0 relative pointer-events-none">
-                {/* Glow behind icon */}
+                {/* Glow behind image */}
                 <div
                   className="absolute inset-0 z-0 pointer-events-none"
                   style={{
                     background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
                     filter: "blur(40px)",
-                    transform: "scale(1.8)",
+                    transform: "scale(1.5)",
                   }}
                 />
+                
+                {/* Glass Frame Container */}
                 <div
-                  className="relative z-10 flex items-center justify-center w-48 h-48 lg:w-72 lg:h-72 rounded-3xl"
+                  className="relative z-10 w-56 lg:w-80 rounded-2xl overflow-hidden"
                   style={{
-                    background: "linear-gradient(145deg, hsl(var(--primary) / 0.12) 0%, hsl(var(--primary) / 0.06) 100%)",
-                    border: "1.5px solid hsl(var(--primary) / 0.2)",
+                    background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1.5px solid hsl(var(--card) / 0.6)",
                     boxShadow: `
-                      0 16px 48px hsl(var(--primary) / 0.12),
-                      inset 0 1px 0 hsl(var(--card) / 0.7),
+                      0 16px 48px hsl(var(--foreground) / 0.12),
+                      0 4px 16px hsl(var(--foreground) / 0.06),
+                      inset 0 1px 0 hsl(var(--card) / 0.9),
                       inset 0 -1px 0 hsl(var(--foreground) / 0.04)
                     `,
+                    padding: "8px",
                   }}
                 >
-                  <Icon className="w-24 h-24 lg:w-36 lg:h-36 text-primary" strokeWidth={1} />
+                  {/* Top edge shine */}
+                  <div
+                    className="absolute top-0 left-[10%] right-[10%] h-px z-20"
+                    style={{
+                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
+                    }}
+                  />
+                  
+                  {/* Conditional content: Image for step 1, Icon for others */}
+                  {activeStep === 0 ? (
+                    <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                      <img
+                        src={onboardingImage}
+                        alt="Onboarding Session"
+                        className="w-full h-full object-cover"
+                      />
+                    </AspectRatio>
+                  ) : (
+                    <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                      <div
+                        className="w-full h-full flex items-center justify-center"
+                        style={{
+                          background: "linear-gradient(145deg, hsl(var(--primary) / 0.08) 0%, hsl(var(--primary) / 0.04) 100%)",
+                        }}
+                      >
+                        <Icon className="w-20 h-20 lg:w-28 lg:h-28 text-primary" strokeWidth={1} />
+                      </div>
+                    </AspectRatio>
+                  )}
                 </div>
               </div>
 
