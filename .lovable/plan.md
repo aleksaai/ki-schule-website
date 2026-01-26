@@ -1,36 +1,132 @@
 
-# Plan: Glaseffekt für "Deine Vorteile" Boxen
 
-## Ziel
-Die fünf Boxen in der "Deine Vorteile" Section sollen einen echten Glaseffekt haben, durch den man das Hintergrundvideo milchig-verschwommen sehen kann - genau wie beim Navigations-Hintergrund.
+# Plan: Neue "Prozess" Section mit 3 Schritten
 
-## Aktuelles Problem
-1. **Boxen zu opak**: Die Boxen verwenden `glass-card` mit 85% Weiß-Hintergrund
-2. **Video-Overlay zu stark**: Ein `bg-white/80` Overlay macht das gesamte Video fast unsichtbar
+## Übersicht
+Eine neue Section, die den Ablauf des Coaching-Programms in drei interaktiven Schritten erklärt. Der Nutzer kann zwischen den Schritten wechseln, wobei jeder Schritt eine Grafik und Beschreibung zeigt.
 
-## Lösung
+## Design-Konzept
 
-### Schritt 1: Video-Overlay reduzieren
-Das weiße Overlay von `bg-white/80` auf `bg-white/30` reduzieren, damit das Video im Hintergrund sichtbar wird.
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                         [Label]                             │
+│                    DEIN WEG ZUM ERFOLG                      │
+│              So bringen wir dich ans Ziel                   │
+│                                                             │
+│  ┌───────────────────────────────────────────────────────┐  │
+│  │                                                       │  │
+│  │   [ Schritt 1 ]   [ Schritt 2 ]   [ Schritt 3 ]      │  │
+│  │       ●              ○              ○                 │  │
+│  │                                                       │  │
+│  │  ┌──────────┐    ┌────────────────────────────────┐  │  │
+│  │  │          │    │  Positionierung & Onboarding   │  │  │
+│  │  │  GRAFIK  │    │                                │  │  │
+│  │  │          │    │  Im gemeinsamen Onboarding     │  │  │
+│  │  │          │    │  arbeiten wir an deiner        │  │  │
+│  │  │          │    │  Positionierung, Produktpalette│  │  │
+│  │  │          │    │  und Zielgruppe.               │  │  │
+│  │  └──────────┘    └────────────────────────────────┘  │  │
+│  │                                                       │  │
+│  └───────────────────────────────────────────────────────┘  │
+│                                                             │
+│                   [ Jetzt Starten → ]                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
-### Schritt 2: Boxen-Styling anpassen
-Die `glass-card` Klasse durch die transparentere `.glass` Klasse ersetzen, die bereits für die Navigation verwendet wird:
-- `rgba(255, 255, 255, 0.7)` bis `0.5` statt `0.85`
-- Gleicher `backdrop-filter: blur(24px)`
-- Gleiche Specular-Highlights
+## Die drei Schritte
 
-### Schritt 3: Gradient-Overlay anpassen
-Den Gradient-Overlay ebenfalls transparenter machen, damit der Glaseffekt der Boxen zur Geltung kommt.
+**Schritt 1 - Positionierung & Onboarding**
+- Gemeinsames Onboarding
+- Erarbeitung der Positionierung
+- Definition von Produktpalette und Zielgruppe
 
-## Technische Änderungen
+**Schritt 2 - Fokus auf Umsatz**
+- Priorität: schnell unabhängig werden
+- Fachliche Kompetenz aufbauen
+- Erste Einnahmen generieren
 
-**Datei: `src/components/BenefitsSection.tsx`**
+**Schritt 3 - Skalierung & Netzwerk**
+- Zugang zu exklusiven Netzwerken
+- Vom Selbstständigen zum Unternehmer
+- Team aufbauen, Business automatisieren
 
-1. Zeile 118: `bg-white/80` → `bg-white/30`
-2. Zeile 125: Gradient-Transparenz erhöhen
-3. Zeile 59: `glass-card` → `glass` Klasse für BenefitCard
+## Technische Umsetzung
 
-## Erwartetes Ergebnis
-- Das Hintergrundvideo ist durch die Boxen milchig-verschwommen sichtbar
-- Die Boxen haben denselben Glaseffekt wie die Navigation
-- Der Text bleibt gut lesbar durch den Blur-Effekt
+### Neue Dateien
+
+**1. `src/components/ProcessSection.tsx`**
+- React-Komponente mit useState für aktiven Schritt
+- Framer Motion Animationen für Schritt-Wechsel
+- Responsive Layout (Mobile: vertikal, Desktop: horizontal)
+
+### Komponenten-Struktur
+
+```tsx
+const ProcessSection = () => {
+  const [activeStep, setActiveStep] = useState(0);
+  
+  return (
+    <section>
+      {/* Header: Badge, Titel, Untertitel */}
+      
+      {/* Große Glasbox */}
+      <div className="glass-card">
+        {/* Step-Tabs oben */}
+        <div className="flex gap-4">
+          {steps.map((step, i) => (
+            <button onClick={() => setActiveStep(i)}>
+              Schritt {i + 1}
+            </button>
+          ))}
+        </div>
+        
+        {/* Content: Grafik links, Text rechts */}
+        <div className="flex">
+          <div>{/* Grafik/Icon */}</div>
+          <div>{/* Titel + Beschreibung */}</div>
+        </div>
+      </div>
+      
+      {/* CTA Button */}
+    </section>
+  );
+};
+```
+
+### Styling-Details
+- Große horizontale Glasbox mit `glass-card` Klasse
+- Step-Tabs als Buttons mit aktivem Zustand (Primary-Farbe)
+- Sanfte Fade-Animation beim Wechsel zwischen Schritten
+- Gleicher Hintergrund wie "Warum KI-Agentur?" Section (Grid-Pattern)
+
+### Integration
+
+**`src/pages/Index.tsx`**
+```tsx
+import ProcessSection from "@/components/ProcessSection";
+
+// Nach BenefitsSection einfügen
+<ProcessSection />
+```
+
+### Grafiken/Icons
+Für jeden Schritt wird ein passendes Icon benötigt:
+- Schritt 1: Zielscheibe/Kompass (Positionierung)
+- Schritt 2: Aufwärtspfeil/Chart (Umsatz)
+- Schritt 3: Netzwerk/Rakete (Skalierung)
+
+Optionen:
+1. Lucide Icons verwenden (sofort verfügbar)
+2. Eigene Grafiken hochladen (wie bei anderen Sections)
+
+## Responsive Verhalten
+
+**Desktop (lg+)**
+- Horizontales Layout: Grafik links, Text rechts
+- Step-Tabs nebeneinander
+
+**Tablet/Mobile**
+- Vertikales Layout: Grafik oben, Text unten
+- Step-Tabs bleiben nebeneinander, aber kompakter
+
