@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import onboardingVideo from "@/assets/onboarding-video.mov";
 import umsatzImage from "@/assets/umsatz-image.jpg";
+import netzwerkImage from "@/assets/netzwerk-image.jpg";
 
 const steps = [
   {
@@ -267,21 +268,18 @@ const ProcessSection = () => {
                   ) : activeStep === 1 ? (
                     <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
                       <img
-                        src={umsatzImage}
+                        src={netzwerkImage}
                         alt="Fokus auf Umsatz"
                         className="w-full h-full object-cover"
                       />
                     </AspectRatio>
                   ) : (
                     <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
-                      <div
-                        className="w-full h-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(145deg, hsl(var(--primary) / 0.08) 0%, hsl(var(--primary) / 0.04) 100%)",
-                        }}
-                      >
-                        <Icon className="w-20 h-20 lg:w-28 lg:h-28 text-primary" strokeWidth={1} />
-                      </div>
+                      <img
+                        src={umsatzImage}
+                        alt="Skalierung & Netzwerk"
+                        className="w-full h-full object-cover"
+                      />
                     </AspectRatio>
                   )}
                 </div>
