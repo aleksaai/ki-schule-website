@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Compass, TrendingUp, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import onboardingImage from "@/assets/onboarding-image.png";
+import onboardingVideo from "@/assets/onboarding-video.mov";
 import umsatzImage from "@/assets/umsatz-image.jpg";
 
 const steps = [
@@ -255,9 +255,12 @@ const ProcessSection = () => {
                   {/* Conditional content: Images for steps 1 & 2, Icon for step 3 */}
                   {activeStep === 0 ? (
                     <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
-                      <img
-                        src={onboardingImage}
-                        alt="Onboarding Session"
+                      <video
+                        src={onboardingVideo}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         className="w-full h-full object-cover"
                       />
                     </AspectRatio>
