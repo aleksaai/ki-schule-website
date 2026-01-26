@@ -3,6 +3,7 @@ import { ArrowUpRight, Compass, TrendingUp, Rocket } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import onboardingImage from "@/assets/onboarding-image.png";
+import umsatzImage from "@/assets/umsatz-image.jpg";
 
 const steps = [
   {
@@ -251,12 +252,20 @@ const ProcessSection = () => {
                     }}
                   />
                   
-                  {/* Conditional content: Image for step 1, Icon for others */}
+                  {/* Conditional content: Images for steps 1 & 2, Icon for step 3 */}
                   {activeStep === 0 ? (
                     <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
                       <img
                         src={onboardingImage}
                         alt="Onboarding Session"
+                        className="w-full h-full object-cover"
+                      />
+                    </AspectRatio>
+                  ) : activeStep === 1 ? (
+                    <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                      <img
+                        src={umsatzImage}
+                        alt="Fokus auf Umsatz"
                         className="w-full h-full object-cover"
                       />
                     </AspectRatio>
