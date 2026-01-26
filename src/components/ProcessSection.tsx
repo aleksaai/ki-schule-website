@@ -102,9 +102,9 @@ const ProcessSection = () => {
           </p>
         </motion.div>
 
-        {/* Main Glass Container */}
+        {/* Main Glass Container - Taller with more whitespace */}
         <motion.div
-          className="relative isolate rounded-3xl p-8 lg:p-12 mb-14 max-w-5xl mx-auto overflow-hidden"
+          className="relative isolate rounded-3xl p-10 lg:p-16 lg:py-20 mb-14 max-w-5xl mx-auto overflow-hidden"
           style={{
             background:
               "linear-gradient(145deg, hsl(var(--card) / 0.22) 0%, hsl(var(--card) / 0.08) 50%, hsl(var(--card) / 0.16) 100%)",
@@ -155,42 +155,41 @@ const ProcessSection = () => {
             }}
           />
 
-          {/* Step Tabs - Premium Style */}
-          <div className="relative z-10 flex flex-wrap justify-center gap-3 mb-12">
+          {/* Step Tabs - Premium Dark Style with White Text */}
+          <div className="relative z-10 flex flex-wrap justify-center gap-4 mb-16">
             {steps.map((step, index) => (
               <motion.button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
-                className={`relative px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
-                  activeStep === index
-                    ? "text-primary-foreground shadow-xl"
-                    : "bg-background/60 text-muted-foreground hover:bg-background/90 hover:text-foreground border border-border/50"
-                }`}
-                style={
-                  activeStep === index
-                    ? {
-                        background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(216 100% 60%) 100%)",
-                        boxShadow: `
-                          0 0 20px hsl(var(--primary) / 0.4),
-                          0 8px 24px hsl(var(--primary) / 0.3),
-                          inset 0 1px 0 rgba(255, 255, 255, 0.3)
-                        `,
-                      }
-                    : {}
-                }
-                whileHover={{ scale: 1.02 }}
+                className="relative px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden text-white"
+                style={{
+                  background: activeStep === index
+                    ? "linear-gradient(135deg, hsl(220 15% 15%) 0%, hsl(220 15% 8%) 100%)"
+                    : "linear-gradient(135deg, hsl(220 15% 20%) 0%, hsl(220 15% 12%) 100%)",
+                  border: activeStep === index
+                    ? "1.5px solid hsl(var(--primary) / 0.5)"
+                    : "1px solid hsl(220 15% 30%)",
+                  boxShadow: activeStep === index
+                    ? `
+                        0 0 24px hsl(var(--primary) / 0.3),
+                        0 8px 24px hsl(220 15% 5% / 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                      `
+                    : `
+                        0 4px 16px hsl(220 15% 5% / 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.05)
+                      `,
+                }}
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {/* Active tab shine effect */}
-                {activeStep === index && (
-                  <div
-                    className="absolute inset-0 z-0"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)",
-                    }}
-                  />
-                )}
+                {/* Top edge shine */}
+                <div
+                  className="absolute top-0 left-[10%] right-[10%] h-px z-0"
+                  style={{
+                    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2) 50%, transparent)",
+                  }}
+                />
                 <span className="relative z-10">{step.label}</span>
               </motion.button>
             ))}
