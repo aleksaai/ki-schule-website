@@ -208,17 +208,17 @@ const ProcessSection = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeStep}
-              className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+              className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-24"
               initial={{ opacity: 0, y: 25, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               {/* Icon/Graphic - Larger Premium Glass */}
-              <div className="flex-shrink-0 relative">
+              <div className="flex-shrink-0 relative pointer-events-none">
                 {/* Glow behind icon */}
                 <div
-                  className="absolute inset-0 z-0"
+                  className="absolute inset-0 z-0 pointer-events-none"
                   style={{
                     background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
                     filter: "blur(40px)",
@@ -242,7 +242,7 @@ const ProcessSection = () => {
               </div>
 
               {/* Text Content - Smaller */}
-              <div className="flex-1 text-center lg:text-left">
+              <div className="flex-1 text-center lg:text-left lg:pl-8">
                 <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-4 tracking-tight">
                   {currentStep.title}
                 </h3>
