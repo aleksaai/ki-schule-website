@@ -47,7 +47,7 @@ const ProcessSection = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 20% 96%) 50%, hsl(220 20% 97%) 100%)",
+              "linear-gradient(180deg, hsl(225 18% 96%) 0%, hsl(225 20% 94%) 50%, hsl(225 18% 96%) 100%)",
           }}
         />
 
