@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, ArrowRight } from "lucide-react";
 
 const VideoIntroSection = () => {
   return (
@@ -122,6 +122,24 @@ const VideoIntroSection = () => {
                 filter: "blur(20px)",
               }}
             />
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            className="flex justify-center mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <motion.button 
+              className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="relative z-10">Erstgespräch buchen</span>
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 relative z-10" />
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>

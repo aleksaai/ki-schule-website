@@ -154,7 +154,7 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10">Kostenlos starten</span>
+                <span className="relative z-10">Erstgespräch buchen</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 relative z-10" />
               </motion.button>
               
