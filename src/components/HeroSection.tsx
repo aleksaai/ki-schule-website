@@ -86,7 +86,7 @@ const NavItem = ({ item }: NavItemProps) => {
             transition={{ duration: 0.15, ease: "easeOut" }}
             className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50"
           >
-            <div className="glass-card rounded-2xl p-2 min-w-[280px] shadow-xl border border-white/20">
+            <div className="glass rounded-2xl p-2 min-w-[280px]">
               {item.dropdown.map((subItem, index) => (
                 <a
                   key={index}
