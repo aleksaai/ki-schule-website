@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Compass, TrendingUp, Rocket, Route } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import StepCard from "@/components/process/StepCard";
 import onboardingVideo from "@/assets/onboarding-video.mov";
 import umsatzImage from "@/assets/umsatz-image.jpg";
 import netzwerkImage from "@/assets/netzwerk-image.jpg";
@@ -36,12 +37,9 @@ const steps = [
 const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  const currentStep = steps[activeStep];
-  const Icon = currentStep.icon;
-
   return (
     <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
-      {/* Background elements - same as WhyKI Section */}
+      {/* Background elements */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
@@ -106,9 +104,9 @@ const ProcessSection = () => {
           </p>
         </motion.div>
 
-        {/* Main Glass Container - Taller with more whitespace */}
+        {/* Main Glass Container */}
         <motion.div
-          className="relative isolate rounded-3xl p-10 lg:p-16 lg:py-20 mb-14 max-w-5xl mx-auto overflow-hidden"
+          className="relative isolate rounded-3xl p-8 lg:p-12 mb-14 max-w-6xl mx-auto overflow-hidden"
           style={{
             background:
               "linear-gradient(145deg, hsl(var(--card) / 0.22) 0%, hsl(var(--card) / 0.08) 50%, hsl(var(--card) / 0.16) 100%)",
@@ -141,7 +139,7 @@ const ProcessSection = () => {
             }}
           />
 
-          {/* Top edge highlight - premium shine */}
+          {/* Top edge highlight */}
           <div
             className="absolute top-0 left-0 right-0 z-20 h-[2px]"
             style={{
@@ -150,153 +148,105 @@ const ProcessSection = () => {
             }}
           />
 
-          {/* Subtle ambient glow */}
-          <div
-            className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[60%] h-32 z-0"
-            style={{
-              background: "radial-gradient(ellipse at center, hsl(var(--primary) / 0.08) 0%, transparent 70%)",
-              filter: "blur(40px)",
-            }}
-          />
-
-          {/* Step Tabs - Glass Style */}
-          <div className="relative z-10 flex flex-wrap justify-center gap-4 mb-16">
-            {steps.map((step, index) => (
-              <motion.button
-                key={step.id}
-                onClick={() => setActiveStep(index)}
-                className={`relative px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
-                  activeStep === index ? "text-white" : "text-primary"
-                }`}
-                style={{
-                  background: activeStep === index
-                    ? "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(216 100% 60%) 100%)"
-                    : "linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.65) 100%)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: activeStep === index
-                    ? "1.5px solid hsl(var(--primary) / 0.6)"
-                    : "1px solid rgba(255, 255, 255, 0.9)",
-                  boxShadow: activeStep === index
-                    ? `
-                        0 0 20px hsl(var(--primary) / 0.35),
-                        0 8px 24px hsl(var(--primary) / 0.25),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.35)
-                      `
-                    : `
-                        0 4px 16px rgba(0, 0, 0, 0.06),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.95),
-                        inset 0 -1px 0 rgba(0, 0, 0, 0.03)
-                      `,
-                }}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {/* Top edge shine */}
-                <div
-                  className="absolute top-0 left-[10%] right-[10%] h-px z-0"
-                  style={{
-                    background: activeStep === index
-                      ? "linear-gradient(90deg, transparent, rgba(255,255,255,0.5) 50%, transparent)"
-                      : "linear-gradient(90deg, transparent, rgba(255,255,255,0.9) 50%, transparent)",
-                  }}
-                />
-                <span className="relative z-10">{step.label}</span>
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Content Area */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeStep}
-              className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-24"
-              initial={{ opacity: 0, y: 25, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.98 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              {/* Image/Graphic - Premium Glass Frame */}
-              <div className="flex-shrink-0 relative pointer-events-none">
-                {/* Glow behind image */}
-                <div
-                  className="absolute inset-0 z-0 pointer-events-none"
-                  style={{
-                    background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
-                    filter: "blur(40px)",
-                    transform: "scale(1.5)",
-                  }}
-                />
-                
-                {/* Glass Frame Container */}
-                <div
-                  className="relative z-10 w-64 lg:w-96 rounded-2xl overflow-hidden"
-                  style={{
-                    background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: "1.5px solid hsl(var(--card) / 0.6)",
-                    boxShadow: `
-                      0 16px 48px hsl(var(--foreground) / 0.12),
-                      0 4px 16px hsl(var(--foreground) / 0.06),
-                      inset 0 1px 0 hsl(var(--card) / 0.9),
-                      inset 0 -1px 0 hsl(var(--foreground) / 0.04)
-                    `,
-                    padding: "8px",
-                  }}
+          {/* Content Area - Side by Side */}
+          <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
+            {/* Left: Large Image (55%) */}
+            <div className="lg:w-[55%] flex-shrink-0">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeStep}
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  {/* Top edge shine */}
+                  {/* Glow behind image */}
                   <div
-                    className="absolute top-0 left-[10%] right-[10%] h-px z-20"
+                    className="absolute inset-0 z-0 pointer-events-none"
                     style={{
-                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
+                      background:
+                        "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
+                      filter: "blur(40px)",
+                      transform: "scale(1.3)",
                     }}
                   />
-                  
-                  {/* Conditional content: Images for steps 1 & 2, Icon for step 3 */}
-                  {activeStep === 0 ? (
-                    <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
-                      <video
-                        src={onboardingVideo}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                        style={{ transform: "scale(1.3)", objectPosition: "center center" }}
-                      />
-                    </AspectRatio>
-                  ) : activeStep === 1 ? (
-                    <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
-                      <img
-                        src={netzwerkImage}
-                        alt="Fokus auf Umsatz"
-                        className="w-full h-full object-cover"
-                      />
-                    </AspectRatio>
-                  ) : (
-                    <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
-                      <img
-                        src={umsatzImage}
-                        alt="Skalierung & Netzwerk"
-                        className="w-full h-full object-cover"
-                      />
-                    </AspectRatio>
-                  )}
-                </div>
-              </div>
 
-              {/* Text Content - Smaller */}
-              <div className="flex-1 text-center lg:text-left lg:pl-8">
-                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-4 tracking-tight">
-                  {currentStep.title}
-                </h3>
-                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed max-w-md">
-                  {currentStep.description}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                  {/* Glass Frame Container */}
+                  <div
+                    className="relative z-10 rounded-2xl overflow-hidden"
+                    style={{
+                      background:
+                        "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
+                      backdropFilter: "blur(20px)",
+                      WebkitBackdropFilter: "blur(20px)",
+                      border: "1.5px solid hsl(var(--card) / 0.6)",
+                      boxShadow: `
+                        0 16px 48px hsl(var(--foreground) / 0.12),
+                        0 4px 16px hsl(var(--foreground) / 0.06),
+                        inset 0 1px 0 hsl(var(--card) / 0.9),
+                        inset 0 -1px 0 hsl(var(--foreground) / 0.04)
+                      `,
+                      padding: "8px",
+                    }}
+                  >
+                    {/* Top edge shine */}
+                    <div
+                      className="absolute top-0 left-[10%] right-[10%] h-px z-20"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
+                      }}
+                    />
+
+                    {/* Conditional content based on active step */}
+                    {activeStep === 0 ? (
+                      <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                        <video
+                          src={onboardingVideo}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                          style={{ transform: "scale(1.3)", objectPosition: "center center" }}
+                        />
+                      </AspectRatio>
+                    ) : activeStep === 1 ? (
+                      <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                        <img
+                          src={netzwerkImage}
+                          alt="Fokus auf Umsatz"
+                          className="w-full h-full object-cover"
+                        />
+                      </AspectRatio>
+                    ) : (
+                      <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                        <img
+                          src={umsatzImage}
+                          alt="Skalierung & Netzwerk"
+                          className="w-full h-full object-cover"
+                        />
+                      </AspectRatio>
+                    )}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right: All Steps (45%) */}
+            <div className="lg:w-[45%] flex flex-col gap-4 justify-center">
+              {steps.map((step, index) => (
+                <StepCard
+                  key={step.id}
+                  step={step}
+                  index={index}
+                  isActive={activeStep === index}
+                  onClick={() => setActiveStep(index)}
+                />
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         {/* CTA Button */}
