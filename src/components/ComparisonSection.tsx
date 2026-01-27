@@ -48,14 +48,18 @@ const ComparisonSection = () => {
         }}
       />
 
-      {/* Ambient glow */}
-      <div
-        className="absolute top-1/2 left-1/2 w-[60%] h-[60%] -translate-x-1/2 -translate-y-1/2"
-        style={{
-          background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 60%)",
-          filter: "blur(80px)",
-        }}
-      />
+      {/* Ambient glow - constrained for ultra-wide */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 max-w-[1920px] mx-auto">
+          <div
+            className="absolute top-1/2 left-1/2 w-[60%] h-[60%] -translate-x-1/2 -translate-y-1/2"
+            style={{
+              background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 60%)",
+              filter: "blur(80px)",
+            }}
+          />
+        </div>
+      </div>
 
       <div className="container relative mx-auto px-6 lg:px-8">
         {/* Section Header */}

@@ -159,8 +159,8 @@ const NavItem = ({ item }: NavItemProps) => {
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-background overflow-hidden">
-      {/* Light gradient background with organic curved shapes */}
-      <div className="absolute inset-0">
+      {/* Light gradient background with organic curved shapes - constrained for ultra-wide */}
+      <div className="absolute inset-0 overflow-hidden">
         {/* Base gradient - light mode */}
         <div 
           className="absolute inset-0"

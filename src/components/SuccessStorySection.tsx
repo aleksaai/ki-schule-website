@@ -28,23 +28,28 @@ const SuccessStorySection = () => {
           }}
         />
 
-        {/* Spotlight glow effect */}
-        <div
-          className="absolute top-1/2 right-1/4 w-[50%] h-[70%] -translate-y-1/2"
-          style={{
-            background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.12) 0%, transparent 55%)",
-            filter: "blur(60px)",
-          }}
-        />
+        {/* Glow effects - constrained for ultra-wide */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 max-w-[1920px] mx-auto">
+            {/* Spotlight glow effect */}
+            <div
+              className="absolute top-1/2 right-1/4 w-[50%] h-[70%] -translate-y-1/2"
+              style={{
+                background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.12) 0%, transparent 55%)",
+                filter: "blur(60px)",
+              }}
+            />
 
-        {/* Secondary ambient glow */}
-        <div
-          className="absolute bottom-0 left-1/3 w-[40%] h-[40%]"
-          style={{
-            background: "radial-gradient(ellipse at center, hsl(220 40% 30% / 0.3) 0%, transparent 60%)",
-            filter: "blur(50px)",
-          }}
-        />
+            {/* Secondary ambient glow */}
+            <div
+              className="absolute bottom-0 left-1/3 w-[40%] h-[40%]"
+              style={{
+                background: "radial-gradient(ellipse at center, hsl(220 40% 30% / 0.3) 0%, transparent 60%)",
+                filter: "blur(50px)",
+              }}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="container relative mx-auto px-6 lg:px-8">

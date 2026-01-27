@@ -49,21 +49,25 @@ const TestimonialsSection = () => {
           }}
         />
 
-        {/* Ambient glow effects */}
-        <div
-          className="absolute top-1/4 left-1/4 w-[40%] h-[50%]"
-          style={{
-            background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 55%)",
-            filter: "blur(60px)",
-          }}
-        />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-[35%] h-[45%]"
-          style={{
-            background: "radial-gradient(ellipse at center, hsl(220 40% 30% / 0.25) 0%, transparent 60%)",
-            filter: "blur(50px)",
-          }}
-        />
+        {/* Ambient glow effects - constrained for ultra-wide */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 max-w-[1920px] mx-auto">
+            <div
+              className="absolute top-1/4 left-1/4 w-[40%] h-[50%]"
+              style={{
+                background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 55%)",
+                filter: "blur(60px)",
+              }}
+            />
+            <div
+              className="absolute bottom-1/4 right-1/4 w-[35%] h-[45%]"
+              style={{
+                background: "radial-gradient(ellipse at center, hsl(220 40% 30% / 0.25) 0%, transparent 60%)",
+                filter: "blur(50px)",
+              }}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="container relative mx-auto px-6 lg:px-8">

@@ -39,8 +39,8 @@ const ProcessSection = () => {
 
   return (
     <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0">
+      {/* Background elements - constrained for ultra-wide */}
+      <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
@@ -61,16 +61,18 @@ const ProcessSection = () => {
           }}
         />
 
-        {/* Subtle blur orbs */}
-        <div
-          className="absolute top-1/4 right-1/4 w-[45%] h-[45%]"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.04) 0%, transparent 62%)",
-            borderRadius: "50%",
-            filter: "blur(50px)",
-          }}
-        />
+        {/* Subtle blur orbs - constrained to center */}
+        <div className="absolute inset-0 max-w-[1920px] mx-auto">
+          <div
+            className="absolute top-1/4 right-1/4 w-[45%] h-[45%]"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.04) 0%, transparent 62%)",
+              borderRadius: "50%",
+              filter: "blur(50px)",
+            }}
+          />
+        </div>
       </div>
 
       <div className="container relative mx-auto px-6 lg:px-8">

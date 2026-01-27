@@ -550,3 +550,36 @@
     z-index: 2;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ULTRA-WIDE SCREEN OPTIMIZATION
+   Ensures consistent layout on screens wider than 1920px
+   ═══════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Wrapper to constrain ultra-wide content */
+  .ultra-wide-wrapper {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Body-level ultra-wide constraint for background effects */
+@media (min-width: 1920px) {
+  body {
+    /* Center the entire page content */
+    background-attachment: fixed;
+  }
+  
+  /* Ensure sections don't stretch awkwardly */
+  section {
+    /* Keep background effects constrained */
+    max-width: 100vw;
+  }
+  
+  /* Container max-width stays consistent */
+  .container {
+    max-width: 1400px;
+  }
+}
