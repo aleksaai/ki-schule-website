@@ -86,7 +86,16 @@ const NavItem = ({ item }: NavItemProps) => {
             transition={{ duration: 0.15, ease: "easeOut" }}
             className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50"
           >
-            <div className="glass rounded-2xl p-2 min-w-[280px]">
+            <div 
+              className="rounded-2xl p-2 min-w-[280px]"
+              style={{
+                background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.9) 100%)',
+                backdropFilter: 'blur(40px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(40px) saturate(180%)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                boxShadow: '0 16px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1)',
+              }}
+            >
               {item.dropdown.map((subItem, index) => (
                 <a
                   key={index}
