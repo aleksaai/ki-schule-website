@@ -1,7 +1,113 @@
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import kiIcon from "@/assets/ki-icon-new.png";
 import founderImage from "@/assets/founder.png";
+
+const navItems = [
+  {
+    label: "Coaching",
+    dropdown: [
+      { label: "Young Founder", description: "Für Schüler, Azubis & Studenten" },
+      { label: "Agency Switcher", description: "Für Agenturinhaber aus anderen Bereichen" },
+      { label: "9-5 Escape", description: "Für Angestellte die sich im KI-Space selbstständig machen wollen" },
+    ],
+  },
+  { label: "Community", href: "#" },
+  {
+    label: "Online-Kurse",
+    dropdown: [
+      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt" },
+      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation" },
+      { label: "Workflow-Automation", description: "Prozesse automatisieren" },
+      { label: "Vibe Coding Business", description: "No-Code & AI Development" },
+      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen" },
+    ],
+  },
+  { label: "Erfolge", href: "#" },
+];
+
+interface NavItemProps {
+  item: typeof navItems[0];
+}
+
+const NavItem = ({ item }: NavItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  if (!item.dropdown) {
+    return (
+      <a 
+        href={item.href || "#"}
+        className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200"
+      >
+        {item.label}
+      </a>
+    );
+  }
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      ref={dropdownRef}
+    >
+      <button 
+        className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200 flex items-center gap-1"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {item.label}
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.96 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50"
+          >
+            <div className="glass-card rounded-2xl p-2 min-w-[280px] shadow-xl border border-white/20">
+              {item.dropdown.map((subItem, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors group"
+                >
+                  <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                    {subItem.label}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {subItem.description}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -94,16 +200,10 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="glass rounded-full px-3 py-2 flex items-center gap-2">
+          <div className="glass rounded-full px-3 py-2 flex items-center gap-1">
             <div className="hidden md:flex items-center gap-1">
-              {['Programm', 'Community', 'Erfolge', 'Über uns'].map((item) => (
-                <a 
-                  key={item}
-                  href="#" 
-                  className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200"
-                >
-                  {item}
-                </a>
+              {navItems.map((item) => (
+                <NavItem key={item.label} item={item} />
               ))}
             </div>
             
