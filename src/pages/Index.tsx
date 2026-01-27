@@ -6,6 +6,7 @@ import FounderSection from "@/components/FounderSection";
 import SuccessStorySection from "@/components/SuccessStorySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CharitySection from "@/components/CharitySection";
+import ComparisonSection from "@/components/ComparisonSection";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <TestimonialsSection />
       <FounderSection />
       <CharitySection />
+      <ComparisonSection />
     </div>
   );
 };
