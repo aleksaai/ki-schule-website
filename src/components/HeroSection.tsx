@@ -2,6 +2,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 import kiIcon from "@/assets/ki-icon-new.png";
 import founderImage from "@/assets/founder.png";
 
@@ -9,20 +10,20 @@ const navItems = [
   {
     label: "Coaching",
     dropdown: [
-      { label: "Young Founder", description: "Für Schüler, Azubis & Studenten" },
-      { label: "Agency Switcher", description: "Für Agenturinhaber aus anderen Bereichen" },
-      { label: "9-5 Escape", description: "Für Angestellte die sich im KI-Space selbstständig machen wollen" },
+      { label: "Young Founder", description: "Für Schüler, Azubis & Studenten", href: "/coming-soon" },
+      { label: "Agency Switcher", description: "Für Agenturinhaber aus anderen Bereichen", href: "/coming-soon" },
+      { label: "9-5 Escape", description: "Für Angestellte die sich im KI-Space selbstständig machen wollen", href: "/coming-soon" },
     ],
   },
-  { label: "Community", href: "#" },
+  { label: "Community", href: "/coming-soon" },
   {
     label: "Online-Kurse",
     dropdown: [
-      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt" },
-      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation" },
-      { label: "Workflow-Automation", description: "Prozesse automatisieren" },
-      { label: "Vibe Coding Business", description: "No-Code & AI Development" },
-      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen" },
+      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt", href: "/coming-soon" },
+      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation", href: "/coming-soon" },
+      { label: "Workflow-Automation", description: "Prozesse automatisieren", href: "/coming-soon" },
+      { label: "Vibe Coding Business", description: "No-Code & AI Development", href: "/coming-soon" },
+      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen", href: "/coming-soon" },
     ],
   },
   { label: "Erfolge", href: "#" },
@@ -71,12 +72,12 @@ const NavItem = ({ item }: NavItemProps) => {
 
   if (!item.dropdown) {
     return (
-      <a 
-        href={item.href || "#"}
+      <Link 
+        to={item.href || "#"}
         className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200"
       >
         {item.label}
-      </a>
+      </Link>
     );
   }
 
@@ -116,9 +117,9 @@ const NavItem = ({ item }: NavItemProps) => {
             >
               <div className="glass rounded-2xl p-2 min-w-[280px]">
                 {item.dropdown.map((subItem, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href="#"
+                    to={subItem.href || "#"}
                     className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors group"
                   >
                     <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
@@ -127,7 +128,7 @@ const NavItem = ({ item }: NavItemProps) => {
                     <span className="text-xs text-muted-foreground">
                       {subItem.description}
                     </span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </motion.div>
