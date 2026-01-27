@@ -107,9 +107,14 @@ const HeroSection = () => {
               ))}
             </div>
             
-            <button className="btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1">
+            <a 
+              href="https://app.ki-hochschule.de/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1"
+            >
               Login
-            </button>
+            </a>
           </div>
         </motion.nav>
         
