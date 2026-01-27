@@ -102,8 +102,8 @@ const SuccessStorySection = () => {
                 David ist im Februar 2024 als 19-Jähriger unserer Community beigetreten. Im letzten Quartal 2024 hat er unseren Wettbewerb gewonnen – mit dem höchsten Umsatz aller KI-Agenturen in der KI-Schule.
               </p>
 
-              {/* Highlights - Dark glass badges */}
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              {/* Highlights - Dark glass badges - Hidden on mobile */}
+              <div className="hidden lg:flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2">
                   <Calendar className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-white/80">
@@ -118,7 +118,8 @@ const SuccessStorySection = () => {
                 </div>
               </div>
 
-              <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+              {/* Budapest text - Hidden on mobile */}
+              <p className="hidden lg:block text-white/60 text-sm sm:text-base leading-relaxed">
                 Als Belohnung für seinen Erfolg haben wir David nach Budapest eingeladen – Flug und Unterkunft inklusive. Gemeinsam haben wir dort gearbeitet, Strategien besprochen und eine unvergessliche Zeit in meiner Lieblingsstadt Europas verbracht.
               </p>
 

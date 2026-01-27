@@ -11,6 +11,7 @@ const steps = [
   {
     id: 1,
     label: "Schritt 1",
+    shortTitle: "Onboarding",
     title: "Positionierung & Onboarding",
     description:
       "Im gemeinsamen Onboarding arbeiten wir direkt an deiner Positionierung. Wir besprechen im Detail deine Produktpalette, die du deinen Kunden anbieten wirst, sowie deine Nische und Zielgruppe – das Fundament für deinen Erfolg.",
@@ -19,6 +20,7 @@ const steps = [
   {
     id: 2,
     label: "Schritt 2",
+    shortTitle: "Umsatz",
     title: "Fokus auf Umsatz",
     description:
       "Obwohl wir dich fachlich fit machen, ist unsere Nummer-eins-Priorität, dass du dich so schnell wie möglich mit deiner Selbstständigkeit unabhängig machst. Geld löst alle Probleme – deshalb fokussieren wir uns darauf, dass du schnell Umsatz generierst.",
@@ -27,6 +29,7 @@ const steps = [
   {
     id: 3,
     label: "Schritt 3",
+    shortTitle: "Skalierung",
     title: "Skalierung & Netzwerk",
     description:
       "Je erfolgreicher du wirst, desto mehr Zugang erhältst du zu unseren exklusiven Netzwerken. Du baust dein Team auf, automatisierst dein Business und wirst vom Selbstständigen zum Unternehmer – du arbeitest nicht mehr im, sondern am Unternehmen.",
@@ -150,60 +153,150 @@ const ProcessSection = () => {
             }}
           />
 
-          {/* Content Area - Stacked on mobile, side by side on desktop */}
-          <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
-            {/* Media: Large Image/Video (Order 1 on mobile) */}
-            <div className="w-full lg:w-[55%] flex-shrink-0 order-1">
+          {/* Content Area - Different layouts for mobile vs desktop */}
+          <div className="relative z-10">
+            {/* Desktop Layout: Side by side */}
+            <div className="hidden lg:flex gap-12">
+              {/* Media: Large Image/Video */}
+              <div className="w-[55%] flex-shrink-0">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeStep}
+                    className="relative"
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {/* Glow behind image */}
+                    <div
+                      className="absolute inset-0 z-0 pointer-events-none"
+                      style={{
+                        background:
+                          "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
+                        filter: "blur(40px)",
+                        transform: "scale(1.3)",
+                      }}
+                    />
+
+                    {/* Glass Frame Container */}
+                    <div
+                      className="relative z-10 rounded-2xl overflow-hidden"
+                      style={{
+                        background:
+                          "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
+                        backdropFilter: "blur(20px)",
+                        WebkitBackdropFilter: "blur(20px)",
+                        border: "1.5px solid hsl(var(--card) / 0.6)",
+                        boxShadow: `
+                          0 16px 48px hsl(var(--foreground) / 0.12),
+                          0 4px 16px hsl(var(--foreground) / 0.06),
+                          inset 0 1px 0 hsl(var(--card) / 0.9),
+                          inset 0 -1px 0 hsl(var(--foreground) / 0.04)
+                        `,
+                        padding: "8px",
+                      }}
+                    >
+                      {/* Top edge shine */}
+                      <div
+                        className="absolute top-0 left-[10%] right-[10%] h-px z-20"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
+                        }}
+                      />
+
+                      {/* Conditional content based on active step */}
+                      {activeStep === 0 ? (
+                        <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                          <video
+                            src={onboardingVideo}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                            style={{ transform: "scale(1.3)", objectPosition: "center center" }}
+                          />
+                        </AspectRatio>
+                      ) : activeStep === 1 ? (
+                        <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                          <img
+                            src={netzwerkImage}
+                            alt="Fokus auf Umsatz"
+                            className="w-full h-full object-cover"
+                          />
+                        </AspectRatio>
+                      ) : (
+                        <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                          <img
+                            src={umsatzImage}
+                            alt="Skalierung & Netzwerk"
+                            className="w-full h-full object-cover"
+                          />
+                        </AspectRatio>
+                      )}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Steps: All Steps */}
+              <div className="w-[45%] flex flex-col gap-4 justify-center">
+                {steps.map((step, index) => (
+                  <StepCard
+                    key={step.id}
+                    step={step}
+                    index={index}
+                    isActive={activeStep === index}
+                    onClick={() => setActiveStep(index)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Layout: Tabs with media below */}
+            <div className="lg:hidden">
+              {/* Step Tabs */}
+              <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+                {steps.map((step, index) => (
+                  <button
+                    key={step.id}
+                    onClick={() => setActiveStep(index)}
+                    className={`flex-1 min-w-[100px] px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                      activeStep === index
+                        ? "bg-primary text-white shadow-lg"
+                        : "glass text-foreground/70 hover:text-foreground"
+                    }`}
+                  >
+                    {step.shortTitle || `Schritt ${index + 1}`}
+                  </button>
+                ))}
+              </div>
+
+              {/* Active Step Content */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {/* Glow behind image */}
+                  {/* Media */}
                   <div
-                    className="absolute inset-0 z-0 pointer-events-none"
-                    style={{
-                      background:
-                        "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
-                      filter: "blur(40px)",
-                      transform: "scale(1.3)",
-                    }}
-                  />
-
-                  {/* Glass Frame Container */}
-                  <div
-                    className="relative z-10 rounded-2xl overflow-hidden max-w-sm sm:max-w-md mx-auto lg:mx-0 lg:max-w-none"
+                    className="relative z-10 rounded-2xl overflow-hidden mb-6"
                     style={{
                       background:
                         "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
                       backdropFilter: "blur(20px)",
                       WebkitBackdropFilter: "blur(20px)",
                       border: "1.5px solid hsl(var(--card) / 0.6)",
-                      boxShadow: `
-                        0 16px 48px hsl(var(--foreground) / 0.12),
-                        0 4px 16px hsl(var(--foreground) / 0.06),
-                        inset 0 1px 0 hsl(var(--card) / 0.9),
-                        inset 0 -1px 0 hsl(var(--foreground) / 0.04)
-                      `,
-                      padding: "8px",
+                      padding: "6px",
                     }}
                   >
-                    {/* Top edge shine */}
-                    <div
-                      className="absolute top-0 left-[10%] right-[10%] h-px z-20"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
-                      }}
-                    />
-
-                    {/* Conditional content based on active step */}
                     {activeStep === 0 ? (
-                      <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                      <AspectRatio ratio={16 / 9} className="rounded-xl overflow-hidden">
                         <video
                           src={onboardingVideo}
                           autoPlay
@@ -215,7 +308,7 @@ const ProcessSection = () => {
                         />
                       </AspectRatio>
                     ) : activeStep === 1 ? (
-                      <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                      <AspectRatio ratio={16 / 9} className="rounded-xl overflow-hidden">
                         <img
                           src={netzwerkImage}
                           alt="Fokus auf Umsatz"
@@ -223,7 +316,7 @@ const ProcessSection = () => {
                         />
                       </AspectRatio>
                     ) : (
-                      <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                      <AspectRatio ratio={16 / 9} className="rounded-xl overflow-hidden">
                         <img
                           src={umsatzImage}
                           alt="Skalierung & Netzwerk"
@@ -232,21 +325,26 @@ const ProcessSection = () => {
                       </AspectRatio>
                     )}
                   </div>
+
+                  {/* Step Info */}
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                        {(() => {
+                          const IconComponent = steps[activeStep].icon;
+                          return <IconComponent className="w-5 h-5 text-primary" />;
+                        })()}
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground">
+                        {steps[activeStep].title}
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground text-base leading-relaxed">
+                      {steps[activeStep].description}
+                    </p>
+                  </div>
                 </motion.div>
               </AnimatePresence>
-            </div>
-
-            {/* Steps: All Steps (Order 2 on mobile) */}
-            <div className="w-full lg:w-[45%] flex flex-col gap-4 justify-center order-2">
-              {steps.map((step, index) => (
-                <StepCard
-                  key={step.id}
-                  step={step}
-                  index={index}
-                  isActive={activeStep === index}
-                  onClick={() => setActiveStep(index)}
-                />
-              ))}
             </div>
           </div>
         </motion.div>

@@ -100,7 +100,8 @@ const BenefitCard = ({ benefit, index }: BenefitCardProps) => {
 
 const BenefitsSection = () => {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    // Hidden on mobile (md:block), visible on tablet and up
+    <section className="relative py-24 lg:py-32 overflow-hidden hidden md:block">
       {/* Video Background */}
       <div className="absolute inset-0">
         <video
