@@ -258,18 +258,18 @@ const ProcessSection = () => {
             {/* Mobile Layout: Tabs with media below */}
             <div className="lg:hidden">
               {/* Step Tabs */}
-              <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+              <div className="flex gap-2 mb-6">
                 {steps.map((step, index) => (
                   <button
                     key={step.id}
                     onClick={() => setActiveStep(index)}
-                    className={`flex-1 min-w-[100px] px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                    className={`flex-1 px-3 py-3 rounded-xl text-sm font-semibold transition-all ${
                       activeStep === index
                         ? "bg-primary text-white shadow-lg"
                         : "glass text-foreground/70 hover:text-foreground"
                     }`}
                   >
-                    {step.shortTitle || `Schritt ${index + 1}`}
+                    Step {index + 1}
                   </button>
                 ))}
               </div>
