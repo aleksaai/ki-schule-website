@@ -18,7 +18,7 @@ const CharitySection = () => {
       <div
         className="absolute top-1/2 right-1/4 w-[50%] h-[60%] -translate-y-1/2"
         style={{
-          background: "radial-gradient(ellipse at center, hsl(350 80% 65% / 0.08) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 60%)",
           filter: "blur(80px)",
         }}
       />
