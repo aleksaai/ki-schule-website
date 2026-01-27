@@ -147,14 +147,17 @@ const FAQSection = () => {
                   Wo drückt der Schuh? Buche dir ein kurzes Erstgespräch und kläre deine Fragen.
                 </p>
 
-                <motion.button
+                <motion.a
+                  href="https://cal.com/aleksa-ai/erstgesprach"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-liquid-glass-accent px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 group"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="relative z-10">Zum Erstgespräch</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
 

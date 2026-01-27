@@ -137,14 +137,17 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <motion.button
+            <motion.a
+              href="https://cal.com/aleksa-ai/erstgesprach"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-liquid-glass-accent px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2 group"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <span className="relative z-10">Erstgespräch buchen</span>
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
