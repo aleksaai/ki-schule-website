@@ -1,132 +1,132 @@
 
+# Plan: Mehr visuelle Abwechslung auf der Landing Page
 
-# Plan: Neue "Prozess" Section mit 3 Schritten
+## Analyse des aktuellen Zustands
 
-## Übersicht
-Eine neue Section, die den Ablauf des Coaching-Programms in drei interaktiven Schritten erklärt. Der Nutzer kann zwischen den Schritten wechseln, wobei jeder Schritt eine Grafik und Beschreibung zeigt.
+Nach eingehender Betrachtung aller Sections bestätige ich deine Beobachtung: Die drei aufeinanderfolgenden Sections **"Dein Weg"**, **"Unser Community Founder"** und **"Erfolgsgeschichte"** sind zu ähnlich strukturiert:
 
-## Design-Konzept
+- Gleicher grauer Hintergrund mit Grid-Pattern
+- Zentrierte Glass-Card als Container
+- Bild + Text Layout nebeneinander
+- Gleiche Abstände und Proportionen
+
+## Überarbeitungs-Strategie
+
+Ich werde jede dieser drei Sections visuell unterschiedlich gestalten, während der Premium "Liquid Glass"-Stil erhalten bleibt.
+
+---
+
+## Änderung 1: "Dein Weg" Section (ProcessSection)
+
+**Bleibt weitgehend wie sie ist** - diese Section funktioniert gut als "Haupt-Content-Block" mit der interaktiven Tab-Navigation. Sie ist bereits die umfangreichste und rechtfertigt ihre zentrale Position.
+
+**Kleine Anpassung:**
+- Hintergrund-Gradient leicht anpassen (wärmer/weicher) um Unterschied zur nächsten Section zu schaffen
+
+---
+
+## Änderung 2: "Unser Community Founder" Section (FounderSection)
+
+**Neues Design: Full-Width Layout ohne zentrale Box**
+
+- **Hintergrund:** Solider, leicht getönter Hintergrund OHNE Grid-Pattern (sanfter Gradient von weiß zu sehr hellem Blau)
+- **Layout:** Asymmetrisches Side-by-Side Layout
+  - Bild auf der linken Seite (größer, ca. 45% Breite)
+  - Text auf der rechten Seite (fließend, ohne Box-Container)
+- **Kein Glass-Card Container** - stattdessen schwebt das Bild im Glass-Frame direkt im Raum
+- **Dezenter vertikaler Akzent-Streifen** links vom Text für visuelle Struktur
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                         [Label]                             │
-│                    DEIN WEG ZUM ERFOLG                      │
-│              So bringen wir dich ans Ziel                   │
-│                                                             │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │                                                       │  │
-│  │   [ Schritt 1 ]   [ Schritt 2 ]   [ Schritt 3 ]      │  │
-│  │       ●              ○              ○                 │  │
-│  │                                                       │  │
-│  │  ┌──────────┐    ┌────────────────────────────────┐  │  │
-│  │  │          │    │  Positionierung & Onboarding   │  │  │
-│  │  │  GRAFIK  │    │                                │  │  │
-│  │  │          │    │  Im gemeinsamen Onboarding     │  │  │
-│  │  │          │    │  arbeiten wir an deiner        │  │  │
-│  │  │          │    │  Positionierung, Produktpalette│  │  │
-│  │  │          │    │  und Zielgruppe.               │  │  │
-│  │  └──────────┘    └────────────────────────────────┘  │  │
-│  │                                                       │  │
-│  └───────────────────────────────────────────────────────┘  │
-│                                                             │
-│                   [ Jetzt Starten → ]                       │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│                     Header/Badge                     │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│   ┌───────────────┐   │  Aleksa Spalevic            │
+│   │               │   │  DestinyMedia GmbH          │
+│   │    Bild im    │   │                             │
+│   │  Glass-Frame  │   │  Beschreibungstext...       │
+│   │               │   │                             │
+│   └───────────────┘   │  [CTA Button]               │
+│                                                      │
+└─────────────────────────────────────────────────────┘
 ```
 
-## Die drei Schritte
+---
 
-**Schritt 1 - Positionierung & Onboarding**
-- Gemeinsames Onboarding
-- Erarbeitung der Positionierung
-- Definition von Produktpalette und Zielgruppe
+## Änderung 3: "Erfolgsgeschichte" Section (SuccessStorySection)
 
-**Schritt 2 - Fokus auf Umsatz**
-- Priorität: schnell unabhängig werden
-- Fachliche Kompetenz aufbauen
-- Erste Einnahmen generieren
+**Neues Design: Dunkler/kontrastierender Akzent-Bereich**
 
-**Schritt 3 - Skalierung & Netzwerk**
-- Zugang zu exklusiven Netzwerken
-- Vom Selbstständigen zum Unternehmer
-- Team aufbauen, Business automatisieren
+- **Hintergrund:** Sanfter dunkler Gradient (tiefes Blau-Grau, z.B. HSL 220 25% 18%) mit subtilen Lichteffekten
+- **Textfarben:** Helle Texte (weiß/hellgrau) für Kontrast
+- **Layout:** Gespiegeltes Layout (Text links, Bild rechts) im Vergleich zur Founder-Section
+- **Glass-Elemente:** Angepasst für dunklen Hintergrund (mehr Transparenz, hellere Borders)
+- **Besonderer Effekt:** Dezenter "Spotlight"-Glow hinter dem Bild
+
+```text
+┌─────────────────────────────────────────────────────┐
+│  ████████████████ DUNKLER HINTERGRUND █████████████ │
+├─────────────────────────────────────────────────────┤
+│                     Header/Badge                     │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│  David – Unser Q4 Champion    ┌───────────────┐     │
+│  19 Jahre, KI-Agentur         │               │     │
+│                               │    Bild im    │     │
+│  Story-Text hier...           │  Glass-Frame  │     │
+│                               │   + Glow      │     │
+│  [Mitglied seit] [Q4 Winner]  └───────────────┘     │
+│                                                      │
+│            [CTA Button]                              │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+## Zusammenfassung der visuellen Unterschiede
+
+| Section | Hintergrund | Layout | Container |
+|---------|-------------|--------|-----------|
+| Dein Weg | Hell + Grid | Zentrierte Box + Tabs | Glass-Card |
+| Community Founder | Sanft getönt, KEIN Grid | Full-Width, asymmetrisch | Nur Bild-Frame |
+| Erfolgsgeschichte | **Dunkel** | Gespiegelt, asymmetrisch | Angepasstes Glass |
+
+---
 
 ## Technische Umsetzung
 
-### Neue Dateien
+### Dateien die bearbeitet werden:
 
-**1. `src/components/ProcessSection.tsx`**
-- React-Komponente mit useState für aktiven Schritt
-- Framer Motion Animationen für Schritt-Wechsel
-- Responsive Layout (Mobile: vertikal, Desktop: horizontal)
+1. **`src/components/ProcessSection.tsx`**
+   - Minimale Hintergrund-Anpassung
 
-### Komponenten-Struktur
+2. **`src/components/FounderSection.tsx`**
+   - Grid-Pattern entfernen
+   - Glass-Card Container entfernen
+   - Neues asymmetrisches Layout implementieren
+   - Sanften Gradient-Hintergrund hinzufügen
 
-```tsx
-const ProcessSection = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  
-  return (
-    <section>
-      {/* Header: Badge, Titel, Untertitel */}
-      
-      {/* Große Glasbox */}
-      <div className="glass-card">
-        {/* Step-Tabs oben */}
-        <div className="flex gap-4">
-          {steps.map((step, i) => (
-            <button onClick={() => setActiveStep(i)}>
-              Schritt {i + 1}
-            </button>
-          ))}
-        </div>
-        
-        {/* Content: Grafik links, Text rechts */}
-        <div className="flex">
-          <div>{/* Grafik/Icon */}</div>
-          <div>{/* Titel + Beschreibung */}</div>
-        </div>
-      </div>
-      
-      {/* CTA Button */}
-    </section>
-  );
-};
-```
+3. **`src/components/SuccessStorySection.tsx`**
+   - Dunklen Hintergrund implementieren
+   - Helle Textfarben setzen
+   - Glass-Styles für Dark-Mode anpassen
+   - Layout spiegeln (Bild rechts)
+   - Spotlight-Glow-Effekt hinzufügen
 
-### Styling-Details
-- Große horizontale Glasbox mit `glass-card` Klasse
-- Step-Tabs als Buttons mit aktivem Zustand (Primary-Farbe)
-- Sanfte Fade-Animation beim Wechsel zwischen Schritten
-- Gleicher Hintergrund wie "Warum KI-Agentur?" Section (Grid-Pattern)
+4. **`src/index.css`**
+   - Neue CSS-Klasse für "dark glass" Elemente (für den dunklen Section-Hintergrund)
 
-### Integration
+---
 
-**`src/pages/Index.tsx`**
-```tsx
-import ProcessSection from "@/components/ProcessSection";
+## Erwartetes Ergebnis
 
-// Nach BenefitsSection einfügen
-<ProcessSection />
-```
+Nach der Überarbeitung wird die Seite einen natürlichen visuellen Rhythmus haben:
 
-### Grafiken/Icons
-Für jeden Schritt wird ein passendes Icon benötigt:
-- Schritt 1: Zielscheibe/Kompass (Positionierung)
-- Schritt 2: Aufwärtspfeil/Chart (Umsatz)
-- Schritt 3: Netzwerk/Rakete (Skalierung)
+1. **Hero** - Dynamisch mit animierten Shapes
+2. **Deine Chance** - Drei Glass-Cards auf Grid
+3. **Deine Vorteile** - Video-Hintergrund (bereits unterschiedlich)
+4. **Dein Weg** - Große zentrale Box mit Tabs
+5. **Community Founder** - Clean, offen, asymmetrisch (NEU)
+6. **Erfolgsgeschichte** - Dunkler Akzent-Block (NEU)
 
-Optionen:
-1. Lucide Icons verwenden (sofort verfügbar)
-2. Eigene Grafiken hochladen (wie bei anderen Sections)
-
-## Responsive Verhalten
-
-**Desktop (lg+)**
-- Horizontales Layout: Grafik links, Text rechts
-- Step-Tabs nebeneinander
-
-**Tablet/Mobile**
-- Vertikales Layout: Grafik oben, Text unten
-- Step-Tabs bleiben nebeneinander, aber kompakter
-
+Dies schafft Abwechslung durch wechselnde Hintergründe, unterschiedliche Layouts und variierende Container-Strukturen - während der Premium Liquid-Glass-Stil konsistent bleibt.
