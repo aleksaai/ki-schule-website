@@ -94,8 +94,8 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 const WhyKISection = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0">
+      {/* Background elements - constrained for ultra-wide */}
+      <div className="absolute inset-0 overflow-hidden">
         {/* Base gradient background */}
         <div 
           className="absolute inset-0"
@@ -116,25 +116,27 @@ const WhyKISection = () => {
           }}
         />
         
-        {/* Subtle blur orbs for depth */}
-        <div 
-          className="absolute top-1/3 left-1/4 w-[50%] h-[50%]"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.05) 0%, transparent 62%)",
-            borderRadius: '50%',
-            filter: 'blur(60px)',
-          }}
-        />
-        <div 
-          className="absolute bottom-1/4 right-1/3 w-[40%] h-[40%]"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.04) 0%, transparent 62%)",
-            borderRadius: '50%',
-            filter: 'blur(50px)',
-          }}
-        />
+        {/* Subtle blur orbs for depth - constrained to center */}
+        <div className="absolute inset-0 max-w-[1920px] mx-auto">
+          <div 
+            className="absolute top-1/3 left-1/4 w-[50%] h-[50%]"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.05) 0%, transparent 62%)",
+              borderRadius: '50%',
+              filter: 'blur(60px)',
+            }}
+          />
+          <div 
+            className="absolute bottom-1/4 right-1/3 w-[40%] h-[40%]"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, hsl(var(--foreground) / 0.04) 0%, transparent 62%)",
+              borderRadius: '50%',
+              filter: 'blur(50px)',
+            }}
+          />
+        </div>
       </div>
 
       <div className="container relative mx-auto px-6 lg:px-8">

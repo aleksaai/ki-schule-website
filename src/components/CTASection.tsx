@@ -12,60 +12,64 @@ const CTASection = () => {
         }}
       />
 
-      {/* Animated floating blur orbs */}
-      <motion.div
-        className="absolute top-1/4 left-1/5 w-64 h-64 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, hsl(216 100% 70% / 0.12) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-        animate={{
-          x: [0, 30, 0],
-          y: [0, -20, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      
-      <motion.div
-        className="absolute top-1/3 right-[10%] w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, hsl(200 80% 65% / 0.14) 0%, transparent 65%)",
-          filter: "blur(70px)",
-        }}
-        animate={{
-          x: [0, -30, 0],
-          y: [0, 20, 0],
-          scale: [1, 1.15, 1],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
+      {/* Animated floating blur orbs - constrained to center on ultra-wide */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 max-w-[1920px] mx-auto">
+          <motion.div
+            className="absolute top-1/4 left-[20%] w-64 h-64 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, hsl(216 100% 70% / 0.12) 0%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+            animate={{
+              x: [0, 30, 0],
+              y: [0, -20, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          <motion.div
+            className="absolute top-1/3 right-[10%] w-96 h-96 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, hsl(200 80% 65% / 0.14) 0%, transparent 65%)",
+              filter: "blur(70px)",
+            }}
+            animate={{
+              x: [0, -30, 0],
+              y: [0, 20, 0],
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
 
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 60%)",
-          filter: "blur(80px)",
-        }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.6, 1, 0.6],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 60%)",
+              filter: "blur(80px)",
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+      </div>
 
 
       <div className="container relative mx-auto px-6 lg:px-8">
