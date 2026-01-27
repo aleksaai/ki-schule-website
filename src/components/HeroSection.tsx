@@ -291,7 +291,7 @@ const HeroSection = () => {
             </div>
 
             {/* Headline with mixed typography */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-[1.1] mb-5">
+            <h1 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-tight lg:leading-[1.2] mb-5">
               Starte Heute dein
               <br />
               <span className="font-serif italic text-primary font-normal">
