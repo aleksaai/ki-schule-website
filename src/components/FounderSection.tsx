@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, User } from "lucide-react";
+import { ArrowUpRight, ArrowRight, User } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import aleksaImage from "@/assets/aleksa-founder.jpg";
 
@@ -128,15 +128,28 @@ const FounderSection = () => {
                 Unser Communityleiter, Aleksa, geht mit tollem Beispiel voran! Er gründete mit der DestinyMedia GmbH eine der ersten KI-Agenturen in Deutschland und hat sich nun mit Spalevic Consulting zu den führenden Anbietern im DACH-Raum etabliert.
               </p>
 
-              {/* CTA Button */}
-              <motion.button
-                className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="relative z-10">Jetzt der Community beitreten</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
-              </motion.button>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <motion.button
+                  className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="relative z-10">Jetzt der Community beitreten</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
+                </motion.button>
+                
+                <motion.button 
+                  className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
+                  whileHover={{ x: 4 }}
+                  onClick={() => document.getElementById('video-intro')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  <span className="text-sm font-medium underline underline-offset-4 decoration-foreground/30 group-hover:decoration-foreground/60 transition-colors">
+                    Video ansehen
+                  </span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </motion.button>
+              </div>
             </div>
           </div>
         </motion.div>
