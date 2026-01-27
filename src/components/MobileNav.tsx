@@ -45,7 +45,7 @@ const MobileNavItem = ({ item, onClose }: MobileNavItemProps) => {
             }
             onClose();
           }}
-          className="w-full text-left px-4 py-3 text-lg font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+          className="w-full text-left px-5 py-4 text-lg font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 rounded-2xl transition-colors"
         >
           {item.label}
         </button>
@@ -55,7 +55,7 @@ const MobileNavItem = ({ item, onClose }: MobileNavItemProps) => {
       <Link 
         to={item.href || "#"}
         onClick={onClose}
-        className="block px-4 py-3 text-lg font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+        className="block px-5 py-4 text-lg font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 rounded-2xl transition-colors"
       >
         {item.label}
       </Link>
@@ -63,13 +63,23 @@ const MobileNavItem = ({ item, onClose }: MobileNavItemProps) => {
   }
 
   return (
-    <div>
+    <div className="glass-mobile-item rounded-2xl overflow-hidden">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-white/90 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+        className="w-full flex items-center justify-between px-5 py-4 text-lg font-medium text-foreground/90 hover:text-foreground transition-colors"
       >
-        {item.label}
-        <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+        <span className="flex items-center gap-2">
+          {item.label}
+          <span className="text-xs text-primary/70 font-normal">
+            ({item.dropdown.length})
+          </span>
+        </span>
+        <motion.div
+          animate={{ rotate: isExpanded ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown className="h-5 w-5 text-foreground/60" />
+        </motion.div>
       </button>
       
       <AnimatePresence>
@@ -78,21 +88,21 @@ const MobileNavItem = ({ item, onClose }: MobileNavItemProps) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pl-4 space-y-1 pb-2">
+            <div className="px-3 pb-3 space-y-1">
               {item.dropdown.map((subItem, index) => (
                 <Link
                   key={index}
                   to={subItem.href || "#"}
                   onClick={onClose}
-                  className="block px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
+                  className="block px-4 py-3 rounded-xl bg-foreground/[0.03] hover:bg-foreground/[0.07] transition-colors border border-foreground/[0.04]"
                 >
-                  <span className="block text-base font-medium text-white/80">
+                  <span className="block text-base font-medium text-foreground/85">
                     {subItem.label}
                   </span>
-                  <span className="block text-sm text-white/50">
+                  <span className="block text-sm text-muted-foreground mt-0.5">
                     {subItem.description}
                   </span>
                 </Link>
@@ -110,10 +120,10 @@ const MobileNav = () => {
 
   return (
     <div className="md:hidden">
-      {/* Hamburger Button */}
+      {/* Hamburger Button - positioned by parent, just the button itself */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 text-foreground/70 hover:text-foreground transition-colors"
+        className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
         aria-label="Menü öffnen"
       >
         <Menu className="h-6 w-6" />
@@ -129,26 +139,26 @@ const MobileNav = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998]"
+              className="fixed inset-0 bg-background/60 backdrop-blur-sm z-[9998]"
               onClick={() => setIsOpen(false)}
             />
 
-            {/* Menu Panel */}
+            {/* Menu Panel - Glass effect */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm z-[9999]"
-              style={{
-                background: "linear-gradient(180deg, hsl(220 35% 12%) 0%, hsl(220 30% 10%) 100%)",
-              }}
+              transition={{ type: "spring", damping: 28, stiffness: 320 }}
+              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm z-[9999] glass-mobile-menu"
             >
-              {/* Close Button */}
-              <div className="flex justify-end p-4">
+              {/* Header with close button */}
+              <div className="flex items-center justify-between p-4 border-b border-foreground/[0.06]">
+                <span className="text-sm font-semibold text-foreground/60 uppercase tracking-wider">
+                  Menü
+                </span>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-white/70 hover:text-white transition-colors"
+                  className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
                   aria-label="Menü schließen"
                 >
                   <X className="h-6 w-6" />
@@ -156,14 +166,14 @@ const MobileNav = () => {
               </div>
 
               {/* Navigation Items */}
-              <nav className="px-4 space-y-1">
+              <nav className="p-4 space-y-2 overflow-y-auto max-h-[calc(100vh-180px)]">
                 {navItems.map((item) => (
                   <MobileNavItem key={item.label} item={item} onClose={() => setIsOpen(false)} />
                 ))}
               </nav>
 
-              {/* Login Button */}
-              <div className="absolute bottom-8 left-4 right-4">
+              {/* Login Button at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-foreground/[0.06] bg-background/50 backdrop-blur-md">
                 <a 
                   href="https://app.ki-hochschule.de/" 
                   target="_blank" 
