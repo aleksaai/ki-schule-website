@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import VideoIntroSection from "@/components/VideoIntroSection";
 import WhyKISection from "@/components/WhyKISection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -15,6 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <VideoIntroSection />
       <WhyKISection />
       <BenefitsSection />
       <ProcessSection />
