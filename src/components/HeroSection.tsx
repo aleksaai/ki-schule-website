@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import kiIcon from "@/assets/ki-icon-new.png";
 import founderImage from "@/assets/founder.png";
 
@@ -33,15 +34,32 @@ interface NavItemProps {
 
 const NavItem = ({ item }: NavItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setPosition({
+        x: rect.left + rect.width / 2,
+        y: rect.bottom + 8
+      });
+    }
     setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+  };
+
+  const handleDropdownMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+
+  const handleDropdownMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
   };
 
@@ -67,9 +85,10 @@ const NavItem = ({ item }: NavItemProps) => {
       className="relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      ref={dropdownRef}
+      ref={containerRef}
     >
       <button 
+        ref={buttonRef}
         className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200 flex items-center gap-1"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -78,24 +97,23 @@ const NavItem = ({ item }: NavItemProps) => {
       </button>
       
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && createPortal(
           <motion.div
             initial={{ opacity: 0, y: 8, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.96 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50"
+            style={{
+              position: 'fixed',
+              left: position.x,
+              top: position.y,
+              transform: 'translateX(-50%)',
+              zIndex: 9999
+            }}
+            onMouseEnter={handleDropdownMouseEnter}
+            onMouseLeave={handleDropdownMouseLeave}
           >
-            <div 
-              className="rounded-2xl p-2 min-w-[280px]"
-              style={{
-                background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.9) 100%)',
-                backdropFilter: 'blur(40px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(40px) saturate(180%)',
-                border: '1px solid rgba(255, 255, 255, 0.9)',
-                boxShadow: '0 16px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1)',
-              }}
-            >
+            <div className="glass rounded-2xl p-2 min-w-[280px]">
               {item.dropdown.map((subItem, index) => (
                 <a
                   key={index}
@@ -111,7 +129,8 @@ const NavItem = ({ item }: NavItemProps) => {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </motion.div>,
+          document.body
         )}
       </AnimatePresence>
     </div>
