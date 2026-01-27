@@ -161,6 +161,7 @@ const HeroSection = () => {
               <motion.button 
                 className="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
                 whileHover={{ x: 4 }}
+                onClick={() => document.getElementById('video-intro')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <span className="text-sm font-medium underline underline-offset-4 decoration-foreground/30 group-hover:decoration-foreground/60 transition-colors">
                   Video ansehen
