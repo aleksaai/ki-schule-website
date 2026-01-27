@@ -4,43 +4,8 @@ import { Play, ArrowRight } from "lucide-react";
 const VideoIntroSection = () => {
   return (
     <section id="video-intro" className="relative py-20 lg:py-28 overflow-hidden">
-      {/* Light Background */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(180deg, hsl(220 25% 97%) 0%, hsl(218 30% 96%) 50%, hsl(220 25% 97%) 100%)",
-        }}
-      />
-
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage: `
-            linear-gradient(hsl(220 20% 80%) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(220 20% 80%) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      {/* Subtle ambient blur */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[80%] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 60%)",
-          filter: "blur(80px)",
-        }}
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.6, 1, 0.6],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      {/* Clean white background */}
+      <div className="absolute inset-0 bg-background" />
 
       <div className="container relative mx-auto px-6 lg:px-8">
         <motion.div
