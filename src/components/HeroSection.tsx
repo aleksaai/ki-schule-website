@@ -281,15 +281,15 @@ const HeroSection = () => {
         <div className="h-16 lg:h-20" />
 
         {/* Hero content */}
-        <div className="grid lg:grid-cols-[1fr,1.1fr] gap-10 lg:gap-12 items-center pt-8 lg:pt-12 pb-16">
-          {/* Left - Text content (Order 2 on mobile for: Media first) */}
+        <div className="grid lg:grid-cols-[1fr,1.1fr] gap-8 lg:gap-12 items-center pt-8 lg:pt-12 pb-16">
+          {/* Left - Text content */}
           <motion.div 
-            className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1"
+            className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left order-1 lg:order-1"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {/* Badge with glass effect */}
+            {/* Badge with glass effect - Order 1 (always first) */}
             <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
               <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsla(216,100%,70%,0.5)]" />
               <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
@@ -297,8 +297,8 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* Headline with mixed typography */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-tight lg:leading-[1.2] mb-5">
+            {/* Headline with mixed typography - Order 2 (bigger on mobile) */}
+            <h1 className="text-4xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-tight lg:leading-[1.2] mb-5">
               Starte Heute dein
               <br />
               <span className="font-serif italic text-primary font-normal">
@@ -306,7 +306,29 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Image - Only visible on mobile, between title and text */}
+            <div className="block lg:hidden mb-8">
+              <div className="relative w-full max-w-xs mx-auto">
+                {/* Glow behind image */}
+                <div className="absolute -inset-6 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-[2rem] blur-2xl" />
+                
+                {/* Glass frame */}
+                <div className="glass-card relative rounded-2xl p-2">
+                  <div className="relative rounded-xl overflow-hidden">
+                    <img 
+                      src={founderImage} 
+                      alt="Gründer der KI-Schule"
+                      className="relative w-full aspect-[4/3] object-cover object-top"
+                    />
+                    
+                    {/* Subtle overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Subheadline - After image on mobile */}
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               In 30 Tagen zur eigenen KI-Agentur. Mit bewährtem System und starker Community.
             </p>
@@ -356,9 +378,9 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Right - Image with glass frame (Order 1 on mobile for: Media first) */}
+          {/* Right - Image with glass frame (Desktop only) */}
           <motion.div 
-            className="relative flex justify-center lg:justify-end order-1 lg:order-2"
+            className="relative hidden lg:flex justify-center lg:justify-end order-2"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -381,33 +403,33 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Floating glass card - Hidden on small mobile */}
+              {/* Floating glass card */}
               <motion.div 
-                className="hidden sm:block absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 glass-card rounded-2xl p-3 lg:p-4 max-w-[200px] lg:max-w-[220px]"
+                className="absolute -bottom-6 -left-6 glass-card rounded-2xl p-4 max-w-[220px]"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                <div className="flex items-center gap-2 lg:gap-3 mb-1.5 lg:mb-2">
-                  <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-xl bg-primary/10 flex items-center justify-center p-1.5 border border-primary/20">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center p-1.5 border border-primary/20">
                     <img src={kiIcon} alt="" className="w-full h-full object-contain" />
                   </div>
-                  <span className="text-xs lg:text-sm font-bold text-foreground">100% Praxisnah</span>
+                  <span className="text-sm font-bold text-foreground">100% Praxisnah</span>
                 </div>
-                <p className="text-[10px] lg:text-xs text-muted-foreground leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   Echte Projekte, echte Ergebnisse — keine graue Theorie.
                 </p>
               </motion.div>
               
-              {/* Top floating badge - Hidden on small mobile */}
+              {/* Top floating badge */}
               <motion.div 
-                className="hidden sm:flex absolute -top-2 -right-2 lg:-top-3 lg:-right-3 glass rounded-full px-3 lg:px-4 py-1.5 lg:py-2 items-center gap-2"
+                className="absolute -top-3 -right-3 glass rounded-full px-4 py-2 flex items-center gap-2"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <span className="text-base lg:text-lg">🚀</span>
-                <span className="text-[10px] lg:text-xs font-semibold text-foreground">Live Community</span>
+                <span className="text-lg">🚀</span>
+                <span className="text-xs font-semibold text-foreground">Live Community</span>
               </motion.div>
             </div>
           </motion.div>
