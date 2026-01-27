@@ -129,7 +129,7 @@ const ComparisonSection = () => {
                   borderRight: "1px solid hsl(var(--foreground) / 0.08)",
                 }}
               >
-                <img src={logoImage} alt="KI-Schule" className="h-7 w-auto" />
+                <img src={logoImage} alt="KI-Schule" className="h-10 w-auto" />
               </div>
               
               {/* Andere Header */}
