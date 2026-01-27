@@ -3,7 +3,7 @@ import { Play, ArrowRight } from "lucide-react";
 
 const VideoIntroSection = () => {
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
+    <section id="video-intro" className="relative py-20 lg:py-28 overflow-hidden">
       {/* Light Background */}
       <div 
         className="absolute inset-0"
