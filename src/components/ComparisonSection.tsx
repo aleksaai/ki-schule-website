@@ -123,18 +123,18 @@ const ComparisonSection = () => {
             >
               {/* KI-Schule Header */}
               <div 
-                className="flex items-center justify-center gap-3 py-5 px-6"
+                className="flex items-center justify-center gap-2 sm:gap-3 py-4 sm:py-5 px-3 sm:px-6"
                 style={{
                   background: "linear-gradient(180deg, hsl(var(--primary) / 0.12) 0%, hsl(var(--primary) / 0.05) 100%)",
                   borderRight: "1px solid hsl(var(--foreground) / 0.08)",
                 }}
               >
-                <img src={logoImage} alt="KI-Schule" className="h-10 w-auto" />
+                <img src={logoImage} alt="KI-Schule" className="h-6 sm:h-10 w-auto" />
               </div>
               
               {/* Andere Header */}
-              <div className="flex items-center justify-center py-5 px-6">
-                <span className="text-base font-serif italic text-muted-foreground">
+              <div className="flex items-center justify-center py-4 sm:py-5 px-3 sm:px-6">
+                <span className="text-xs sm:text-base font-serif italic text-muted-foreground text-center">
                   Andere Anbieter
                 </span>
               </div>
@@ -155,38 +155,38 @@ const ComparisonSection = () => {
               >
                 {/* KI-Schule Cell */}
                 <div 
-                  className="flex items-start gap-4 py-5 px-6"
+                  className="flex items-start gap-2 sm:gap-4 py-4 sm:py-5 px-3 sm:px-6"
                   style={{
                     background: "hsl(var(--primary) / 0.03)",
                     borderRight: "1px solid hsl(var(--foreground) / 0.06)",
                   }}
                 >
                   <div 
-                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+                    className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center mt-0.5"
                     style={{
                       background: "hsl(var(--primary))",
                       boxShadow: "0 2px 8px hsl(var(--primary) / 0.35)",
                     }}
                   >
-                    <Check className="h-3 w-3 text-white" strokeWidth={3} />
+                    <Check className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white" strokeWidth={3} />
                   </div>
-                  <span className="text-foreground text-sm lg:text-base leading-relaxed">
+                  <span className="text-foreground text-xs sm:text-sm lg:text-base leading-relaxed">
                     {row.kiSchule}
                   </span>
                 </div>
 
                 {/* Andere Cell */}
-                <div className="flex items-start gap-4 py-5 px-6">
+                <div className="flex items-start gap-2 sm:gap-4 py-4 sm:py-5 px-3 sm:px-6">
                   <div 
-                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+                    className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center mt-0.5"
                     style={{
                       background: "hsl(var(--foreground) / 0.08)",
                       border: "1px solid hsl(var(--foreground) / 0.12)",
                     }}
                   >
-                    <X className="h-3 w-3 text-muted-foreground" strokeWidth={2.5} />
+                    <X className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-muted-foreground" strokeWidth={2.5} />
                   </div>
-                  <span className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                  <span className="text-muted-foreground text-xs sm:text-sm lg:text-base leading-relaxed">
                     {row.andere}
                   </span>
                 </div>

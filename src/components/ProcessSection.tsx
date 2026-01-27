@@ -148,10 +148,10 @@ const ProcessSection = () => {
             }}
           />
 
-          {/* Content Area - Side by Side */}
+          {/* Content Area - Stacked on mobile, side by side on desktop */}
           <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
-            {/* Left: Large Image (55%) */}
-            <div className="lg:w-[55%] flex-shrink-0">
+            {/* Media: Large Image/Video (Order 1 on mobile) */}
+            <div className="w-full lg:w-[55%] flex-shrink-0 order-1">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
@@ -174,7 +174,7 @@ const ProcessSection = () => {
 
                   {/* Glass Frame Container */}
                   <div
-                    className="relative z-10 rounded-2xl overflow-hidden"
+                    className="relative z-10 rounded-2xl overflow-hidden max-w-sm sm:max-w-md mx-auto lg:mx-0 lg:max-w-none"
                     style={{
                       background:
                         "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
@@ -234,8 +234,8 @@ const ProcessSection = () => {
               </AnimatePresence>
             </div>
 
-            {/* Right: All Steps (45%) */}
-            <div className="lg:w-[45%] flex flex-col gap-4 justify-center">
+            {/* Steps: All Steps (Order 2 on mobile) */}
+            <div className="w-full lg:w-[45%] flex flex-col gap-4 justify-center order-2">
               {steps.map((step, index) => (
                 <StepCard
                   key={step.id}

@@ -58,8 +58,8 @@ const FounderSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <div className="grid lg:grid-cols-[1fr,1.1fr] gap-10 lg:gap-16 items-center">
-            {/* Image with Glass Frame - Floating freely */}
-            <div className="relative">
+            {/* Image with Glass Frame - Order 1 on mobile (Media first) */}
+            <div className="relative order-1">
               {/* Glow behind image */}
               <div
                 className="absolute inset-0 z-0 pointer-events-none"
@@ -72,7 +72,7 @@ const FounderSection = () => {
               
               {/* Glass Frame Container */}
               <div
-                className="relative z-10 rounded-2xl overflow-hidden"
+                className="relative z-10 rounded-2xl overflow-hidden max-w-sm sm:max-w-md mx-auto lg:mx-0"
                 style={{
                   background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
                   backdropFilter: "blur(20px)",
@@ -105,9 +105,9 @@ const FounderSection = () => {
               </div>
             </div>
 
-            {/* Text Content - With accent stripe */}
-            <div className="relative space-y-6 lg:pl-8">
-              {/* Vertical accent stripe */}
+            {/* Text Content - Order 2 on mobile (After media) */}
+            <div className="relative space-y-6 lg:pl-8 order-2 text-center lg:text-left">
+              {/* Vertical accent stripe - Desktop only */}
               <div 
                 className="hidden lg:block absolute left-0 top-0 bottom-0 w-1 rounded-full"
                 style={{
@@ -124,17 +124,17 @@ const FounderSection = () => {
                 </p>
               </div>
               
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                 Unser Communityleiter, Aleksa, geht mit tollem Beispiel voran! Er gründete mit der DestinyMedia GmbH eine der ersten KI-Agenturen in Deutschland und hat sich nun mit Spalevic Consulting zu den führenden Anbietern im DACH-Raum etabliert.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <motion.a
                   href="https://cal.com/aleksa-ai/erstgesprach"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
+                  className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group w-full sm:w-auto justify-center"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

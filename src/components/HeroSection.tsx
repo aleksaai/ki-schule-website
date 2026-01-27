@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import kiIcon from "@/assets/ki-icon-new.png";
 import founderImage from "@/assets/founder.png";
-
+import MobileNav from "@/components/MobileNav";
 const navItems = [
   {
     label: "Coaching",
@@ -248,20 +248,25 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="glass rounded-full px-3 py-2 flex items-center gap-1">
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               {navItems.map((item) => (
                 <NavItem key={item.label} item={item} />
               ))}
             </div>
             
+            {/* Desktop Login */}
             <a 
               href="https://app.ki-hochschule.de/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1"
+              className="hidden md:block btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1"
             >
               Login
             </a>
+
+            {/* Mobile Navigation */}
+            <MobileNav />
           </div>
         </motion.nav>
         
@@ -270,9 +275,9 @@ const HeroSection = () => {
 
         {/* Hero content */}
         <div className="grid lg:grid-cols-[1fr,1.1fr] gap-10 lg:gap-12 items-center pt-8 lg:pt-12 pb-16">
-          {/* Left - Text content */}
+          {/* Left - Text content (Order 2 on mobile for: Media first) */}
           <motion.div 
-            className="max-w-lg"
+            className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -286,7 +291,7 @@ const HeroSection = () => {
             </div>
 
             {/* Headline with mixed typography */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-[1.1] mb-5">
+            <h1 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-tight text-foreground leading-[1.1] mb-5">
               Starte Heute dein
               <br />
               <span className="font-serif italic text-primary font-normal">
@@ -295,17 +300,17 @@ const HeroSection = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               In 30 Tagen zur eigenen KI-Agentur. Mit bewährtem System und starker Community.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <motion.a
                 href="https://cal.com/aleksa-ai/erstgesprach"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
+                className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group w-full sm:w-auto justify-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -326,17 +331,17 @@ const HeroSection = () => {
             </div>
 
             {/* Stats - Clean inline style */}
-            <div className="flex items-center gap-6 mt-10 text-sm">
+            <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-10 text-xs sm:text-sm flex-wrap">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-foreground">87</span>
                 <span className="text-muted-foreground">Mitglieder</span>
               </div>
-              <span className="text-border">•</span>
+              <span className="text-border hidden sm:inline">•</span>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-foreground">5.0★</span>
                 <span className="text-muted-foreground">Bewertung</span>
               </div>
-              <span className="text-border">•</span>
+              <span className="text-border hidden sm:inline">•</span>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-foreground">5</span>
                 <span className="text-muted-foreground">Premium Kurse</span>
@@ -344,14 +349,14 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Right - Image with glass frame */}
+          {/* Right - Image with glass frame (Order 1 on mobile for: Media first) */}
           <motion.div 
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative w-full max-w-lg lg:max-w-xl">
+            <div className="relative w-full max-w-sm sm:max-w-lg lg:max-w-xl">
               {/* Glow behind image */}
               <div className="absolute -inset-8 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-[3rem] blur-3xl" />
               
@@ -369,9 +374,9 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Floating glass card */}
+              {/* Floating glass card - Hidden on small mobile */}
               <motion.div 
-                className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 glass-card rounded-2xl p-3 lg:p-4 max-w-[200px] lg:max-w-[220px]"
+                className="hidden sm:block absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 glass-card rounded-2xl p-3 lg:p-4 max-w-[200px] lg:max-w-[220px]"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
@@ -387,9 +392,9 @@ const HeroSection = () => {
                 </p>
               </motion.div>
               
-              {/* Top floating badge */}
+              {/* Top floating badge - Hidden on small mobile */}
               <motion.div 
-                className="absolute -top-2 -right-2 lg:-top-3 lg:-right-3 glass rounded-full px-3 lg:px-4 py-1.5 lg:py-2 flex items-center gap-2"
+                className="hidden sm:flex absolute -top-2 -right-2 lg:-top-3 lg:-right-3 glass rounded-full px-3 lg:px-4 py-1.5 lg:py-2 items-center gap-2"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
