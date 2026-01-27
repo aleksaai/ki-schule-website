@@ -2,20 +2,27 @@ import { motion } from "framer-motion";
 import { Check, X, Scale } from "lucide-react";
 import logoImage from "@/assets/logo.png";
 
-const kiSchuleFeatures = [
-  "4x pro Woche Live Calls geleitet vom Main Coach",
-  "KI-Cockpit: Dein Team steht dank deiner KI-Crew von Tag 1",
-  "Sehr hoher Praxisbezug mit Money-First Approach",
-  "Durch die KI-Schule finanzierte Live-Events in Budapest",
-  "Sehr faires & flexibles Preismodell, ideal für Einsteiger",
-];
-
-const othersFeatures = [
-  "Weniger Live Calls geleitet vom Main Coach",
-  "Keine Entlastung durch eigene On-Demand KI-Mitarbeiter",
-  "Viel zu viel Theorie. Wir wollen Geld verdienen, richtig?",
-  "Keine vor Ort Events. Schlechtere Grundlage zum Netzwerken.",
-  "Fragwürdiges Preismodell. Nicht geeignet für Anfänger.",
+const comparisonData = [
+  {
+    kiSchule: "4x pro Woche Live Calls geleitet vom Main Coach",
+    andere: "Weniger Live Calls geleitet vom Main Coach",
+  },
+  {
+    kiSchule: "KI-Cockpit: Dein Team steht dank deiner KI-Crew von Tag 1",
+    andere: "Keine Entlastung durch eigene On-Demand KI-Mitarbeiter",
+  },
+  {
+    kiSchule: "Sehr hoher Praxisbezug mit Money-First Approach",
+    andere: "Viel zu viel Theorie. Wir wollen Geld verdienen, richtig?",
+  },
+  {
+    kiSchule: "Durch die KI-Schule finanzierte Live-Events in Budapest",
+    andere: "Keine vor Ort Events. Schlechtere Grundlage zum Netzwerken.",
+  },
+  {
+    kiSchule: "Sehr faires & flexibles Preismodell, ideal für Einsteiger",
+    andere: "Fragwürdiges Preismodell. Nicht geeignet für Anfänger.",
+  },
 ];
 
 const ComparisonSection = () => {
@@ -25,7 +32,7 @@ const ComparisonSection = () => {
       <div 
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 25% 95%) 50%, hsl(220 20% 97%) 100%)",
+          background: "linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(225 22% 95%) 50%, hsl(220 20% 97%) 100%)",
         }}
       />
       
@@ -41,18 +48,11 @@ const ComparisonSection = () => {
         }}
       />
 
-      {/* Ambient glows */}
+      {/* Ambient glow */}
       <div
-        className="absolute top-1/3 left-1/4 w-[40%] h-[50%] -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 w-[60%] h-[60%] -translate-x-1/2 -translate-y-1/2"
         style={{
-          background: "radial-gradient(ellipse at center, hsl(142 70% 50% / 0.08) 0%, transparent 60%)",
-          filter: "blur(80px)",
-        }}
-      />
-      <div
-        className="absolute top-1/3 right-1/4 w-[40%] h-[50%] -translate-y-1/2"
-        style={{
-          background: "radial-gradient(ellipse at center, hsl(0 70% 50% / 0.06) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 60%)",
           filter: "blur(80px)",
         }}
       />
@@ -60,7 +60,7 @@ const ComparisonSection = () => {
       <div className="container relative mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,7 +83,7 @@ const ComparisonSection = () => {
           </p>
         </motion.div>
 
-        {/* Comparison Cards */}
+        {/* Single Glass Table */}
         <motion.div 
           className="max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -91,130 +91,107 @@ const ComparisonSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            {/* KI-Schule Card - Positive */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+          <div
+            className="rounded-3xl overflow-hidden"
+            style={{
+              background: "linear-gradient(145deg, hsl(var(--card) / 0.35) 0%, hsl(var(--card) / 0.12) 55%, hsl(var(--card) / 0.20) 100%)",
+              backdropFilter: "blur(40px) saturate(180%)",
+              WebkitBackdropFilter: "blur(40px) saturate(180%)",
+              border: "1.5px solid hsl(var(--card) / 0.7)",
+              boxShadow: `
+                0 25px 80px hsl(var(--foreground) / 0.12),
+                0 10px 30px hsl(var(--foreground) / 0.08),
+                inset 0 1px 0 hsl(var(--card) / 0.95),
+                inset 0 -1px 0 hsl(var(--foreground) / 0.03)
+              `,
+            }}
+          >
+            {/* Top edge shine */}
+            <div
+              className="absolute top-0 left-[10%] right-[10%] h-px z-20"
+              style={{
+                background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)",
+              }}
+            />
+
+            {/* Table Header */}
+            <div 
+              className="grid grid-cols-2"
+              style={{
+                borderBottom: "1px solid hsl(var(--foreground) / 0.08)",
+              }}
             >
-              {/* Card Header */}
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <img src={logoImage} alt="KI-Schule" className="h-8 w-auto" />
-              </div>
-              
-              {/* Glass Card */}
-              <div
-                className="rounded-2xl p-6 lg:p-8 h-full"
+              {/* KI-Schule Header */}
+              <div 
+                className="flex items-center justify-center gap-3 py-5 px-6"
                 style={{
-                  background: "linear-gradient(145deg, hsl(var(--card) / 0.35) 0%, hsl(var(--card) / 0.15) 100%)",
-                  backdropFilter: "blur(30px) saturate(180%)",
-                  WebkitBackdropFilter: "blur(30px) saturate(180%)",
-                  border: "1.5px solid hsl(142 70% 45% / 0.3)",
-                  boxShadow: `
-                    0 20px 50px hsl(142 70% 45% / 0.08),
-                    0 8px 20px hsl(var(--foreground) / 0.06),
-                    inset 0 1px 0 hsl(var(--card) / 0.9),
-                    inset 0 -1px 0 hsl(var(--foreground) / 0.03)
-                  `,
+                  background: "linear-gradient(180deg, hsl(var(--primary) / 0.12) 0%, hsl(var(--primary) / 0.05) 100%)",
+                  borderRight: "1px solid hsl(var(--foreground) / 0.08)",
                 }}
               >
-                {/* Top edge shine */}
-                <div
-                  className="absolute top-0 left-[15%] right-[15%] h-px"
-                  style={{
-                    background: "linear-gradient(90deg, transparent, hsl(142 70% 60% / 0.4) 50%, transparent)",
-                  }}
-                />
-                
-                <ul className="space-y-5">
-                  {kiSchuleFeatures.map((feature, index) => (
-                    <motion.li 
-                      key={index}
-                      className="flex items-start gap-4"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    >
-                      <div 
-                        className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5"
-                        style={{
-                          background: "linear-gradient(135deg, hsl(142 70% 45%) 0%, hsl(142 70% 35%) 100%)",
-                          boxShadow: "0 2px 8px hsl(142 70% 45% / 0.4)",
-                        }}
-                      >
-                        <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
-                      </div>
-                      <span className="text-foreground font-medium leading-relaxed">
-                        {feature}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
+                <img src={logoImage} alt="KI-Schule" className="h-7 w-auto" />
               </div>
-            </motion.div>
-
-            {/* Others Card - Negative */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              {/* Card Header */}
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="text-lg font-serif italic text-muted-foreground">
+              
+              {/* Andere Header */}
+              <div className="flex items-center justify-center py-5 px-6">
+                <span className="text-base font-serif italic text-muted-foreground">
                   Andere Anbieter
                 </span>
               </div>
-              
-              {/* Glass Card */}
-              <div
-                className="rounded-2xl p-6 lg:p-8 h-full"
+            </div>
+
+            {/* Table Rows */}
+            {comparisonData.map((row, index) => (
+              <motion.div 
+                key={index}
+                className="grid grid-cols-2"
                 style={{
-                  background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
-                  backdropFilter: "blur(30px) saturate(180%)",
-                  WebkitBackdropFilter: "blur(30px) saturate(180%)",
-                  border: "1.5px solid hsl(var(--foreground) / 0.08)",
-                  boxShadow: `
-                    0 20px 50px hsl(var(--foreground) / 0.05),
-                    0 8px 20px hsl(var(--foreground) / 0.04),
-                    inset 0 1px 0 hsl(var(--card) / 0.7),
-                    inset 0 -1px 0 hsl(var(--foreground) / 0.02)
-                  `,
+                  borderBottom: index < comparisonData.length - 1 ? "1px solid hsl(var(--foreground) / 0.06)" : "none",
                 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.08 }}
               >
-                <ul className="space-y-5">
-                  {othersFeatures.map((feature, index) => (
-                    <motion.li 
-                      key={index}
-                      className="flex items-start gap-4"
-                      initial={{ opacity: 0, x: 10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    >
-                      <div 
-                        className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5"
-                        style={{
-                          background: "linear-gradient(135deg, hsl(0 65% 50% / 0.15) 0%, hsl(0 65% 45% / 0.1) 100%)",
-                          border: "1.5px solid hsl(0 65% 50% / 0.3)",
-                        }}
-                      >
-                        <X className="h-3.5 w-3.5 text-destructive/70" strokeWidth={2.5} />
-                      </div>
-                      <span className="text-muted-foreground leading-relaxed">
-                        {feature}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
+                {/* KI-Schule Cell */}
+                <div 
+                  className="flex items-start gap-4 py-5 px-6"
+                  style={{
+                    background: "hsl(var(--primary) / 0.03)",
+                    borderRight: "1px solid hsl(var(--foreground) / 0.06)",
+                  }}
+                >
+                  <div 
+                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+                    style={{
+                      background: "hsl(var(--primary))",
+                      boxShadow: "0 2px 8px hsl(var(--primary) / 0.35)",
+                    }}
+                  >
+                    <Check className="h-3 w-3 text-white" strokeWidth={3} />
+                  </div>
+                  <span className="text-foreground text-sm lg:text-base leading-relaxed">
+                    {row.kiSchule}
+                  </span>
+                </div>
+
+                {/* Andere Cell */}
+                <div className="flex items-start gap-4 py-5 px-6">
+                  <div 
+                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+                    style={{
+                      background: "hsl(var(--foreground) / 0.08)",
+                      border: "1px solid hsl(var(--foreground) / 0.12)",
+                    }}
+                  >
+                    <X className="h-3 w-3 text-muted-foreground" strokeWidth={2.5} />
+                  </div>
+                  <span className="text-muted-foreground text-sm lg:text-base leading-relaxed">
+                    {row.andere}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
