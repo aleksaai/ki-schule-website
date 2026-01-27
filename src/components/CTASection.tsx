@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Clock } from "lucide-react";
+import { ArrowUpRight, Rocket } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -91,7 +91,7 @@ const CTASection = () => {
               }}
             />
             <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2">
-              <Clock className="h-4 w-4 text-primary fill-primary" />
+              <Rocket className="h-4 w-4 text-primary fill-primary" />
               <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
                 Es wird Zeit
               </span>
