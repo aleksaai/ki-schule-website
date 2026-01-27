@@ -12,14 +12,114 @@ const CTASection = () => {
         }}
       />
 
-      {/* Subtle ambient glow */}
-      <div
-        className="absolute top-1/2 left-1/2 w-[60%] h-[70%] -translate-x-1/2 -translate-y-1/2"
+      {/* Animated floating blur orbs */}
+      <motion.div
+        className="absolute top-1/4 left-1/5 w-64 h-64 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.10) 0%, transparent 60%)",
-          filter: "blur(100px)",
+          background: "radial-gradient(circle, hsl(216 100% 70% / 0.12) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+        animate={{
+          x: [0, 30, 0],
+          y: [0, -20, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
       />
+      
+      <motion.div
+        className="absolute bottom-1/4 right-1/5 w-80 h-80 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, hsl(200 80% 65% / 0.10) 0%, transparent 70%)",
+          filter: "blur(70px)",
+        }}
+        animate={{
+          x: [0, -25, 0],
+          y: [0, 25, 0],
+          scale: [1, 1.15, 1],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
+
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 60%)",
+          filter: "blur(80px)",
+        }}
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Sparkle elements */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 rounded-full pointer-events-none"
+          style={{
+            background: "hsl(var(--primary))",
+            boxShadow: "0 0 6px 2px hsl(var(--primary) / 0.4)",
+            left: `${15 + i * 14}%`,
+            top: `${20 + (i % 3) * 25}%`,
+          }}
+          animate={{
+            opacity: [0, 1, 0],
+            scale: [0.5, 1.2, 0.5],
+          }}
+          transition={{
+            duration: 2 + i * 0.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.8,
+          }}
+        />
+      ))}
+
+      {/* Additional subtle sparkles */}
+      {[...Array(4)].map((_, i) => (
+        <motion.div
+          key={`spark-${i}`}
+          className="absolute pointer-events-none"
+          style={{
+            left: `${25 + i * 18}%`,
+            top: `${35 + (i % 2) * 30}%`,
+          }}
+          animate={{
+            opacity: [0, 0.8, 0],
+            scale: [0.8, 1.5, 0.8],
+          }}
+          transition={{
+            duration: 3 + i * 0.3,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5 + i * 1.2,
+          }}
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path
+              d="M6 0L6.5 4.5L11 6L6.5 6.5L6 11L5.5 6.5L1 6L5.5 5.5L6 0Z"
+              fill="hsl(var(--primary))"
+              fillOpacity="0.6"
+            />
+          </svg>
+        </motion.div>
+      ))}
 
       <div className="container relative mx-auto px-6 lg:px-8">
         <motion.div 
