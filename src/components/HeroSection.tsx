@@ -96,43 +96,45 @@ const NavItem = ({ item }: NavItemProps) => {
         <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       
-      <AnimatePresence>
-        {isOpen && createPortal(
-          <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.96 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            style={{
-              position: 'fixed',
-              left: position.x,
-              top: position.y,
-              transform: 'translateX(-50%)',
-              zIndex: 9999
-            }}
-            onMouseEnter={handleDropdownMouseEnter}
-            onMouseLeave={handleDropdownMouseLeave}
-          >
-            <div className="glass rounded-2xl p-2 min-w-[280px]">
-              {item.dropdown.map((subItem, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors group"
-                >
-                  <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                    {subItem.label}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {subItem.description}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </motion.div>,
-          document.body
-        )}
-      </AnimatePresence>
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 8, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 8, scale: 0.96 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              style={{
+                position: 'fixed',
+                left: position.x,
+                top: position.y,
+                transform: 'translateX(-50%)',
+                zIndex: 9999
+              }}
+              onMouseEnter={handleDropdownMouseEnter}
+              onMouseLeave={handleDropdownMouseLeave}
+            >
+              <div className="glass rounded-2xl p-2 min-w-[280px]">
+                {item.dropdown.map((subItem, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors group"
+                  >
+                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                      {subItem.label}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {subItem.description}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </div>
   );
 };
