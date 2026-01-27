@@ -26,7 +26,7 @@ const navItems = [
       { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen", href: "/coming-soon" },
     ],
   },
-  { label: "Erfolge", href: "#" },
+  { label: "Erfolge", href: "#erfolgsgeschichte" },
 ];
 
 interface NavItemProps {
@@ -71,6 +71,22 @@ const NavItem = ({ item }: NavItemProps) => {
   }, []);
 
   if (!item.dropdown) {
+    // Handle anchor links for smooth scrolling
+    if (item.href?.startsWith('#')) {
+      return (
+        <button
+          onClick={() => {
+            const targetId = item.href?.slice(1);
+            if (targetId) {
+              document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200"
+        >
+          {item.label}
+        </button>
+      );
+    }
     return (
       <Link 
         to={item.href || "#"}
