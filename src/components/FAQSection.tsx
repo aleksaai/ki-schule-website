@@ -97,15 +97,16 @@ const FAQSection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <div className="grid lg:grid-cols-[0.8fr,1.2fr] gap-8 items-start">
-            {/* Left: Contact Card */}
+            {/* Left: Contact Card - Full width on mobile, shown first */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="order-2 lg:order-1"
             >
               <div
-                className="rounded-2xl p-8 text-center sticky top-8"
+                className="rounded-2xl p-6 sm:p-8 text-center lg:sticky lg:top-8"
                 style={{
                   background: "linear-gradient(145deg, hsl(var(--card) / 0.40) 0%, hsl(var(--card) / 0.15) 55%, hsl(var(--card) / 0.25) 100%)",
                   backdropFilter: "blur(40px) saturate(180%)",
@@ -129,21 +130,21 @@ const FAQSection = () => {
 
                 {/* Icon */}
                 <div 
-                  className="w-14 h-14 rounded-full mx-auto mb-5 flex items-center justify-center"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full mx-auto mb-4 sm:mb-5 flex items-center justify-center"
                   style={{
                     background: "linear-gradient(145deg, hsl(var(--card) / 0.5) 0%, hsl(var(--card) / 0.2) 100%)",
                     border: "1px solid hsl(var(--card) / 0.6)",
                     boxShadow: "0 4px 15px hsl(var(--foreground) / 0.06)",
                   }}
                 >
-                  <MessageCircleQuestion className="h-6 w-6 text-primary" />
+                  <MessageCircleQuestion className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">
                   Noch Fragen?
                 </h3>
                 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
                   Wo drückt der Schuh? Buche dir ein kurzes Erstgespräch und kläre deine Fragen.
                 </p>
 
@@ -151,7 +152,7 @@ const FAQSection = () => {
                   href="https://cal.com/aleksa-ai/erstgesprach"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-liquid-glass-accent px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 group"
+                  className="btn-liquid-glass-accent px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 group w-full sm:w-auto justify-center"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -161,12 +162,13 @@ const FAQSection = () => {
               </div>
             </motion.div>
 
-            {/* Right: Accordion FAQ */}
+            {/* Right: Accordion FAQ - Shown first on mobile */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              className="order-1 lg:order-2"
             >
               <div
                 className="rounded-2xl overflow-hidden"
@@ -202,14 +204,14 @@ const FAQSection = () => {
                       }}
                     >
                       <AccordionTrigger 
-                        className="px-6 py-5 hover:no-underline group"
+                        className="px-4 sm:px-6 py-4 sm:py-5 hover:no-underline group"
                       >
-                        <span className="text-left text-foreground font-medium text-base group-hover:text-primary transition-colors">
+                        <span className="text-left text-foreground font-medium text-sm sm:text-base group-hover:text-primary transition-colors">
                           {faq.question}
                         </span>
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-5 pt-0">
-                        <p className="text-muted-foreground text-sm leading-relaxed">
+                      <AccordionContent className="px-4 sm:px-6 pb-4 sm:pb-5 pt-0">
+                        <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                           {faq.answer}
                         </p>
                       </AccordionContent>

@@ -50,10 +50,10 @@ const FooterSection = () => {
       />
 
       <div className="container relative mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8">
           {/* Logo & Description */}
           <motion.div 
-            className="lg:col-span-2"
+            className="col-span-2 lg:col-span-2 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -63,10 +63,10 @@ const FooterSection = () => {
               <img 
                 src={logo} 
                 alt="KI-Schule Logo" 
-                className="h-10 w-auto"
+                className="h-8 sm:h-10 w-auto mx-auto lg:mx-0"
               />
             </a>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed max-w-xs mx-auto lg:mx-0">
               Baue deine eigene KI-Agentur auf – mit professionellem Coaching und einer starken Community.
             </p>
           </motion.div>
@@ -75,20 +75,21 @@ const FooterSection = () => {
           {footerLinks.map((column, columnIndex) => (
             <motion.div
               key={column.title}
+              className="text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * (columnIndex + 1) }}
             >
-              <h4 className="text-sm font-semibold text-foreground mb-4">
+              <h4 className="text-xs sm:text-sm font-semibold text-foreground mb-3 sm:mb-4">
                 {column.title}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                      className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                     >
                       {link.label}
                     </a>

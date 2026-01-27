@@ -82,23 +82,23 @@ const SuccessStorySection = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <div className="grid lg:grid-cols-[1.1fr,1fr] gap-10 lg:gap-16 items-center">
-            {/* Text Content - Left side */}
-            <div className="space-y-6 order-2 lg:order-1">
+            {/* Text Content - Order 2 on mobile */}
+            <div className="space-y-6 order-2 text-center lg:text-left">
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                   David – Unser Q4 2024 Champion
                 </h3>
-                <p className="text-primary font-medium text-lg">
+                <p className="text-primary font-medium text-base sm:text-lg">
                   19 Jahre, KI-Agentur Gründer
                 </p>
               </div>
 
-              <p className="text-white/70 text-lg leading-relaxed">
+              <p className="text-white/70 text-base sm:text-lg leading-relaxed">
                 David ist im Februar 2024 als 19-Jähriger unserer Community beigetreten. Im letzten Quartal 2024 hat er unseren Wettbewerb gewonnen – mit dem höchsten Umsatz aller KI-Agenturen in der KI-Schule.
               </p>
 
               {/* Highlights - Dark glass badges */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2">
                   <Calendar className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-white/80">
@@ -113,26 +113,28 @@ const SuccessStorySection = () => {
                 </div>
               </div>
 
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/60 text-sm sm:text-base leading-relaxed">
                 Als Belohnung für seinen Erfolg haben wir David nach Budapest eingeladen – Flug und Unterkunft inklusive. Gemeinsam haben wir dort gearbeitet, Strategien besprochen und eine unvergessliche Zeit in meiner Lieblingsstadt Europas verbracht.
               </p>
 
               {/* CTA Button */}
-              <motion.a
-                href="https://cal.com/aleksa-ai/erstgesprach"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="relative z-10">Werde die nächste Erfolgsgeschichte</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
-              </motion.a>
+              <div className="flex justify-center lg:justify-start">
+                <motion.a
+                  href="https://cal.com/aleksa-ai/erstgesprach"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold flex items-center gap-2 group w-full sm:w-auto justify-center"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="relative z-10">Werde die nächste Erfolgsgeschichte</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 relative z-10" />
+                </motion.a>
+              </div>
             </div>
 
-            {/* Image with Glass Frame - Right side */}
-            <div className="relative order-1 lg:order-2">
+            {/* Image with Glass Frame - Order 1 on mobile (Media first) */}
+            <div className="relative order-1">
               {/* Spotlight glow behind image */}
               <div
                 className="absolute inset-0 z-0 pointer-events-none"
@@ -145,7 +147,7 @@ const SuccessStorySection = () => {
 
               {/* Glass Frame Container - Dark variant */}
               <div
-                className="relative z-10 rounded-2xl overflow-hidden"
+                className="relative z-10 rounded-2xl overflow-hidden max-w-sm sm:max-w-md mx-auto lg:mx-0"
                 style={{
                   background: "linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%)",
                   backdropFilter: "blur(20px)",
@@ -177,9 +179,9 @@ const SuccessStorySection = () => {
                 </AspectRatio>
               </div>
 
-              {/* Budapest Badge - Dark glass */}
+              {/* Budapest Badge - Hidden on small mobile */}
               <div
-                className="absolute -bottom-3 -right-3 z-30 glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2"
+                className="hidden sm:inline-flex absolute -bottom-3 -right-3 z-30 glass-dark items-center gap-2 rounded-full px-4 py-2"
                 style={{
                   boxShadow: "0 8px 24px rgba(0, 0, 0, 0.4)",
                 }}

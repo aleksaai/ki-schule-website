@@ -162,7 +162,7 @@ const TestimonialsSection = () => {
             href="https://cal.com/aleksa-ai/erstgesprach"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2 group"
+            className="btn-liquid-glass-accent px-7 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2 group w-full sm:w-auto justify-center"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
