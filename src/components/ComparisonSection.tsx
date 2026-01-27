@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, X, Scale } from "lucide-react";
-import logoImage from "@/assets/logo.png";
+import logoImage from "@/assets/ki-schule-logo.png";
 
 const comparisonData = [
   {
