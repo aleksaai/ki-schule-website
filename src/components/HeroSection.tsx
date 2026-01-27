@@ -240,16 +240,16 @@ const HeroSection = () => {
       />
 
       <div className="container relative mx-auto px-6 lg:px-8">
-        {/* Sticky Navigation with glass effect */}
+        {/* Desktop Navigation with glass effect - hidden on mobile */}
         <motion.nav 
-          className="fixed top-4 left-0 right-0 z-50 flex justify-center"
+          className="fixed top-4 left-0 right-0 z-50 hidden md:flex justify-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <div className="glass rounded-full px-3 py-2 flex items-center gap-1">
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="flex items-center gap-1">
               {navItems.map((item) => (
                 <NavItem key={item.label} item={item} />
               ))}
@@ -260,15 +260,22 @@ const HeroSection = () => {
               href="https://app.ki-hochschule.de/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:block btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1"
+              className="btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1"
             >
               Login
             </a>
-
-            {/* Mobile Navigation */}
-            <MobileNav />
           </div>
         </motion.nav>
+
+        {/* Mobile Navigation - separate fixed position top-right */}
+        <motion.div
+          className="fixed top-4 right-4 z-50 md:hidden"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <MobileNav />
+        </motion.div>
         
         {/* Spacer for fixed nav */}
         <div className="h-16 lg:h-20" />

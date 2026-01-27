@@ -119,11 +119,11 @@ const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
-      {/* Hamburger Button - positioned by parent, just the button itself */}
+    <>
+      {/* Hamburger Button with glass background */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-full hover:bg-foreground/5"
+        className="glass p-3 rounded-full text-foreground/80 hover:text-foreground transition-colors"
         aria-label="Menü öffnen"
       >
         <Menu className="h-6 w-6" />
@@ -188,7 +188,7 @@ const MobileNav = () => {
           </>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 };
 
