@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { HelpCircle, ArrowUpRight, ChevronDown } from "lucide-react";
+import { MessageCircleQuestion, ArrowUpRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -73,7 +73,7 @@ const FAQSection = () => {
         >
           {/* Badge */}
           <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
-            <HelpCircle className="h-4 w-4 text-primary fill-primary" />
+            <MessageCircleQuestion className="h-4 w-4 text-primary fill-primary" />
             <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
               FAQ's
             </span>
@@ -136,7 +136,7 @@ const FAQSection = () => {
                     boxShadow: "0 4px 15px hsl(var(--foreground) / 0.06)",
                   }}
                 >
-                  <HelpCircle className="h-6 w-6 text-primary" />
+                  <MessageCircleQuestion className="h-6 w-6 text-primary" />
                 </div>
 
                 <h3 className="text-xl font-bold text-foreground mb-3">
