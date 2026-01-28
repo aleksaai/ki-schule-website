@@ -1,24 +1,24 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import blueOceanIcon from "@/assets/blue-ocean-icon.png";
-import highIncomeIcon from "@/assets/high-income-icon.png";
-import automationIcon from "@/assets/automation-icon.png";
+import agencyBenefit1 from "@/assets/agency-benefit-1.png";
+import agencyBenefit2 from "@/assets/agency-benefit-2.png";
+import agencyBenefit3 from "@/assets/agency-benefit-3.png";
 
 const features = [
   {
     title: "Bestehende Expertise nutzen",
     description: "Du kennst deine Branche bereits in- und auswendig. Jetzt ergänzt du dein Wissen mit KI-Skills und wirst zum gefragtesten Anbieter in deinem Markt.",
-    imageUrl: blueOceanIcon,
+    imageUrl: agencyBenefit1,
   },
   {
     title: "Höhere Margen erzielen",
     description: "KI-Dienstleistungen sind Premium-Angebote. Während andere Agenturen im Preiskrieg stecken, hebst du dich ab und erzielst bessere Margen.",
-    imageUrl: highIncomeIcon,
+    imageUrl: agencyBenefit2,
   },
   {
     title: "Kunden automatisch begeistern",
     description: "Biete deinen bestehenden Kunden KI-Lösungen an und gewinne neue Kunden, die gezielt nach KI-Expertise suchen. Der Markt ist riesig.",
-    imageUrl: automationIcon,
+    imageUrl: agencyBenefit3,
   },
 ];
 
