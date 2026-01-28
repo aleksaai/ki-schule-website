@@ -1,24 +1,24 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import yfBenefit1 from "@/assets/yf-benefit-1.png";
-import yfBenefit2 from "@/assets/yf-benefit-2.png";
-import yfBenefit3 from "@/assets/yf-benefit-3.png";
+import ntfBenefit1 from "@/assets/ntf-benefit-1.png";
+import ntfBenefit2 from "@/assets/ntf-benefit-2.png";
+import ntfBenefit3 from "@/assets/ntf-benefit-3.png";
 
 const features = [
   {
     title: "Kein Risiko, volle Kontrolle",
     description: "Baue dein KI-Business nebenbei auf, während du weiter dein Gehalt bekommst. Erst kündigen, wenn dein Einkommen steht.",
-    imageUrl: yfBenefit1,
+    imageUrl: ntfBenefit1,
   },
   {
     title: "Schneller Skillaufbau",
     description: "Lerne in wenigen Wochen die gefragtesten KI-Skills. Deine Berufserfahrung wird dabei zum wertvollen Vorteil.",
-    imageUrl: yfBenefit2,
+    imageUrl: ntfBenefit2,
   },
   {
     title: "Raus aus dem Hamsterrad",
     description: "Verdiene mehr als in deinem Job — mit flexiblen Arbeitszeiten, ortsunabhängig und selbstbestimmt.",
-    imageUrl: yfBenefit3,
+    imageUrl: ntfBenefit3,
   },
 ];
 
