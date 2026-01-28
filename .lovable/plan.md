@@ -1,62 +1,102 @@
 
-# Plan: Lifestyle-Section mit hellem Akzent-Hintergrund
+# Plan: Community-Seite erstellen
 
-## Analyse
+## Ziel
+Erstellung einer neuen Community-Seite, die alle Vorteile und Features der KI-Schule Community prasentiert und zum bestehenden Design-System passt.
 
-Die aktuelle dunkle Lifestyle-Section unterbricht den visuellen Fluss der Seite. Sie erscheint als isolierte "dunkle Insel" zwischen den hellen Sections, während die späteren dunklen Sections (Erfolgsgeschichte, Testimonials) als zusammenhängender Block funktionieren.
+## Seitenstruktur
 
-## Lösung
+### 1. Hero Section
+Eine einladende Hero Section, die die Community vorstellt:
 
-Die Lifestyle-Section erhält einen **hellen Hintergrund** mit:
-- Sauberer weißer/heller Basis (wie VideoIntroSection)
-- **KEIN Grid-Pattern** (zur Unterscheidung von WhyKI und ProcessSection)
-- Subtiler **blauer Akzent-Glow** im Hintergrund (branded, aber dezent)
-- Die bunten Lifestyle-Bilder werden dadurch besser hervorgehoben
+**Inhalte:**
+- Badge: "Community" Icon (z.B. Users icon)
+- Headline: "Dein Netzwerk fur" + "KI-Erfolg." (Serif italic)
+- Subheadline: Kurze Beschreibung uber die 80+ KI-Agenturen aus dem DACH-Raum
+- Stats: "80+ Agenturen", "Seit Feb. 2024", "DACH-Raum"
+- CTA: "Community beitreten" Button
 
-## Visuelle Hierarchie (neu)
+**Visuell:**
+- Gleicher Hintergrund-Stil wie andere Landing Pages (Light gradient + organic shapes + grid)
+- Hero-Bild: Wir konnen das bestehende Netzwerk-Bild (`src/assets/netzwerk-image.jpg`) verwenden oder ein neues hochladen
+- Floating Glass Cards mit Community-Stats
 
-```text
-┌──────────────────────────────────────┐
-│  HERO              Light + Grid      │
-├──────────────────────────────────────┤
-│  KURZE VORSTELLUNG Light (clean)     │
-├──────────────────────────────────────┤
-│  DEINE CHANCE      Light + Grid      │
-├──────────────────────────────────────┤
-│  DEIN LIFESTYLE    Light + Blue Glow │  ← NEU: Unterscheidbar ohne Grid
-├──────────────────────────────────────┤
-│  DEINE VORTEILE    Video BG          │
-├──────────────────────────────────────┤
-│  DEIN WEG          Light + Grid      │
-├──────────────────────────────────────┤
-│  ERFOLGSGESCHICHTE Dark              │  ← Dunkler Block beginnt
-├──────────────────────────────────────┤
-│  TESTIMONIALS      Dark              │
-└──────────────────────────────────────┘
-```
+---
 
-## Technische Änderungen
+### 2. Community Features Section (Neu)
+Ein Bento-Grid Layout, das alle Community-Features prasentiert:
 
-### Datei: `src/components/LifestyleSection.tsx`
+**6 Feature-Karten:**
 
-**Hintergrund-Änderungen:**
-- Dark gradient (`hsl(220 30% 14%)`) → Light gradient (`hsl(220 20% 97%)`)
-- Grid-Pattern entfernen (bleibt leer für Abwechslung)
-- Subtile blaue Radial-Gradients als Akzent hinzufügen
+| Feature | Icon | Beschreibung |
+|---------|------|--------------|
+| Community Feed | MessageSquare | Fragen stellen, Hilfe bekommen, Neuigkeiten teilen |
+| Live Calls | Video | 4x pro Woche Gruppen-Calls mit Q&A und Support |
+| Kurse & Tutorials | GraduationCap | Basics, Masterclass, Automation, Paid Ads |
+| Blueprints | FileCode | n8n & make.com Templates, Vertragsvorlagen |
+| Opportunities | Briefcase | Auftrage von KI-Agenturen, erste Erfahrungen sammeln |
+| Zertifizierung | Award | Anerkannte Zertifikate fur LinkedIn & Website |
 
-**Typografie-Änderungen:**
-- `text-white` → `text-foreground`
-- `text-white/60` → `text-muted-foreground`
-- `glass-dark` Badge → `glass` Badge
+**Design:**
+- Ahnlich wie BenefitsSection aber ohne Video-Hintergrund
+- Light background mit grid pattern
+- Glass cards fur jedes Feature
 
-**Card-Styling:**
-- Dunkle Glass-Cards → Helle Glass-Cards (wie in WhyKISection)
-- Rahmen und Schatten für Light Mode anpassen
-- Label-Overlay-Gradient für dunklen Text optimieren
+---
 
-## Vorteile
+### 3. Netzwerk & Events Section (Neu)
+Eine spezielle Section fur Networking und Events:
 
-1. **Natürlicher Fluss**: Hell-Hell-Hell-Hell-Video-Hell-Dunkel-Dunkel
-2. **Visuelle Unterscheidung**: Kein Grid + blauer Akzent hebt die Section ab
-3. **Bessere Bildpräsentation**: Bunte Lifestyle-Bilder auf hellem Hintergrund
-4. **Konsistenz**: Dunkle Sections bleiben als Block zusammen
+**Inhalte:**
+- Interne Netzwerke (gemeinsame Werbeanzeigen)
+- Netzwerkveranstaltungen
+- Wettbewerbe (Gutscheine, Reisen, 1:1 Budapest)
+
+**Design:**
+- Dark mode accent section (wie SuccessStorySection)
+- Asymmetrisches Layout mit Bild
+
+---
+
+### 4. Wiederverwendete Sections
+- **TestimonialsSection** - Community Feedback
+- **FAQSection** - Haufige Fragen (evtl. mit community-spezifischen FAQs)
+- **CTASection** - Finale Conversion
+- **FooterSection** - Standard Footer
+
+---
+
+## Technische Umsetzung
+
+### Neue Dateien:
+1. `src/pages/Community.tsx` - Hauptseite
+2. `src/components/CommunityFeatures.tsx` - Features Bento Grid
+3. `src/components/CommunityNetworkSection.tsx` - Netzwerk Section
+
+### Anderungen:
+1. `src/App.tsx` - Neue Route `/community` registrieren
+2. `src/components/MainNav.tsx` - Community Link von `/coming-soon` auf `/community` andern
+3. `src/components/MobileNav.tsx` - Community Link aktualisieren
+
+---
+
+## Design-Konsistenz
+
+Die Seite wird folgende etablierte Patterns verwenden:
+- Liquid Glass Aesthetic (`.glass`, `.glass-card` Klassen)
+- Light mode Farbpalette mit Sky Blue Accent (#66A4FF)
+- Framer Motion Animationen
+- Mobile-first responsive Design
+- MainNav + MobileNav Komponenten
+- 48px Grid Pattern Hintergrund
+
+---
+
+## Nachste Schritte
+
+Nach der Genehmigung dieses Plans:
+1. Hero Section mit Placeholder-Bild erstellen
+2. Community Features Grid implementieren
+3. Netzwerk Section erstellen
+4. Routing und Navigation aktualisieren
+5. Optional: Hero-Bild hochladen falls gewunscht
