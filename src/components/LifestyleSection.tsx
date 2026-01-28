@@ -1,13 +1,14 @@
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
+import workLifeBalanceImg from "@/assets/lifestyle/work-life-balance.jpg";
 
 const lifestyleItems = [
-  { label: "Zeit für Freunde", placeholder: true },
-  { label: "Flexibles Arbeiten", placeholder: true },
-  { label: "Finanzielle Freiheit", placeholder: true },
-  { label: "Reisen & Erlebnisse", placeholder: true },
-  { label: "Quality Time", placeholder: true },
-  { label: "Work-Life-Balance", placeholder: true },
+  { label: "Zeit für Freunde", image: null },
+  { label: "Flexibles Arbeiten", image: null },
+  { label: "Finanzielle Freiheit", image: null },
+  { label: "Reisen & Erlebnisse", image: null },
+  { label: "Quality Time", image: null },
+  { label: "Work-Life-Balance", image: workLifeBalanceImg },
 ];
 
 const LifestyleSection = () => {
@@ -117,10 +118,18 @@ const LifestyleSection = () => {
                 
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-muted/30">
-                  {/* Placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/30">
-                    <span className="text-muted-foreground/40 text-sm">Bild {index + 1}</span>
-                  </div>
+                  {/* Image or Placeholder */}
+                  {item.image ? (
+                    <img 
+                      src={item.image} 
+                      alt={item.label} 
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/30">
+                      <span className="text-muted-foreground/40 text-sm">Bild {index + 1}</span>
+                    </div>
+                  )}
                   
                   {/* Gradient Overlay for Label */}
                   <div 
