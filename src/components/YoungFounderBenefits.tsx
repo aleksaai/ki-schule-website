@@ -8,17 +8,17 @@ const features = [
   {
     title: "Früh starten, früh profitieren",
     description: "Während andere noch überlegen, baust du dir bereits ein Einkommen auf. Zeit ist dein größter Vorteil — nutze sie jetzt.",
-    imageUrl: yfBenefit1,
+    imageUrl: yfBenefit2,
   },
   {
     title: "Lebenslauf-Booster",
     description: "Praktische KI-Erfahrung macht dich zum gefragtesten Bewerber. Egal ob Job, Freelancing oder eigenes Business.",
-    imageUrl: yfBenefit2,
+    imageUrl: yfBenefit3,
   },
   {
     title: "Maximale Flexibilität",
     description: "Arbeite wann und wo du willst — perfekt neben Schule, Ausbildung oder Studium. Kein Chef, keine festen Zeiten.",
-    imageUrl: yfBenefit3,
+    imageUrl: yfBenefit1,
   },
 ];
 
