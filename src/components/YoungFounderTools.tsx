@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Wrench } from "lucide-react";
 import toolsBgVideo from "@/assets/tools-bg.mp4";
+import n8nIcon from "@/assets/tools/n8n-icon.png";
 
 const toolIcons = [
   {
@@ -12,8 +13,8 @@ const toolIcons = [
     alt: "ChatGPT",
   },
   {
-    src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/9e80c50a5802d3b0a7ec66f3fe4ce348_low_res_Finder.png",
-    alt: "Finder",
+    src: n8nIcon,
+    alt: "n8n",
   },
   {
     src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/6d26d432bd65c522b0708185c0768ec3_low_res_Maps.png",
