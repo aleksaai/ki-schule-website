@@ -20,43 +20,32 @@ const lifestyleItems = [
 const LifestyleSection = () => {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Dark background - matching Testimonials/SuccessStory */}
+      {/* Light background with blue accent glow - NO grid pattern */}
       <div className="absolute inset-0">
+        {/* Clean light gradient base */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(220 30% 14%) 0%, hsl(220 35% 12%) 50%, hsl(220 30% 14%) 100%)",
+              "linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 22% 96%) 50%, hsl(220 20% 97%) 100%)",
           }}
         />
 
-        {/* Subtle grid pattern for dark mode */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, hsl(220 20% 50%) 1px, transparent 1px),
-              linear-gradient(to bottom, hsl(220 20% 50%) 1px, transparent 1px)
-            `,
-            backgroundSize: "48px 48px",
-          }}
-        />
-
-        {/* Ambient glow effects */}
+        {/* Blue accent glow effects - branded but subtle */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 max-w-[1920px] mx-auto">
             <div
-              className="absolute top-1/4 left-1/4 w-[40%] h-[50%]"
+              className="absolute top-1/4 left-1/5 w-[45%] h-[55%]"
               style={{
-                background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.08) 0%, transparent 55%)",
-                filter: "blur(60px)",
+                background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.12) 0%, transparent 60%)",
+                filter: "blur(80px)",
               }}
             />
             <div
-              className="absolute bottom-1/4 right-1/4 w-[35%] h-[45%]"
+              className="absolute bottom-1/3 right-1/4 w-[40%] h-[50%]"
               style={{
-                background: "radial-gradient(ellipse at center, hsl(220 40% 30% / 0.25) 0%, transparent 60%)",
-                filter: "blur(50px)",
+                background: "radial-gradient(ellipse at center, hsl(216 100% 75% / 0.10) 0%, transparent 55%)",
+                filter: "blur(70px)",
               }}
             />
           </div>
@@ -72,16 +61,16 @@ const LifestyleSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          {/* Badge - Dark glass variant */}
-          <div className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
+          {/* Badge - Light glass variant */}
+          <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
             <Heart className="h-4 w-4 text-primary fill-primary" />
-            <span className="text-xs font-semibold text-white/70 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
               Dein Lifestyle
             </span>
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15] mb-5">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15] mb-5">
             So könnte dein Leben
             <br />
             <span className="font-serif italic text-primary font-normal">
@@ -90,7 +79,7 @@ const LifestyleSection = () => {
           </h2>
 
           {/* Subtitle */}
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Als KI-Agentur-Inhaber bestimmst du selbst, wann und wo du arbeitest — 
             für mehr Zeit mit den Menschen, die dir wichtig sind.
           </p>
@@ -106,18 +95,18 @@ const LifestyleSection = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Dark Glass Frame Card */}
+              {/* Light Glass Frame Card */}
               <div
                 className="relative rounded-2xl overflow-hidden group"
                 style={{
-                  background: "linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)",
+                  background: "linear-gradient(145deg, hsl(var(--card) / 0.16) 0%, hsl(var(--card) / 0.06) 55%, hsl(var(--card) / 0.12) 100%)",
                   backdropFilter: "blur(20px)",
                   WebkitBackdropFilter: "blur(20px)",
-                  border: "1.5px solid rgba(255, 255, 255, 0.1)",
+                  border: "1px solid hsl(var(--card) / 0.40)",
                   boxShadow: `
-                    0 12px 40px rgba(0, 0, 0, 0.3),
-                    0 4px 12px rgba(0, 0, 0, 0.2),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.08)
+                    0 12px 40px hsl(var(--foreground) / 0.08),
+                    0 4px 12px hsl(var(--foreground) / 0.04),
+                    inset 0 1px 0 hsl(var(--card) / 0.85)
                   `,
                   padding: "8px",
                 }}
@@ -126,7 +115,7 @@ const LifestyleSection = () => {
                 <div
                   className="absolute top-0 left-[15%] right-[15%] h-px z-20"
                   style={{
-                    background: "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 50%, transparent)",
+                    background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.75) 50%, transparent)",
                   }}
                 />
                 
