@@ -86,9 +86,9 @@ const SuccessStorySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="grid lg:grid-cols-[1.1fr,1fr] gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr,1.1fr] gap-10 lg:gap-16 items-center">
             {/* Text Content - Order 2 on mobile */}
-            <div className="space-y-6 order-2 text-center lg:text-left">
+            <div className="space-y-6 order-2 lg:order-1 text-center lg:text-left">
               <div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                   David – Unser Q4 2024 Champion
@@ -140,7 +140,7 @@ const SuccessStorySection = () => {
             </div>
 
             {/* Image with Glass Frame - Order 1 on mobile (Media first) */}
-            <div className="relative order-1">
+            <div className="relative order-1 lg:order-2">
               {/* Spotlight glow behind image */}
               <div
                 className="absolute inset-0 z-0 pointer-events-none"

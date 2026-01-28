@@ -61,9 +61,9 @@ const CharitySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="grid lg:grid-cols-[1.1fr,1fr] gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr,1.1fr] gap-10 lg:gap-16 items-center">
             {/* Text Content - Order 2 on mobile */}
-            <div className="relative space-y-6 lg:pr-8 order-2 text-center lg:text-left">
+            <div className="relative space-y-6 lg:pr-8 order-2 lg:order-1 text-center lg:text-left">
               {/* Vertical accent stripe on right side - Desktop only */}
               <div 
                 className="hidden lg:block absolute right-0 top-0 bottom-0 w-1 rounded-full"
@@ -106,7 +106,7 @@ const CharitySection = () => {
             </div>
 
             {/* Image with Glass Frame - Order 1 on mobile (Media first) */}
-            <div className="relative order-1">
+            <div className="relative order-1 lg:order-2">
               {/* Glow behind image */}
               <div
                 className="absolute inset-0 z-0 pointer-events-none"
