@@ -8,6 +8,7 @@ import MobileNav from "@/components/MobileNav";
 import YoungFounderBenefits from "@/components/YoungFounderBenefits";
 import YoungFounderTools from "@/components/YoungFounderTools";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import LifestyleSection from "@/components/LifestyleSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
@@ -250,6 +251,9 @@ const YoungFounder = () => {
 
       {/* Community Feedback Section */}
       <TestimonialsSection />
+
+      {/* Lifestyle Section */}
+      <LifestyleSection />
 
       {/* FAQ Section */}
       <FAQSection />
