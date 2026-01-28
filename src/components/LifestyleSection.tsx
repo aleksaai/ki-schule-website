@@ -128,6 +128,7 @@ const LifestyleSection = () => {
                       src={item.image} 
                       alt={item.label} 
                       className="absolute inset-0 w-full h-full object-cover"
+                      style={item.label === "Eigene Mitarbeiter" ? { objectPosition: "center 25%" } : undefined}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/30">
