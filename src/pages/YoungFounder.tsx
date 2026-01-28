@@ -5,6 +5,7 @@ import youngFounderHero from "@/assets/young-founder-hero.jpg";
 import kiIcon from "@/assets/ki-icon-new.png";
 import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
+import YoungFounderBenefits from "@/components/YoungFounderBenefits";
 
 const YoungFounder = () => {
   return (
@@ -235,6 +236,9 @@ const YoungFounder = () => {
           </div>
         </div>
       </section>
+
+      {/* Benefits Section */}
+      <YoungFounderBenefits />
     </div>
   );
 };
