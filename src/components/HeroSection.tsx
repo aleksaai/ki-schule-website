@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import kiIcon from "@/assets/ki-icon-new.png";
+import kiCrewIcon from "@/assets/ki-crew-icon.png";
 import founderImage from "@/assets/founder.png";
 import MobileNav from "@/components/MobileNav";
 const navItems = [
@@ -291,7 +292,7 @@ const HeroSection = () => {
           >
             {/* Badge with glass effect - Order 1 (always first) */}
             <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
-              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_hsla(216,100%,70%,0.5)]" />
+              <img src={kiCrewIcon} alt="" className="h-4 w-4" />
               <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
                 KI-Schule | Coaching & Community
               </span>
