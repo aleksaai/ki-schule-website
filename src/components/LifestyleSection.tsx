@@ -1,6 +1,6 @@
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
-import friendsDinner from "@/assets/lifestyle/friends-dinner.png";
+import friendsDinner from "@/assets/lifestyle/friends-dinner.jpg";
 import friendsGroup from "@/assets/lifestyle/friends-group.jpg";
 import coupleLaughing from "@/assets/lifestyle/couple-laughing.jpg";
 
