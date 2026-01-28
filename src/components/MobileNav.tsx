@@ -24,6 +24,7 @@ const navItems = [
     ],
   },
   { label: "Erfolge", href: "#erfolgsgeschichte" },
+  { label: "Blog", href: "/coming-soon" },
 ];
 
 interface MobileNavItemProps {
