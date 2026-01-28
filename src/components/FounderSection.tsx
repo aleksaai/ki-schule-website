@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight, User } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import aleksaImage from "@/assets/aleksa-founder.jpg";
+import aleksaAiLogo from "@/assets/aleksa-ai-logo.png";
 const FounderSection = () => {
   return <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background - Clean gradient without grid pattern */}
@@ -94,6 +95,36 @@ const FounderSection = () => {
                 <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
                   <img src={aleksaImage} alt="Aleksa Spalevic - Gründer der KI-Schule" className="w-full h-full object-cover object-top" />
                 </AspectRatio>
+                
+                {/* Glass Badge with Agency Logo */}
+                <div 
+                  className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center z-30"
+                  style={{
+                    background: "linear-gradient(145deg, hsl(var(--card) / 0.85) 0%, hsl(var(--card) / 0.70) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1.5px solid hsl(var(--card) / 0.9)",
+                    boxShadow: `
+                      0 8px 32px hsl(var(--foreground) / 0.15),
+                      0 4px 12px hsl(var(--foreground) / 0.08),
+                      inset 0 1px 0 hsl(var(--card) / 1),
+                      inset 0 -1px 0 hsl(var(--foreground) / 0.04)
+                    `
+                  }}
+                >
+                  {/* Top edge shine */}
+                  <div 
+                    className="absolute top-0 left-[15%] right-[15%] h-px rounded-full"
+                    style={{
+                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 1) 50%, transparent)"
+                    }}
+                  />
+                  <img 
+                    src={aleksaAiLogo} 
+                    alt="Aleksa AI Logo" 
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
