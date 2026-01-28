@@ -8,6 +8,7 @@ import Lenis from "@studio-freight/lenis";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ComingSoon from "./pages/ComingSoon";
+import Impressum from "./pages/Impressum";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
+          <Route path="/impressum" element={<Impressum />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
