@@ -4,6 +4,7 @@ import toolsBgVideo from "@/assets/tools-bg.mp4";
 import n8nIcon from "@/assets/tools/n8n-icon.png";
 import lovableIcon from "@/assets/tools/lovable-icon.png";
 import heygenIcon from "@/assets/tools/heygen-icon.webp";
+import retellIcon from "@/assets/tools/retell-icon.png";
 
 const toolIcons = [
   {
@@ -27,8 +28,8 @@ const toolIcons = [
     alt: "HeyGen",
   },
   {
-    src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/b7f24edc7183f63dbe34c1943bef2967_low_res_Steam___Liquid_Glass__Default_.png",
-    alt: "Steam",
+    src: retellIcon,
+    alt: "Retell AI",
   },
 ];
 
