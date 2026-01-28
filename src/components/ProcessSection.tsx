@@ -232,7 +232,8 @@ const ProcessSection = () => {
                           <img
                             src={umsatzImage}
                             alt="Skalierung & Netzwerk"
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: "center 25%" }}
                           />
                         </AspectRatio>
                       )}
@@ -320,7 +321,8 @@ const ProcessSection = () => {
                         <img
                           src={umsatzImage}
                           alt="Skalierung & Netzwerk"
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: "center 25%" }}
                         />
                       </AspectRatio>
                     )}
