@@ -1,0 +1,174 @@
+import { Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import friendsDinner from "@/assets/lifestyle/friends-dinner.png";
+import friendsGroup from "@/assets/lifestyle/friends-group.jpg";
+import coupleLaughing from "@/assets/lifestyle/couple-laughing.jpg";
+
+const images = [
+  { src: coupleLaughing, alt: "Quality time together", rotation: -6, zIndex: 30, offsetX: 0, offsetY: 0 },
+  { src: friendsGroup, alt: "Celebrating with friends", rotation: 4, zIndex: 20, offsetX: 40, offsetY: 30 },
+  { src: friendsDinner, alt: "Family dinner moments", rotation: -3, zIndex: 10, offsetX: -20, offsetY: 60 },
+];
+
+const LifestyleSection = () => {
+  return (
+    <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 20% 96%) 50%, hsl(220 20% 97%) 100%)',
+          }}
+        />
+        
+        {/* Grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, hsl(220 15% 70%) 1px, transparent 1px),
+              linear-gradient(to bottom, hsl(220 15% 70%) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
+        
+        {/* Subtle accent blur */}
+        <div className="absolute inset-0 max-w-[1920px] mx-auto">
+          <div 
+            className="absolute top-1/4 right-1/4 w-[40%] h-[40%]"
+            style={{
+              background: "radial-gradient(ellipse at center, hsl(216 100% 70% / 0.06) 0%, transparent 60%)",
+              borderRadius: '50%',
+              filter: 'blur(80px)',
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="container relative mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Text Content */}
+          <motion.div
+            className="text-center lg:text-left order-2 lg:order-1"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Badge */}
+            <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6">
+              <Heart className="h-4 w-4 text-primary fill-primary" />
+              <span className="text-xs font-semibold text-foreground/70 uppercase tracking-wider">
+                Dein Lifestyle
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15] mb-6">
+              Mehr Zeit für das,
+              <br />
+              <span className="font-serif italic text-primary font-normal">
+                was wirklich zählt.
+              </span>
+            </h2>
+
+            {/* Description */}
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
+              Als KI-Agentur-Inhaber bestimmst du selbst, wann und wo du arbeitest. 
+              Keine festen Bürozeiten, keine langen Pendelwege — dafür mehr 
+              Frühstück mit der Familie, spontane Treffen mit Freunden und echte 
+              Quality Time mit den Menschen, die dir wichtig sind.
+            </p>
+
+            <p className="text-base text-muted-foreground/80 leading-relaxed max-w-lg mx-auto lg:mx-0">
+              Das ist kein Traum. Das ist der Alltag, den du dir mit einer 
+              KI-Agentur aufbauen kannst.
+            </p>
+          </motion.div>
+
+          {/* Right: Stacked Photo Gallery */}
+          <motion.div
+            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="relative w-full max-w-md h-[420px] sm:h-[480px]">
+              {images.map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="absolute"
+                  style={{
+                    zIndex: image.zIndex,
+                    left: `${50 + image.offsetX}px`,
+                    top: `${image.offsetY}px`,
+                    transform: `rotate(${image.rotation}deg)`,
+                  }}
+                  initial={{ opacity: 0, y: 40, rotate: image.rotation }}
+                  whileInView={{ opacity: 1, y: 0, rotate: image.rotation }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    zIndex: 50,
+                    rotate: 0,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  {/* Glass Frame */}
+                  <div
+                    className="relative rounded-2xl overflow-hidden cursor-pointer"
+                    style={{
+                      background:
+                        "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
+                      backdropFilter: "blur(20px)",
+                      WebkitBackdropFilter: "blur(20px)",
+                      border: "1px solid hsl(var(--card) / 0.50)",
+                      boxShadow: `
+                        0 25px 50px hsl(var(--foreground) / 0.15),
+                        0 10px 25px hsl(var(--foreground) / 0.08),
+                        inset 0 1px 0 hsl(var(--card) / 0.90)
+                      `,
+                      padding: "8px",
+                    }}
+                  >
+                    {/* Top edge shine */}
+                    <div
+                      className="absolute top-0 left-0 right-0 z-20 h-px"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
+                      }}
+                    />
+                    
+                    {/* Image Container - 4:3 aspect ratio */}
+                    <div className="relative w-52 sm:w-60 aspect-[4/3] rounded-xl overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* Subtle inner shadow */}
+                      <div 
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                          boxShadow: 'inset 0 0 20px hsl(var(--foreground) / 0.08)'
+                        }}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LifestyleSection;
