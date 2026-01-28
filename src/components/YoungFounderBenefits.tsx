@@ -1,21 +1,24 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import yfBenefit1 from "@/assets/yf-benefit-1.png";
+import yfBenefit2 from "@/assets/yf-benefit-2.png";
+import yfBenefit3 from "@/assets/yf-benefit-3.png";
 
 const features = [
   {
     title: "Früh starten, früh profitieren",
     description: "Während andere noch überlegen, baust du dir bereits ein Einkommen auf. Zeit ist dein größter Vorteil — nutze sie jetzt.",
-    placeholder: "🚀",
+    imageUrl: yfBenefit1,
   },
   {
     title: "Lebenslauf-Booster",
     description: "Praktische KI-Erfahrung macht dich zum gefragtesten Bewerber. Egal ob Job, Freelancing oder eigenes Business.",
-    placeholder: "📄",
+    imageUrl: yfBenefit2,
   },
   {
     title: "Maximale Flexibilität",
     description: "Arbeite wann und wo du willst — perfekt neben Schule, Ausbildung oder Studium. Kein Chef, keine festen Zeiten.",
-    placeholder: "⏰",
+    imageUrl: yfBenefit3,
   },
 ];
 
@@ -65,9 +68,13 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
         }}
       />
       
-      {/* Placeholder Image/Icon */}
-      <div className="relative mb-6 h-28 w-28 z-10 flex items-center justify-center rounded-2xl bg-primary/10 border border-primary/20">
-        <span className="text-5xl">{feature.placeholder}</span>
+      {/* Image */}
+      <div className="relative mb-6 h-28 w-28 z-10">
+        <img 
+          src={feature.imageUrl} 
+          alt={feature.title}
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* Title */}
