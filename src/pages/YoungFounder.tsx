@@ -7,6 +7,9 @@ import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
 import YoungFounderBenefits from "@/components/YoungFounderBenefits";
 import YoungFounderTools from "@/components/YoungFounderTools";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
 
 const YoungFounder = () => {
   return (
@@ -243,6 +246,15 @@ const YoungFounder = () => {
 
       {/* Tools Section */}
       <YoungFounderTools />
+
+      {/* Community Feedback Section */}
+      <TestimonialsSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* CTA Section */}
+      <CTASection />
     </div>
   );
 };
