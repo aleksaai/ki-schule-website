@@ -232,7 +232,7 @@ const ProcessSection = () => {
                           <img
                             src={umsatzImage}
                             alt="Skalierung & Netzwerk"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-top"
                           />
                         </AspectRatio>
                       )}
@@ -320,7 +320,7 @@ const ProcessSection = () => {
                         <img
                           src={umsatzImage}
                           alt="Skalierung & Netzwerk"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top"
                         />
                       </AspectRatio>
                     )}
