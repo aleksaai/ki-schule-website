@@ -6,6 +6,7 @@ import kiIcon from "@/assets/ki-icon-new.png";
 import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
 import YoungFounderBenefits from "@/components/YoungFounderBenefits";
+import YoungFounderTools from "@/components/YoungFounderTools";
 
 const YoungFounder = () => {
   return (
@@ -239,6 +240,9 @@ const YoungFounder = () => {
 
       {/* Benefits Section */}
       <YoungFounderBenefits />
+
+      {/* Tools Section */}
+      <YoungFounderTools />
     </div>
   );
 };
