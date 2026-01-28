@@ -6,7 +6,6 @@ import coupleLaughing from "@/assets/lifestyle/couple-laughing.jpg";
 
 const images = [
   { src: coupleLaughing, alt: "Quality time together" },
-  { src: friendsGroup, alt: "Celebrating with friends" },
   { src: friendsDinner, alt: "Family dinner moments" },
 ];
 
@@ -88,7 +87,7 @@ const LifestyleSection = () => {
             </p>
           </motion.div>
 
-          {/* Right: Photo Gallery - Connected Diagonal Layout */}
+          {/* Right: Photo Gallery - 2 Large Images */}
           <motion.div
             className="relative order-1 lg:order-2"
             initial={{ opacity: 0, x: 30 }}
@@ -96,15 +95,14 @@ const LifestyleSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Gallery container with consistent diagonal flow */}
             <div 
-              className="relative w-full max-w-[500px] mx-auto lg:mx-0 lg:ml-auto"
-              style={{ transform: 'rotate(-6deg)' }}
+              className="relative w-full max-w-[520px] mx-auto lg:mx-0 lg:ml-auto"
+              style={{ transform: 'rotate(-4deg)' }}
             >
-              <div className="flex flex-col gap-4">
-                {/* Row 1: Image top-right aligned */}
+              <div className="flex flex-col gap-5">
+                {/* Image 1: Top - slightly right aligned */}
                 <motion.div
-                  className="self-end mr-0 sm:mr-4"
+                  className="self-end"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -123,7 +121,7 @@ const LifestyleSection = () => {
                         0 8px 20px hsl(var(--foreground) / 0.06),
                         inset 0 1px 0 hsl(var(--card) / 0.90)
                       `,
-                      padding: "5px",
+                      padding: "6px",
                     }}
                   >
                     <div
@@ -132,15 +130,15 @@ const LifestyleSection = () => {
                         background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
                       }}
                     />
-                    <div className="w-44 sm:w-52 lg:w-60 aspect-[4/3] rounded-xl overflow-hidden">
+                    <div className="w-56 sm:w-72 lg:w-80 aspect-[4/3] rounded-xl overflow-hidden">
                       <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </motion.div>
 
-                {/* Row 2: Image center */}
+                {/* Image 2: Bottom - slightly left aligned */}
                 <motion.div
-                  className="self-center"
+                  className="self-start"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -159,7 +157,7 @@ const LifestyleSection = () => {
                         0 8px 20px hsl(var(--foreground) / 0.06),
                         inset 0 1px 0 hsl(var(--card) / 0.90)
                       `,
-                      padding: "5px",
+                      padding: "6px",
                     }}
                   >
                     <div
@@ -168,44 +166,8 @@ const LifestyleSection = () => {
                         background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
                       }}
                     />
-                    <div className="w-44 sm:w-52 lg:w-60 aspect-[4/3] rounded-xl overflow-hidden">
+                    <div className="w-56 sm:w-72 lg:w-80 aspect-[4/3] rounded-xl overflow-hidden">
                       <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Row 3: Image bottom-left aligned */}
-                <motion.div
-                  className="self-start ml-0 sm:ml-4"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  <div
-                    className="relative rounded-2xl overflow-hidden"
-                    style={{
-                      background:
-                        "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
-                      backdropFilter: "blur(20px)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      border: "1px solid hsl(var(--card) / 0.50)",
-                      boxShadow: `
-                        0 20px 40px hsl(var(--foreground) / 0.12),
-                        0 8px 20px hsl(var(--foreground) / 0.06),
-                        inset 0 1px 0 hsl(var(--card) / 0.90)
-                      `,
-                      padding: "5px",
-                    }}
-                  >
-                    <div
-                      className="absolute top-0 left-0 right-0 z-20 h-px"
-                      style={{
-                        background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
-                      }}
-                    />
-                    <div className="w-44 sm:w-52 lg:w-60 aspect-[4/3] rounded-xl overflow-hidden">
-                      <img src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </motion.div>
