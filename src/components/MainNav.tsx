@@ -160,8 +160,10 @@ const MainNav = () => {
   const navigate = useNavigate();
   
   const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (location.pathname === '/') {
-      e.preventDefault();
+      // Scroll to top - using both methods for Lenis compatibility
+      document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       navigate('/');
