@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logo from "@/assets/ki-schule-logo.png";
 
 const FooterSection = () => {
@@ -24,8 +25,8 @@ const FooterSection = () => {
     {
       title: "Rechtliches",
       links: [
-        { label: "Impressum", href: "#" },
-        { label: "Datenschutz", href: "#" },
+        { label: "Impressum", href: "/impressum" },
+        { label: "Datenschutz", href: "/datenschutz" },
         { label: "AGB", href: "#" },
       ],
     },
@@ -87,12 +88,21 @@ const FooterSection = () => {
               <ul className="space-y-2 sm:space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        to={link.href}
+                        className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

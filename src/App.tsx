@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ComingSoon from "./pages/ComingSoon";
 import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const AppContent = () => {
           <Route path="/" element={<Index />} />
           <Route path="/coming-soon" element={<ComingSoon />} />
           <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
