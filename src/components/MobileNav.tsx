@@ -7,9 +7,9 @@ const navItems = [
   {
     label: "Coaching",
     dropdown: [
-      { label: "Young Founder", description: "Für Schüler, Azubis & Studenten", href: "/coming-soon" },
+      { label: "Young Founder", description: "Für Schüler, Azubis & Studenten", href: "/young-founder" },
       { label: "Agency Switcher", description: "Für Agenturinhaber, Coaches, Berater und Dienstleister", href: "/agency-switcher" },
-      { label: "9-5 Escape", description: "Für Angestellte die sich im KI-Space selbstständig machen wollen", href: "/coming-soon" },
+      { label: "9-5 Escape", description: "Für Angestellte die sich im KI-Space selbstständig machen wollen", href: "/nine-to-five" },
     ],
   },
   { label: "Community", href: "/coming-soon" },

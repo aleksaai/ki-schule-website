@@ -51,7 +51,7 @@ const AppContent = () => {
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/young-founder" element={<YoungFounder />} />
           <Route path="/agency-switcher" element={<AgencySwitcher />} />
-          <Route path="/nine-to-five-escape" element={<NineToFiveEscape />} />
+          <Route path="/nine-to-five" element={<NineToFiveEscape />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
