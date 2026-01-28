@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Wrench } from "lucide-react";
 import toolsBgVideo from "@/assets/tools-bg.mp4";
 import n8nIcon from "@/assets/tools/n8n-icon.png";
+import lovableIcon from "@/assets/tools/lovable-icon.png";
 
 const toolIcons = [
   {
@@ -17,8 +18,8 @@ const toolIcons = [
     alt: "n8n",
   },
   {
-    src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/6d26d432bd65c522b0708185c0768ec3_low_res_Maps.png",
-    alt: "Maps",
+    src: lovableIcon,
+    alt: "Lovable",
   },
   {
     src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/7c59c945731aecf4f91eb8c2c5f867ce_low_res_Safari.png",
