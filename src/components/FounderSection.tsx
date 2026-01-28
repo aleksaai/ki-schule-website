@@ -68,63 +68,51 @@ const FounderSection = () => {
             <div className="relative order-1">
               {/* Glow behind image */}
               <div className="absolute inset-0 z-0 pointer-events-none" style={{
-              background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
-              filter: "blur(50px)",
-              transform: "scale(1.4)"
-            }} />
+                background: "radial-gradient(circle at center, hsl(var(--primary) / 0.25) 0%, transparent 70%)",
+                filter: "blur(50px)",
+                transform: "scale(1.4)"
+              }} />
               
-              {/* Glass Frame Container */}
-              <div className="relative z-10 rounded-2xl overflow-hidden max-w-sm sm:max-w-md mx-auto lg:mx-0" style={{
-              background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: "1.5px solid hsl(var(--card) / 0.6)",
-              boxShadow: `
+              {/* Inner wrapper for positioning the badge */}
+              <div className="relative max-w-sm sm:max-w-md mx-auto lg:mx-0">
+                {/* Glass Frame Container */}
+                <div className="relative z-10 rounded-2xl overflow-hidden" style={{
+                  background: "linear-gradient(145deg, hsl(var(--card) / 0.25) 0%, hsl(var(--card) / 0.10) 100%)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  border: "1.5px solid hsl(var(--card) / 0.6)",
+                  boxShadow: `
                     0 20px 60px hsl(var(--foreground) / 0.15),
                     0 6px 20px hsl(var(--foreground) / 0.08),
                     inset 0 1px 0 hsl(var(--card) / 0.9),
                     inset 0 -1px 0 hsl(var(--foreground) / 0.04)
                   `,
-              padding: "10px"
-            }}>
-                {/* Top edge shine */}
-                <div className="absolute top-0 left-[10%] right-[10%] h-px z-20" style={{
-                background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)"
-              }} />
-                
-                <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
-                  <img src={aleksaImage} alt="Aleksa Spalevic - Gründer der KI-Schule" className="w-full h-full object-cover object-top" />
-                </AspectRatio>
-                
-                {/* Glass Badge with Agency Logo */}
-                <div 
-                  className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center z-30"
-                  style={{
-                    background: "linear-gradient(145deg, hsl(var(--card) / 0.85) 0%, hsl(var(--card) / 0.70) 100%)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: "1.5px solid hsl(var(--card) / 0.9)",
-                    boxShadow: `
-                      0 8px 32px hsl(var(--foreground) / 0.15),
-                      0 4px 12px hsl(var(--foreground) / 0.08),
-                      inset 0 1px 0 hsl(var(--card) / 1),
-                      inset 0 -1px 0 hsl(var(--foreground) / 0.04)
-                    `
-                  }}
-                >
+                  padding: "10px"
+                }}>
                   {/* Top edge shine */}
-                  <div 
-                    className="absolute top-0 left-[15%] right-[15%] h-px rounded-full"
-                    style={{
-                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 1) 50%, transparent)"
-                    }}
-                  />
+                  <div className="absolute top-0 left-[10%] right-[10%] h-px z-20" style={{
+                    background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.9) 50%, transparent)"
+                  }} />
+                  
+                  <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
+                    <img src={aleksaImage} alt="Aleksa Spalevic - Gründer der KI-Schule" className="w-full h-full object-cover object-top" />
+                  </AspectRatio>
+                </div>
+                
+                {/* Floating Glass Badge with Agency Logo - OUTSIDE the frame */}
+                <motion.div 
+                  className="absolute -top-4 -right-4 sm:-top-5 sm:-right-5 glass rounded-full w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center z-20"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
                   <img 
                     src={aleksaAiLogo} 
                     alt="Aleksa AI Logo" 
                     className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
 
