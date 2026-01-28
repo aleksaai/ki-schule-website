@@ -88,127 +88,125 @@ const LifestyleSection = () => {
             </p>
           </motion.div>
 
-          {/* Right: Photo Gallery - Fan Layout */}
+          {/* Right: Photo Gallery - Diagonal Staircase Layout */}
           <motion.div
-            className="relative order-1 lg:order-2 flex justify-center"
+            className="relative order-1 lg:order-2"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative flex items-center justify-center w-full">
-              {/* Fan of 3 photos */}
-              <div className="relative flex items-end justify-center gap-[-20px]" style={{ perspective: '1000px' }}>
-                {/* Left photo - rotated left */}
-                <motion.div
-                  className="relative z-10"
-                  style={{ transform: 'rotate(-8deg) translateY(10px)' }}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
+            <div className="relative w-full h-[480px] sm:h-[520px] lg:h-[560px]">
+              {/* Image 1: Top Left */}
+              <motion.div
+                className="absolute top-0 left-0 z-20"
+                style={{ transform: 'rotate(-3deg)' }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div
+                  className="relative rounded-2xl overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid hsl(var(--card) / 0.50)",
+                    boxShadow: `
+                      0 25px 50px hsl(var(--foreground) / 0.15),
+                      0 10px 25px hsl(var(--foreground) / 0.08),
+                      inset 0 1px 0 hsl(var(--card) / 0.90)
+                    `,
+                    padding: "6px",
+                  }}
                 >
                   <div
-                    className="relative rounded-2xl overflow-hidden"
+                    className="absolute top-0 left-0 right-0 z-20 h-px"
                     style={{
-                      background:
-                        "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
-                      backdropFilter: "blur(20px)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      border: "1px solid hsl(var(--card) / 0.50)",
-                      boxShadow: `
-                        0 25px 50px hsl(var(--foreground) / 0.15),
-                        0 10px 25px hsl(var(--foreground) / 0.08),
-                        inset 0 1px 0 hsl(var(--card) / 0.90)
-                      `,
-                      padding: "6px",
+                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
                     }}
-                  >
-                    <div
-                      className="absolute top-0 left-0 right-0 z-20 h-px"
-                      style={{
-                        background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
-                      }}
-                    />
-                    <div className="w-40 sm:w-48 lg:w-52 aspect-[4/3] rounded-xl overflow-hidden">
-                      <img src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover" />
-                    </div>
+                  />
+                  <div className="w-52 sm:w-60 lg:w-72 aspect-[4/3] rounded-xl overflow-hidden">
+                    <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover" />
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-                {/* Center photo - largest, no rotation */}
-                <motion.div
-                  className="relative z-30 -mx-6"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+              {/* Image 2: Middle Right */}
+              <motion.div
+                className="absolute top-[140px] sm:top-[160px] lg:top-[170px] right-0 z-30"
+                style={{ transform: 'rotate(4deg)' }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.45 }}
+              >
+                <div
+                  className="relative rounded-2xl overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid hsl(var(--card) / 0.50)",
+                    boxShadow: `
+                      0 25px 50px hsl(var(--foreground) / 0.15),
+                      0 10px 25px hsl(var(--foreground) / 0.08),
+                      inset 0 1px 0 hsl(var(--card) / 0.90)
+                    `,
+                    padding: "6px",
+                  }}
                 >
                   <div
-                    className="relative rounded-2xl overflow-hidden"
+                    className="absolute top-0 left-0 right-0 z-20 h-px"
                     style={{
-                      background:
-                        "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
-                      backdropFilter: "blur(20px)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      border: "1px solid hsl(var(--card) / 0.50)",
-                      boxShadow: `
-                        0 30px 60px hsl(var(--foreground) / 0.18),
-                        0 15px 30px hsl(var(--foreground) / 0.10),
-                        inset 0 1px 0 hsl(var(--card) / 0.90)
-                      `,
-                      padding: "6px",
+                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
                     }}
-                  >
-                    <div
-                      className="absolute top-0 left-0 right-0 z-20 h-px"
-                      style={{
-                        background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
-                      }}
-                    />
-                    <div className="w-48 sm:w-56 lg:w-64 aspect-[4/3] rounded-xl overflow-hidden">
-                      <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover" />
-                    </div>
+                  />
+                  <div className="w-52 sm:w-60 lg:w-72 aspect-[4/3] rounded-xl overflow-hidden">
+                    <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover" />
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-                {/* Right photo - rotated right */}
-                <motion.div
-                  className="relative z-20"
-                  style={{ transform: 'rotate(7deg) translateY(15px)' }}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+              {/* Image 3: Bottom Left */}
+              <motion.div
+                className="absolute bottom-0 left-[20px] sm:left-[30px] lg:left-[40px] z-10"
+                style={{ transform: 'rotate(-2deg)' }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <div
+                  className="relative rounded-2xl overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid hsl(var(--card) / 0.50)",
+                    boxShadow: `
+                      0 25px 50px hsl(var(--foreground) / 0.15),
+                      0 10px 25px hsl(var(--foreground) / 0.08),
+                      inset 0 1px 0 hsl(var(--card) / 0.90)
+                    `,
+                    padding: "6px",
+                  }}
                 >
                   <div
-                    className="relative rounded-2xl overflow-hidden"
+                    className="absolute top-0 left-0 right-0 z-20 h-px"
                     style={{
-                      background:
-                        "linear-gradient(145deg, hsl(var(--card) / 0.20) 0%, hsl(var(--card) / 0.08) 55%, hsl(var(--card) / 0.15) 100%)",
-                      backdropFilter: "blur(20px)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      border: "1px solid hsl(var(--card) / 0.50)",
-                      boxShadow: `
-                        0 25px 50px hsl(var(--foreground) / 0.15),
-                        0 10px 25px hsl(var(--foreground) / 0.08),
-                        inset 0 1px 0 hsl(var(--card) / 0.90)
-                      `,
-                      padding: "6px",
+                      background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
                     }}
-                  >
-                    <div
-                      className="absolute top-0 left-0 right-0 z-20 h-px"
-                      style={{
-                        background: "linear-gradient(90deg, transparent, hsl(var(--card) / 0.85) 50%, transparent)",
-                      }}
-                    />
-                    <div className="w-40 sm:w-48 lg:w-52 aspect-[4/3] rounded-xl overflow-hidden">
-                      <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover" />
-                    </div>
+                  />
+                  <div className="w-52 sm:w-60 lg:w-72 aspect-[4/3] rounded-xl overflow-hidden">
+                    <img src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover" />
                   </div>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
