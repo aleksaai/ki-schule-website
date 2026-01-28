@@ -12,7 +12,7 @@ const navItems = [
       { label: "9-5 Escape", description: "Für Angestellte die sich im KI-Space selbstständig machen wollen", href: "/nine-to-five" },
     ],
   },
-  { label: "Community", href: "/coming-soon" },
+  { label: "Community", href: "/community" },
   {
     label: "Online-Kurse",
     dropdown: [
