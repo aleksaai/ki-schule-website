@@ -161,20 +161,20 @@ const YoungFounder = () => {
               </div>
 
               {/* Stats */}
-              <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-10 text-xs sm:text-sm flex-wrap">
+              <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-10 text-xs sm:text-sm">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-foreground">0€</span>
-                  <span className="text-muted-foreground">Startkapital</span>
+                  <span className="text-muted-foreground">Start</span>
                 </div>
-                <span className="text-border hidden sm:inline">•</span>
+                <span className="text-border">•</span>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-foreground">Keine</span>
-                  <span className="text-muted-foreground">Vorkenntnisse</span>
+                  <span className="text-muted-foreground">Erfahrung</span>
                 </div>
-                <span className="text-border hidden sm:inline">•</span>
+                <span className="text-border">•</span>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-foreground">Flexibel</span>
-                  <span className="text-muted-foreground">neben Schule/Uni</span>
+                  <span className="font-bold text-foreground">100%</span>
+                  <span className="text-muted-foreground">Flexibel</span>
                 </div>
               </div>
             </motion.div>
