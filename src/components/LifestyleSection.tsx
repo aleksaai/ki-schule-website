@@ -108,7 +108,7 @@ const LifestyleSection = () => {
             >
               {/* Dark Glass Frame Card */}
               <div
-                className="relative rounded-2xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]"
+                className="relative rounded-2xl overflow-hidden group"
                 style={{
                   background: "linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)",
                   backdropFilter: "blur(20px)",
