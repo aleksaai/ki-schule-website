@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import navLogo from "@/assets/nav-logo.png";
 
 const navItems = [
   {
@@ -163,6 +164,14 @@ const MainNav = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="glass rounded-full px-3 py-2 flex items-center gap-1">
+        {/* Logo - Home Link */}
+        <Link 
+          to="/"
+          className="flex items-center justify-center h-8 w-8 rounded-full hover:bg-foreground/5 transition-all duration-200 mr-1"
+        >
+          <img src={navLogo} alt="KI-Schule Home" className="h-5 w-5 object-contain" />
+        </Link>
+        
         {/* Desktop Navigation */}
         <div className="flex items-center gap-1">
           {navItems.map((item) => (
