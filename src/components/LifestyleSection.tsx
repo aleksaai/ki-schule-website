@@ -7,8 +7,8 @@ import reisenErlebnisseImg from "@/assets/lifestyle/reisen-erlebnisse.png";
 const lifestyleItems = [
   { label: "Zeit für Freunde", image: zeitFuerFreundeImg },
   { label: "Flexibles Arbeiten", image: null },
-  { label: "Finanzielle Freiheit", image: null },
-  { label: "Reisen & Erlebnisse", image: reisenErlebnisseImg },
+  { label: "Finanzielle Freiheit", image: reisenErlebnisseImg },
+  { label: "Reisen & Erlebnisse", image: null },
   { label: "Quality Time", image: null },
   { label: "Work-Life-Balance", image: workLifeBalanceImg },
 ];
