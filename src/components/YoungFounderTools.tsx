@@ -5,6 +5,7 @@ import n8nIcon from "@/assets/tools/n8n-icon.png";
 import lovableIcon from "@/assets/tools/lovable-icon.png";
 import heygenIcon from "@/assets/tools/heygen-icon.webp";
 import retellIcon from "@/assets/tools/retell-icon.png";
+import makeIcon from "@/assets/tools/make-icon.png";
 
 const toolIcons = [
   {
@@ -12,8 +13,8 @@ const toolIcons = [
     alt: "Claude",
   },
   {
-    src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/c2c4a538c2d42a8dc0927d7d6530d125_low_res_ChatGPT___Liquid_Glass__Default_.png",
-    alt: "ChatGPT",
+    src: makeIcon,
+    alt: "Make",
   },
   {
     src: n8nIcon,
