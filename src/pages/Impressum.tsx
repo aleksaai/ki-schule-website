@@ -148,8 +148,8 @@ const Impressum = () => {
                 <div className="text-muted-foreground space-y-2">
                   <p>
                     <span className="font-medium text-foreground">Telefon: </span>
-                    <a href="tel:+4915141310845" className="hover:text-primary transition-colors">
-                      +49 151 41310845
+                    <a href="tel:+491607763741" className="hover:text-primary transition-colors">
+                      +49 160 7763741
                     </a>
                   </p>
                   <p>
@@ -204,7 +204,7 @@ const Impressum = () => {
                 </h2>
                 <div className="text-muted-foreground space-y-1">
                   <p className="font-semibold text-foreground">Aleksa Spalevic</p>
-                  <p>Révay Street 6th Floor, Door 7th</p>
+                  <p>Révay utca 6. Fsz. 7. ajtó</p>
                   <p>1065 Budapest</p>
                   <p>Hungary</p>
                 </div>
