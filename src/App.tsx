@@ -13,6 +13,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import YoungFounder from "./pages/YoungFounder";
 import AgencySwitcher from "./pages/AgencySwitcher";
+import NineToFiveEscape from "./pages/NineToFiveEscape";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const AppContent = () => {
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/young-founder" element={<YoungFounder />} />
           <Route path="/agency-switcher" element={<AgencySwitcher />} />
+          <Route path="/nine-to-five-escape" element={<NineToFiveEscape />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
