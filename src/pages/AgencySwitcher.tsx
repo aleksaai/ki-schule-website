@@ -6,6 +6,7 @@ import kiIcon from "@/assets/ki-icon-new.png";
 import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
 import AgencySwitcherBenefits from "@/components/AgencySwitcherBenefits";
+import YoungFounderTools from "@/components/YoungFounderTools";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LifestyleSection from "@/components/LifestyleSection";
 import FAQSection from "@/components/FAQSection";
@@ -244,6 +245,9 @@ const AgencySwitcher = () => {
 
       {/* Benefits Section */}
       <AgencySwitcherBenefits />
+
+      {/* Tools Section */}
+      <YoungFounderTools />
 
       {/* Community Feedback Section */}
       <TestimonialsSection />
