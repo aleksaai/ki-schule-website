@@ -6,10 +6,11 @@ import lovableIcon from "@/assets/tools/lovable-icon.png";
 import heygenIcon from "@/assets/tools/heygen-icon.webp";
 import retellIcon from "@/assets/tools/retell-icon.png";
 import makeIcon from "@/assets/tools/make-icon.png";
+import claudeIcon from "@/assets/tools/claude-icon.svg";
 
 const toolIcons = [
   {
-    src: "https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/a13d1acfd046f503f987c1c95af582c8_low_res_Claude.png",
+    src: claudeIcon,
     alt: "Claude",
   },
   {
