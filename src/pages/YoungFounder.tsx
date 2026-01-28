@@ -1,9 +1,9 @@
-import { ArrowRight, GraduationCap, ChevronDown } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import youngFounderHero from "@/assets/young-founder-hero.jpg";
-import kiCrewIcon from "@/assets/ki-crew-icon.png";
 import kiIcon from "@/assets/ki-icon-new.png";
+import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
 
 const YoungFounder = () => {
@@ -71,33 +71,8 @@ const YoungFounder = () => {
           />
         </div>
 
-        {/* Desktop Navigation */}
-        <motion.nav 
-          className="fixed top-4 left-0 right-0 z-50 hidden md:flex justify-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="glass rounded-full px-3 py-2 flex items-center gap-1">
-            <Link 
-              to="/"
-              className="px-4 py-2 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/5 rounded-full transition-all duration-200"
-            >
-              Startseite
-            </Link>
-            <span className="px-4 py-2 text-sm text-primary font-medium">
-              Young Founder
-            </span>
-            <a 
-              href="https://app.ki-hochschule.de/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-liquid-glass px-4 py-2 rounded-full text-sm font-semibold ml-1"
-            >
-              Login
-            </a>
-          </div>
-        </motion.nav>
+        {/* Desktop Navigation - Same as main page */}
+        <MainNav />
 
         {/* Mobile Navigation */}
         <motion.div
