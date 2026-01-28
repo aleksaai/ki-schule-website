@@ -2,13 +2,14 @@ import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import workLifeBalanceImg from "@/assets/lifestyle/work-life-balance.jpg";
 import zeitFuerFreundeImg from "@/assets/lifestyle/zeit-fuer-freunde.jpg";
-import reisenErlebnisseImg from "@/assets/lifestyle/reisen-erlebnisse.png";
+import finanzielleFreiheitImg from "@/assets/lifestyle/reisen-erlebnisse.png";
+import reisenElephantImg from "@/assets/lifestyle/reisen-elephant.png";
 
 const lifestyleItems = [
   { label: "Zeit für Freunde", image: zeitFuerFreundeImg },
   { label: "Flexibles Arbeiten", image: null },
-  { label: "Finanzielle Freiheit", image: reisenErlebnisseImg },
-  { label: "Reisen & Erlebnisse", image: null },
+  { label: "Finanzielle Freiheit", image: finanzielleFreiheitImg },
+  { label: "Reisen & Erlebnisse", image: reisenElephantImg },
   { label: "Quality Time", image: null },
   { label: "Work-Life-Balance", image: workLifeBalanceImg },
 ];
