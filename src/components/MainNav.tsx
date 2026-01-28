@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import navLogo from "@/assets/nav-logo.png";
 
 const navItems = [
@@ -156,6 +156,18 @@ const NavItem = ({ item }: NavItemProps) => {
 };
 
 const MainNav = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <motion.nav 
       className="fixed top-4 left-0 right-0 z-50 hidden md:flex justify-center"
@@ -164,13 +176,13 @@ const MainNav = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="glass rounded-full px-3 py-2 flex items-center gap-1">
-        {/* Logo - Home Link */}
-        <Link 
-          to="/"
+        {/* Logo - Home Link / Scroll to top */}
+        <button 
+          onClick={handleLogoClick}
           className="flex items-center justify-center h-8 w-8 rounded-full hover:bg-foreground/5 transition-all duration-200 mr-1"
         >
           <img src={navLogo} alt="KI-Schule Home" className="h-5 w-5 object-contain" />
-        </Link>
+        </button>
         
         {/* Desktop Navigation */}
         <div className="flex items-center gap-1">
