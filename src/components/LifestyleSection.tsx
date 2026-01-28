@@ -4,13 +4,14 @@ import workLifeBalanceImg from "@/assets/lifestyle/work-life-balance.jpg";
 import zeitFuerFreundeImg from "@/assets/lifestyle/zeit-fuer-freunde.jpg";
 import finanzielleFreiheitImg from "@/assets/lifestyle/reisen-erlebnisse.png";
 import reisenElephantImg from "@/assets/lifestyle/reisen-elephant.png";
+import eigeneMitarbeiterImg from "@/assets/lifestyle/eigene-mitarbeiter.png";
 
 const lifestyleItems = [
   { label: "Zeit für Freunde", image: zeitFuerFreundeImg },
   { label: "Flexibles Arbeiten", image: null },
   { label: "Finanzielle Freiheit", image: finanzielleFreiheitImg },
   { label: "Reisen & Erlebnisse", image: reisenElephantImg },
-  { label: "Quality Time", image: null },
+  { label: "Eigene Mitarbeiter", image: eigeneMitarbeiterImg },
   { label: "Work-Life-Balance", image: workLifeBalanceImg },
 ];
 
