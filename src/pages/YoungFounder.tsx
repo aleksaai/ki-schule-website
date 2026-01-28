@@ -10,6 +10,7 @@ import YoungFounderTools from "@/components/YoungFounderTools";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import FooterSection from "@/components/FooterSection";
 
 const YoungFounder = () => {
   return (
@@ -255,6 +256,9 @@ const YoungFounder = () => {
 
       {/* CTA Section */}
       <CTASection />
+
+      {/* Footer */}
+      <FooterSection />
     </div>
   );
 };
