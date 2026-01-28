@@ -8,12 +8,12 @@ const features = [
   {
     title: "Kein Risiko, volle Kontrolle",
     description: "Baue dein KI-Business nebenbei auf, während du weiter dein Gehalt bekommst. Erst kündigen, wenn dein Einkommen steht.",
-    imageUrl: ntfBenefit1,
+    imageUrl: ntfBenefit2,
   },
   {
     title: "Schneller Skillaufbau",
     description: "Lerne in wenigen Wochen die gefragtesten KI-Skills. Deine Berufserfahrung wird dabei zum wertvollen Vorteil.",
-    imageUrl: ntfBenefit2,
+    imageUrl: ntfBenefit1,
   },
   {
     title: "Raus aus dem Hamsterrad",
