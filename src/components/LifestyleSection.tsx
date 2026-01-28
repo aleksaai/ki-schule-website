@@ -5,10 +5,11 @@ import zeitFuerFreundeImg from "@/assets/lifestyle/zeit-fuer-freunde.jpg";
 import reisenErlebnisseImg from "@/assets/lifestyle/reisen-erlebnisse.jpg";
 import reisenElephantImg from "@/assets/lifestyle/reisen-elephant.png";
 import eigeneMitarbeiterImg from "@/assets/lifestyle/eigene-mitarbeiter.png";
+import flexiblesArbeitenImg from "@/assets/lifestyle/flexibles-arbeiten.jpg";
 
 const lifestyleItems = [
   { label: "Zeit für Freunde", image: zeitFuerFreundeImg },
-  { label: "Flexibles Arbeiten", image: null },
+  { label: "Flexibles Arbeiten", image: flexiblesArbeitenImg },
   { label: "Finanzielle Freiheit", image: reisenElephantImg },
   { label: "Reisen & Erlebnisse", image: reisenErlebnisseImg },
   { label: "Eigene Mitarbeiter", image: eigeneMitarbeiterImg },
@@ -128,7 +129,8 @@ const LifestyleSection = () => {
                       src={item.image} 
                       alt={item.label} 
                       className="absolute inset-0 w-full h-full object-cover"
-                      style={item.label === "Eigene Mitarbeiter" ? { objectPosition: "center 25%" } : undefined}
+                      style={item.label === "Eigene Mitarbeiter" ? { objectPosition: "center 25%" } : 
+                            item.label === "Flexibles Arbeiten" ? { objectPosition: "top center" } : undefined}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted/50 to-muted/30">
