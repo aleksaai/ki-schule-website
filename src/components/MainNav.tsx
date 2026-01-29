@@ -18,11 +18,11 @@ const navItems = [
   {
     label: "Online-Kurse",
     dropdown: [
-      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt", href: "/coming-soon" },
-      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation", href: "/coming-soon" },
-      { label: "Workflow-Automation", description: "Prozesse automatisieren", href: "/coming-soon" },
-      { label: "Vibe Coding Business", description: "No-Code & AI Development", href: "/coming-soon" },
-      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen", href: "/coming-soon" },
+      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt", comingSoon: true },
+      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation", comingSoon: true },
+      { label: "Workflow-Automation", description: "Prozesse automatisieren", comingSoon: true },
+      { label: "Vibe Coding Business", description: "No-Code & AI Development", comingSoon: true },
+      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen", comingSoon: true },
     ],
   },
   { label: "Erfolge", href: "#erfolgsgeschichte" },
@@ -131,20 +131,45 @@ const NavItem = ({ item }: NavItemProps) => {
               onMouseLeave={handleDropdownMouseLeave}
             >
               <div className="glass rounded-2xl p-2 min-w-[280px]">
-                {item.dropdown.map((subItem, index) => (
-                  <Link
-                    key={index}
-                    to={subItem.href || "#"}
-                    className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors group"
-                  >
-                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                      {subItem.label}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {subItem.description}
-                    </span>
-                  </Link>
-                ))}
+                {item.dropdown.map((subItem, index) => {
+                  const isComingSoon = 'comingSoon' in subItem && subItem.comingSoon;
+                  
+                  if (isComingSoon) {
+                    return (
+                      <div
+                        key={index}
+                        className="flex flex-col gap-0.5 px-4 py-3 rounded-xl opacity-60 cursor-default"
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-foreground">
+                            {subItem.label}
+                          </span>
+                          <span className="text-[10px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                            Bald verfügbar
+                          </span>
+                        </div>
+                        <span className="text-xs text-muted-foreground">
+                          {subItem.description}
+                        </span>
+                      </div>
+                    );
+                  }
+                  
+                  return (
+                    <Link
+                      key={index}
+                      to={'href' in subItem ? subItem.href || "#" : "#"}
+                      className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors group"
+                    >
+                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                        {subItem.label}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {subItem.description}
+                      </span>
+                    </Link>
+                  );
+                })}
               </div>
             </motion.div>
           )}

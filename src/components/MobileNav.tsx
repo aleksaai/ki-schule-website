@@ -16,11 +16,11 @@ const navItems = [
   {
     label: "Online-Kurse",
     dropdown: [
-      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt", href: "/coming-soon" },
-      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation", href: "/coming-soon" },
-      { label: "Workflow-Automation", description: "Prozesse automatisieren", href: "/coming-soon" },
-      { label: "Vibe Coding Business", description: "No-Code & AI Development", href: "/coming-soon" },
-      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen", href: "/coming-soon" },
+      { label: "KI-Agentur Starter", description: "Dein Einstieg in die KI-Welt", comingSoon: true },
+      { label: "KI-Agenten Masterclass", description: "Fortgeschrittene KI-Automation", comingSoon: true },
+      { label: "Workflow-Automation", description: "Prozesse automatisieren", comingSoon: true },
+      { label: "Vibe Coding Business", description: "No-Code & AI Development", comingSoon: true },
+      { label: "Testkunden Gewinnung", description: "Erste Kunden gewinnen", comingSoon: true },
     ],
   },
   { label: "Erfolge", href: "#erfolgsgeschichte" },
@@ -92,21 +92,46 @@ const MobileNavItem = ({ item, onClose }: MobileNavItemProps) => {
             className="overflow-hidden"
           >
             <div className="px-3 pb-3 space-y-1">
-              {item.dropdown.map((subItem, index) => (
-                <Link
-                  key={index}
-                  to={subItem.href || "#"}
-                  onClick={onClose}
-                  className="block px-4 py-3 rounded-xl bg-foreground/[0.03] hover:bg-foreground/[0.07] transition-colors border border-foreground/[0.04]"
-                >
-                  <span className="block text-base font-medium text-foreground/85">
-                    {subItem.label}
-                  </span>
-                  <span className="block text-sm text-muted-foreground mt-0.5">
-                    {subItem.description}
-                  </span>
-                </Link>
-              ))}
+              {item.dropdown.map((subItem, index) => {
+                const isComingSoon = 'comingSoon' in subItem && subItem.comingSoon;
+                
+                if (isComingSoon) {
+                  return (
+                    <div
+                      key={index}
+                      className="block px-4 py-3 rounded-xl bg-foreground/[0.03] border border-foreground/[0.04] opacity-60 cursor-default"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-base font-medium text-foreground/85">
+                          {subItem.label}
+                        </span>
+                        <span className="text-[10px] font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                          Bald verfügbar
+                        </span>
+                      </div>
+                      <span className="block text-sm text-muted-foreground mt-0.5">
+                        {subItem.description}
+                      </span>
+                    </div>
+                  );
+                }
+                
+                return (
+                  <Link
+                    key={index}
+                    to={'href' in subItem ? subItem.href || "#" : "#"}
+                    onClick={onClose}
+                    className="block px-4 py-3 rounded-xl bg-foreground/[0.03] hover:bg-foreground/[0.07] transition-colors border border-foreground/[0.04]"
+                  >
+                    <span className="block text-base font-medium text-foreground/85">
+                      {subItem.label}
+                    </span>
+                    <span className="block text-sm text-muted-foreground mt-0.5">
+                      {subItem.description}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}
