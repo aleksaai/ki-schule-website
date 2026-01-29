@@ -1,7 +1,7 @@
 import { ArrowRight, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import netzwerkImage from "@/assets/netzwerk-image.jpg";
+import communityHeroImage from "@/assets/community-hero.jpg";
 import MainNav from "@/components/MainNav";
 import MobileNav from "@/components/MobileNav";
 import CommunityFeatures from "@/components/CommunityFeatures";
@@ -126,7 +126,7 @@ const Community = () => {
                   <div className="glass-card relative rounded-2xl p-2">
                     <div className="relative rounded-xl overflow-hidden">
                       <img 
-                        src={netzwerkImage} 
+                        src={communityHeroImage} 
                         alt="KI-Schule Community"
                         className="relative w-full aspect-[4/3] object-cover object-center"
                       />
@@ -199,7 +199,7 @@ const Community = () => {
                 <div className="glass-card relative rounded-3xl p-3 lg:p-4">
                   <div className="relative rounded-2xl overflow-hidden">
                     <img 
-                      src={netzwerkImage} 
+                      src={communityHeroImage} 
                       alt="KI-Schule Community"
                       className="relative w-full aspect-[4/3] object-cover object-center"
                     />
