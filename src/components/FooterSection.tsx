@@ -10,8 +10,8 @@ const FooterSection = () => {
       title: "Coaching",
       links: [
         { label: "Young Founder", href: "/young-founder" },
-        { label: "Agency Switcher", href: "/coming-soon" },
-        { label: "9-5 Escape", href: "/coming-soon" },
+        { label: "Agency Switcher", href: "/agency-switcher" },
+        { label: "9-5 Escape", href: "/nine-to-five" },
       ],
     },
     {
