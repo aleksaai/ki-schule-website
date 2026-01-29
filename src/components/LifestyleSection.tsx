@@ -4,7 +4,7 @@ import workLifeBalanceImg from "@/assets/lifestyle/work-life-balance.jpg";
 import zeitFuerFreundeImg from "@/assets/lifestyle/zeit-fuer-freunde.jpg";
 import reisenErlebnisseImg from "@/assets/lifestyle/reisen-erlebnisse.jpg";
 import reisenElephantImg from "@/assets/lifestyle/reisen-elephant.png";
-import eigeneMitarbeiterImg from "@/assets/lifestyle/eigene-mitarbeiter-new.jpg";
+import eigeneMitarbeiterImg from "@/assets/lifestyle/eigene-mitarbeiter.png";
 import flexiblesArbeitenImg from "@/assets/lifestyle/flexibles-arbeiten.jpg";
 import finanzielleFreiheitImg from "@/assets/lifestyle/finanzielle-freiheit.png";
 

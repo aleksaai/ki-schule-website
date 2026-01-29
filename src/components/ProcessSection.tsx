@@ -6,7 +6,6 @@ import StepCard from "@/components/process/StepCard";
 import onboardingVideo from "@/assets/onboarding-video.mov";
 import umsatzImage from "@/assets/umsatz-image.jpg";
 import netzwerkImage from "@/assets/netzwerk-image.jpg";
-import step3Image from "@/assets/lifestyle/eigene-mitarbeiter-new.jpg";
 
 const steps = [
   {
@@ -231,10 +230,10 @@ const ProcessSection = () => {
                       ) : (
                         <AspectRatio ratio={4 / 3} className="rounded-xl overflow-hidden">
                           <img
-                            src={step3Image}
+                            src={umsatzImage}
                             alt="Skalierung & Netzwerk"
                             className="w-full h-full object-cover"
-                            style={{ objectPosition: "center 40%" }}
+                            style={{ objectPosition: "center 25%" }}
                           />
                         </AspectRatio>
                       )}
@@ -320,10 +319,10 @@ const ProcessSection = () => {
                     ) : (
                       <AspectRatio ratio={16 / 9} className="rounded-xl overflow-hidden">
                         <img
-                          src={step3Image}
+                          src={umsatzImage}
                           alt="Skalierung & Netzwerk"
                           className="w-full h-full object-cover"
-                          style={{ objectPosition: "center 40%" }}
+                          style={{ objectPosition: "center 25%" }}
                         />
                       </AspectRatio>
                     )}
