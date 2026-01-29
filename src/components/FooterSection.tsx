@@ -27,8 +27,7 @@ const FooterSection = () => {
     {
       title: "Ressourcen",
       links: [
-        { label: "Community", href: "/coming-soon" },
-        { label: "Blog", href: "/coming-soon" },
+        { label: "Community", href: "/community" },
         { label: "Erfolge", href: "#erfolgsgeschichte" },
         { label: "FAQ", href: "#faq" },
       ],
