@@ -9,10 +9,10 @@ import flexiblesArbeitenImg from "@/assets/lifestyle/flexibles-arbeiten.jpg";
 import finanzielleFreiheitImg from "@/assets/lifestyle/finanzielle-freiheit.png";
 
 const lifestyleItems = [
-  { label: "Zeit für Freunde", image: zeitFuerFreundeImg },
+  { label: "Mehr Zeit für Freunde & Familie", image: zeitFuerFreundeImg },
   { label: "Flexibles Arbeiten", image: flexiblesArbeitenImg },
   { label: "Finanzielle Freiheit", image: finanzielleFreiheitImg },
-  { label: "Reisen & Erlebnisse", image: reisenErlebnisseImg },
+  { label: "Mehr Reisen & Erlebnisse", image: reisenErlebnisseImg },
   { label: "Eigene Mitarbeiter", image: eigeneMitarbeiterImg },
   { label: "Work-Life-Balance", image: workLifeBalanceImg },
 ];
