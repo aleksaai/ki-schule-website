@@ -1,42 +1,44 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Video, GraduationCap, FileCode, Briefcase, Award, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+
+// Import custom icons
+import communityFeedIcon from "@/assets/icons/community-feed-icon.png";
+import livecallIcon from "@/assets/icons/livecall-community-icon.png";
+import coursesIcon from "@/assets/icons/courses-icon.png";
+import blueprintsIcon from "@/assets/icons/blueprints-community-icon.png";
+import opportunitiesIcon from "@/assets/icons/opportunities-icon.png";
+import certificateIcon from "@/assets/icons/certificate-community-icon.png";
 
 const features = [
   {
-    icon: MessageSquare,
+    icon: communityFeedIcon,
     title: "Community Feed",
     description: "Stelle Fragen, bekomme Hilfe und teile Neuigkeiten mit der Community. Bleib immer auf dem neuesten Stand der KI-Welt.",
-    accent: "bg-blue-500/10 text-blue-600",
   },
   {
-    icon: Video,
+    icon: livecallIcon,
     title: "4x Live Calls",
     description: "Viermal pro Woche Gruppen-Calls mit Q&A, Support und direktem Feedback zu deinen Projekten.",
-    accent: "bg-purple-500/10 text-purple-600",
   },
   {
-    icon: GraduationCap,
+    icon: coursesIcon,
     title: "Premium Kurse",
     description: "Zugang zu allen Kursen: KI-Basics, Masterclass, Automation, Paid Ads und Neukunden-Gewinnung.",
-    accent: "bg-green-500/10 text-green-600",
   },
   {
-    icon: FileCode,
+    icon: blueprintsIcon,
     title: "Blueprints",
     description: "Fertige n8n & make.com Templates, Vertragsvorlagen und Automations – sofort einsatzbereit.",
-    accent: "bg-orange-500/10 text-orange-600",
   },
   {
-    icon: Briefcase,
+    icon: opportunitiesIcon,
     title: "Opportunities",
     description: "Echte Aufträge von KI-Agenturen. Sammle erste Erfahrungen und verdiene direkt Geld.",
-    accent: "bg-pink-500/10 text-pink-600",
   },
   {
-    icon: Award,
+    icon: certificateIcon,
     title: "Zertifizierung",
     description: "Anerkannte Zertifikate für dein LinkedIn-Profil und deine Website. Zeige deine Expertise.",
-    accent: "bg-cyan-500/10 text-cyan-600",
   },
 ];
 
@@ -116,8 +118,12 @@ const CommunityFeatures = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Icon */}
-              <div className={`inline-flex items-center justify-center h-12 w-12 rounded-xl ${feature.accent} mb-5`}>
-                <feature.icon className="h-6 w-6" />
+              <div className="mb-5">
+                <img 
+                  src={feature.icon} 
+                  alt={feature.title} 
+                  className="h-14 w-14 object-contain"
+                />
               </div>
 
               {/* Content */}
