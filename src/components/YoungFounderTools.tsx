@@ -38,14 +38,14 @@ const toolIcons = [
 const GlassIcon = ({ icon, index }: { icon: typeof toolIcons[0]; index: number }) => {
   return (
     <motion.div
-      className="relative group"
+      className="relative group flex flex-col items-center"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
     >
       <div
-        className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"
+        className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"
         style={{
           boxShadow: "0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1)",
         }}
@@ -74,7 +74,7 @@ const GlassIcon = ({ icon, index }: { icon: typeof toolIcons[0]; index: number }
         />
         
         {/* Icon */}
-        <div className="relative z-10 w-full h-full flex items-center justify-center p-3">
+        <div className="relative z-10 w-full h-full flex items-center justify-center p-2.5 sm:p-3">
           <img 
             src={icon.src} 
             alt={icon.alt}
@@ -83,10 +83,10 @@ const GlassIcon = ({ icon, index }: { icon: typeof toolIcons[0]; index: number }
         </div>
       </div>
       
-      {/* Tooltip */}
-      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-        <span className="text-xs text-white/80 font-medium whitespace-nowrap">{icon.alt}</span>
-      </div>
+      {/* Label - visible on mobile, tooltip on desktop */}
+      <span className="mt-2 text-[10px] sm:text-xs text-white/70 font-medium text-center sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
+        {icon.alt}
+      </span>
     </motion.div>
   );
 };
@@ -166,8 +166,8 @@ const YoungFounderTools = () => {
               }}
             />
             
-            {/* Icons */}
-            <div className="flex items-center gap-3 sm:gap-4">
+            {/* Icons - 3x2 grid on mobile, single row on desktop */}
+            <div className="grid grid-cols-3 sm:flex sm:flex-row items-center justify-center gap-4 sm:gap-5">
               {toolIcons.map((icon, index) => (
                 <GlassIcon key={icon.alt} icon={icon} index={index} />
               ))}
