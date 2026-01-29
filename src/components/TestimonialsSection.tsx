@@ -26,7 +26,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="erfolgsgeschichte" className="relative py-24 lg:py-32 overflow-hidden">
       {/* Dark background with gradient - matching SuccessStorySection */}
       <div className="absolute inset-0">
         <div
