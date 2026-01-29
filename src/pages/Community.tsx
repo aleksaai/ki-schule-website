@@ -128,7 +128,7 @@ const Community = () => {
                       <img 
                         src={communityHeroImage} 
                         alt="KI-Schule Community"
-                        className="relative w-full aspect-[4/3] object-cover object-center"
+                        className="relative w-full aspect-[4/3] object-cover object-top"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10" />
                     </div>
@@ -201,7 +201,7 @@ const Community = () => {
                     <img 
                       src={communityHeroImage} 
                       alt="KI-Schule Community"
-                      className="relative w-full aspect-[4/3] object-cover object-center"
+                      className="relative w-full aspect-[4/3] object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10" />
                   </div>
