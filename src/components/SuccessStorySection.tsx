@@ -90,16 +90,16 @@ const SuccessStorySection = () => {
             {/* Text Content - Order 2 on mobile */}
             <div className="space-y-6 order-2 lg:order-1 text-center lg:text-left">
               <div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
-                  David – Unser Q4 2024 Champion
-                </h3>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
+                David – Unser Q4 2025 Champion
+              </h3>
                 <p className="text-primary font-medium text-base sm:text-lg">
                   19 Jahre, KI-Agentur Gründer
                 </p>
               </div>
 
               <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                David ist im Februar 2024 als 19-Jähriger unserer Community beigetreten. Im letzten Quartal 2024 hat er unseren Wettbewerb gewonnen – mit dem höchsten Umsatz aller KI-Agenturen in der KI-Schule.
+                David ist im Februar 2024 als 19-Jähriger unserer Community beigetreten. Im letzten Quartal 2025 hat er unseren Wettbewerb gewonnen – mit dem höchsten Umsatz aller KI-Agenturen in der KI-Schule.
               </p>
 
               {/* Highlights - Dark glass badges - Hidden on mobile */}
@@ -113,7 +113,7 @@ const SuccessStorySection = () => {
                 <div className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2">
                   <Trophy className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-white/80">
-                    Q4 2024 Gewinner
+                    Q4 2025 Gewinner
                   </span>
                 </div>
               </div>
