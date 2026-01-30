@@ -99,7 +99,7 @@ const SuccessStorySection = () => {
               </div>
 
               <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                David ist im Februar 2024 als 19-Jähriger unserer Community beigetreten. Im letzten Quartal 2025 hat er unseren Wettbewerb gewonnen – mit dem höchsten Umsatz aller KI-Agenturen in der KI-Schule.
+                David ist im Februar 2025 als 19-Jähriger unserer Community beigetreten. Im letzten Quartal 2025 hat er unseren Wettbewerb gewonnen – mit dem höchsten Umsatz aller KI-Agenturen in der KI-Schule.
               </p>
 
               {/* Highlights - Dark glass badges - Hidden on mobile */}
@@ -107,7 +107,7 @@ const SuccessStorySection = () => {
                 <div className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2">
                   <Calendar className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-white/80">
-                    Mitglied seit Feb 2024
+                    Mitglied seit Feb 2025
                   </span>
                 </div>
                 <div className="glass-dark inline-flex items-center gap-2 rounded-full px-4 py-2">
