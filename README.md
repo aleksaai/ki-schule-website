@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# KI-Schule
 
-## Project info
+Die offizielle Website der **KI-Schule** — die #1 KI-Community im DACH-Raum für Personen, die KI lernen und damit ein Business aufbauen wollen.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Stack
 
-## How can I edit this code?
+- **Vite 5** + **React 18** + **TypeScript**
+- **Tailwind CSS 3** + **shadcn/ui**
+- **react-router-dom v6** (10 Routes)
+- **framer-motion** (Animationen)
+- **@react-three/fiber** + **drei** (3D-Komponenten)
+- **@studio-freight/lenis** (Smooth Scrolling)
 
-There are several ways of editing your application.
+## Lokale Entwicklung
 
-**Use Lovable**
+Voraussetzung: Node.js (18+) und npm.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Dev-Server läuft auf `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Verfügbare Scripts
 
-**Use GitHub Codespaces**
+| Script | Was es tut |
+|--------|------------|
+| `npm run dev` | Vite Dev-Server (Port 8080, HMR) |
+| `npm run build` | Production Build nach `dist/` |
+| `npm run build:dev` | Build im Development-Mode |
+| `npm run preview` | Preview des Production Builds lokal |
+| `npm run lint` | ESLint über das ganze Projekt |
+| `npm run test` | Vitest Run (single pass) |
+| `npm run test:watch` | Vitest im Watch-Mode |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Routing
 
-## What technologies are used for this project?
+10 Routes, alle in `src/App.tsx` registriert:
 
-This project is built with:
+- `/` — Landing Page
+- `/community` — KI-Schule Community
+- `/young-founder` — Young Founder Program
+- `/agency-switcher` — Agency Switcher
+- `/nine-to-five` — 9-to-5 Escape
+- `/coming-soon` — Coming Soon Placeholder
+- `/agb` — AGB
+- `/impressum` — Impressum
+- `/datenschutz` — Datenschutz
+- `*` — 404 Not Found
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+Hosting läuft über **Netlify**. Production Build wird via `npm run build` erzeugt und in `dist/` abgelegt.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Brand & Design
 
-## Can I connect a custom domain to my Lovable project?
+- **Accent Color:** Sky Blue `#66A4FF`
+- **Aesthetic:** "Liquid Glass" (`.glass` / `.glass-card` Tailwind-Klassen)
+- **Hintergrund:** 48px Grid Pattern
+- **Typo:** Inter (Headlines + Body), Serif Italic für Akzent-Wörter
+- **Color Mode:** Light
 
-Yes, you can!
+## Repo
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+GitHub: [`aleksaai/ki-schule`](https://github.com/aleksaai/ki-schule)
