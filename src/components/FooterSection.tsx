@@ -37,6 +37,7 @@ const FooterSection = () => {
       links: [
         { label: "Impressum", href: "/impressum" },
         { label: "Datenschutz", href: "/datenschutz" },
+        { label: "AGB", href: "/agb" },
       ],
     },
   ];
