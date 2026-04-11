@@ -12,10 +12,24 @@ import LifestyleSection from "@/components/LifestyleSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
+import { breadcrumbSchema } from "@/seo/schemas";
 
 const AgencySwitcher = () => {
+  const meta = routeMeta["/agency-switcher"];
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/agency-switcher"
+        keywords={meta.keywords}
+        jsonLd={breadcrumbSchema([
+          { name: "Start", url: "/" },
+          { name: "Agency Switcher", url: "/agency-switcher" },
+        ])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Background */}

@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
 
 const Datenschutz = () => {
+  const meta = routeMeta["/datenschutz"];
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/datenschutz"
+        robots={meta.robots}
+      />
       {/* Background - matching main site */}
       <div className="fixed inset-0 pointer-events-none">
         <div 

@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
 
 const AGB = () => {
+  const meta = routeMeta["/agb"];
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/agb"
+        robots={meta.robots}
+      />
       {/* Background - matching main site */}
       <div className="fixed inset-0 pointer-events-none">
         <div 

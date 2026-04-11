@@ -12,10 +12,24 @@ import LifestyleSection from "@/components/LifestyleSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
+import { breadcrumbSchema } from "@/seo/schemas";
 
 const YoungFounder = () => {
+  const meta = routeMeta["/young-founder"];
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/young-founder"
+        keywords={meta.keywords}
+        jsonLd={breadcrumbSchema([
+          { name: "Start", url: "/" },
+          { name: "Young Founder", url: "/young-founder" },
+        ])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Background */}

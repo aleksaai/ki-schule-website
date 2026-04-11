@@ -12,10 +12,24 @@ import LifestyleSection from "@/components/LifestyleSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
+import { breadcrumbSchema } from "@/seo/schemas";
 
 const NineToFiveEscape = () => {
+  const meta = routeMeta["/nine-to-five"];
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/nine-to-five"
+        keywords={meta.keywords}
+        jsonLd={breadcrumbSchema([
+          { name: "Start", url: "/" },
+          { name: "9-to-5 Escape", url: "/nine-to-five" },
+        ])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Background */}

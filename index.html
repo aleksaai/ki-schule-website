@@ -3,22 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KI-Schule | Starte dein KI Business</title>
-    <meta name="description" content="Werde Teil der #1 KI-Community im DACH-Raum. Lerne, wie du ohne Vorerfahrung eine profitable KI-Agentur aufbauen kannst.">
-    <meta name="author" content="KI-Schule" />
+    <meta name="theme-color" content="#66A4FF" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png">
-    <meta property="og:title" content="KI-Schule | Starte dein KI Business">
-    <meta property="og:description" content="Werde Teil der #1 KI-Community im DACH-Raum. Lerne, wie du ohne Vorerfahrung eine profitable KI-Agentur aufbauen kannst.">
+    <!--
+      Fallback-Title für den allerersten Paint, bevor react-helmet-async gemountet ist.
+      ALLE anderen SEO-Meta-Tags (description, keywords, robots, author, canonical,
+      og:*, twitter:*) werden ausschließlich von <SEO /> per Route gesetzt. Wir dürfen
+      sie hier NICHT hardcoden, weil react-helmet-async Meta-Tags mit demselben
+      name/property nicht ersetzt, sondern zusätzlich einfügt — das würde im Prerender
+      zu Duplikaten und falschen Defaults auf allen Subseiten führen.
+    -->
+    <title>KI-Schule | Deutscher KI-Kurs & KI-Agentur gründen</title>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@KISchule" />
-    <meta name="twitter:image" content="/og-image.png">
-    <meta name="twitter:title" content="KI-Schule | Starte dein KI Business">
-    <meta name="twitter:description" content="Werde Teil der #1 KI-Community im DACH-Raum. Lerne, wie du ohne Vorerfahrung eine profitable KI-Agentur aufbauen kannst.">
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
 
-    <link rel="icon" type="image/png" href="/icon.png">
+    <!-- DNS / Preconnect für externe Assets -->
+    <link rel="preconnect" href="https://cal.com" />
+    <link rel="dns-prefetch" href="https://cal.com" />
+
+    <!-- Site-wide JSON-LD (Organization + WebSite). Wird von Helmet auf / zusätzlich mit EducationalOrganization, Course, FAQ angereichert. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://ki-schule.de/#organization",
+      "name": "KI-Schule",
+      "legalName": "Spalevic Consulting Kft.",
+      "url": "https://ki-schule.de/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ki-schule.de/icon.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://ki-schule.de/og-image.png",
+      "description": "KI-Schule ist die #1 deutschsprachige Community für Personen, die mit KI eine eigene Agentur aufbauen und online Geld verdienen wollen.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Aleksa Spalevic"
+      },
+      "email": "info@aleksa.ai",
+      "telephone": "+49 160 7763741",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lőcsei út 9/A",
+        "postalCode": "1147",
+        "addressLocality": "Budapest",
+        "addressCountry": "HU"
+      },
+      "sameAs": [
+        "https://www.instagram.com/iamaleksa.ai/",
+        "https://www.linkedin.com/in/aleksaspalevic/",
+        "https://www.youtube.com/@aleksa-ai"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://ki-schule.de/#website",
+      "url": "https://ki-schule.de/",
+      "name": "KI-Schule",
+      "description": "Deutscher KI-Kurs, Coaching und Community für KI-Agenturen und KI-Automation.",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "https://ki-schule.de/#organization" }
+    }
+    </script>
 </head>
 
   <body>

@@ -1,10 +1,17 @@
 import { ArrowLeft, Construction } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { SEO } from "@/seo/SEO";
 
 const ComingSoon = () => {
   return (
     <section className="relative min-h-screen bg-background flex items-center justify-center overflow-hidden">
+      <SEO
+        title="Bald verfügbar | KI-Schule"
+        description="Dieser Kurs wird in Kürze verfügbar sein. Trage dich in die Warteliste ein, um keinen Launch zu verpassen."
+        path="/coming-soon"
+        robots="noindex,follow"
+      />
       {/* Background */}
       <div className="absolute inset-0">
         <div 

@@ -10,10 +10,24 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
+import { breadcrumbSchema } from "@/seo/schemas";
 
 const Community = () => {
+  const meta = routeMeta["/community"];
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/community"
+        keywords={meta.keywords}
+        jsonLd={breadcrumbSchema([
+          { name: "Start", url: "/" },
+          { name: "Community", url: "/community" },
+        ])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Background */}

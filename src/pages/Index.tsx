@@ -12,10 +12,32 @@ import ComparisonSection from "@/components/ComparisonSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
+import { SEO } from "@/seo/SEO";
+import { routeMeta } from "@/seo/routes";
+import {
+  educationalOrganizationSchema,
+  courseCatalog,
+  faqPageSchema,
+  siteFaqs,
+} from "@/seo/schemas";
 
 const Index = () => {
+  const meta = routeMeta["/"];
+  // Organization + WebSite Schemas liegen site-wide in index.html und sind auf jeder
+  // Route automatisch präsent. Hier nur die /-spezifischen Schemas ergänzen.
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        path="/"
+        keywords={meta.keywords}
+        jsonLd={[
+          educationalOrganizationSchema(),
+          ...courseCatalog(),
+          faqPageSchema(siteFaqs),
+        ]}
+      />
       <HeroSection />
       <VideoIntroSection />
       <WhyKISection />
