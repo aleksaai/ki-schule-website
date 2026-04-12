@@ -1,0 +1,58 @@
+# Netlify Build-Konfiguration für KI-Schule
+#
+# Build-Befehl: Vite baut die SPA, danach rendert Playwright jede
+# öffentliche Route vorab als statisches HTML (für SEO-Crawler).
+# Das Ergebnis liegt komplett in dist/.
+#
+# ACHTUNG: Playwright braucht Chromium. Auf Netlify muss das Build-Image
+# Chromium unterstützen. Falls der Build scheitert, weil Chromium nicht
+# verfügbar ist, gibt es zwei Optionen:
+#   1. npx playwright install --with-deps chromium  als Teil des Builds
+#   2. Lokal build:ssg laufen lassen und dist/ direkt deployen
+#
+# Die sicherste Variante ist aktuell: lokal `npm run build:ssg` laufen
+# lassen und bei Netlify nur `npm run build` (ohne Prerender) setzen,
+# weil die prerenderten HTML-Dateien bereits im dist/ Verzeichnis liegen,
+# das Netlify direkt served.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Node 18+ für Vite 5 und React 18
+[build.environment]
+  NODE_VERSION = "18"
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache static assets aggressiv (Vite hängt Content-Hashes an Dateinamen)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# llms.txt und llms-full.txt sollen immer frisch sein
+[[headers]]
+  for = "/llms*.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "text/plain; charset=utf-8"
+
+# Sitemap und robots.txt
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/xml; charset=utf-8"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

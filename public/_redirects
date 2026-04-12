@@ -1,0 +1,13 @@
+# Netlify _redirects
+#
+# Prerendered Routen (/, /community, /young-founder, /agency-switcher,
+# /nine-to-five, /impressum, /datenschutz, /agb) werden direkt als
+# statische HTML-Dateien aus dist/<route>/index.html ausgeliefert.
+# Netlify erkennt diese automatisch — kein expliziter Redirect nötig.
+#
+# Für ALLE anderen Pfade (z. B. /coming-soon, 404-Fallback, Client-Side-
+# Navigation) greift der SPA-Fallback unten. Netlify liefert dist/index.html
+# und React Router übernimmt das Routing.
+
+# SPA Fallback — muss die LETZTE Regel sein.
+/*    /index.html   200

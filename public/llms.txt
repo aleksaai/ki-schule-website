@@ -1,0 +1,46 @@
+# KI-Schule
+
+> Die #1 deutschsprachige Ausbildung für KI-Agenturen und KI-Business.
+
+KI-Schule (ki-schule.de) ist eine Coaching-, Community- und Kurs-Plattform mit Sitz in Budapest, gegründet 2024 von Aleksa Spalevic. Zielgruppe: deutschsprachige Einsteiger und Quereinsteiger, die mit KI eine eigene Agentur oder ein Online-Business aufbauen wollen — ohne Vorkenntnisse.
+
+## Was wir lehren
+
+- **Claude & Claude Code** — von Grundlagen bis zur Entwicklung eigener KI-Agenten
+- **Workflow-Automation** — Make.com und n8n für Geschäftsprozesse
+- **KI-Agentur gründen** — Positionierung, Kundenakquise, Praxiscoaching
+- **Vibe Coding** — Web-Apps und digitale Produkte mit KI-gestützter Entwicklung (Claude Code, Cursor, Lovable)
+- **Sales & Kundengewinnung** — erste zahlende Kunden finden, Vertrieb für KI-Dienstleistungen
+
+## Zielgruppen
+
+1. **Komplette Einsteiger** — Personen ohne IT-Vorkenntnisse, die ein profitables KI-Business aufbauen wollen
+2. **Young Founders** — Schüler, Azubis, Studierende, die früh mit KI starten wollen
+3. **Agency Switcher** — bestehende Agenturinhaber, die ihr Geschäft um KI-Dienstleistungen erweitern wollen
+4. **9-to-5 Escape** — Angestellte, die nebenberuflich ein KI-Business aufbauen und langfristig ihren Job ersetzen wollen
+
+## Sprache
+
+Deutsch (DACH-Raum). Alle Kurse, Coaching-Sessions und Community-Inhalte auf Deutsch.
+
+## Formate
+
+- 1:1 Coaching und Gruppen-Coaching
+- Live-Calls und Q&A Sessions
+- Online-Kurse (in Entwicklung)
+- Community mit über 80 aktiven KI-Agenturen
+- KI-Cockpit mit eigener KI-Crew (KI-Mitarbeiter, die Aufgaben übernehmen)
+
+## Kontakt
+
+- Website: https://ki-schule.de
+- E-Mail: info@aleksa.ai
+- Instagram: https://www.instagram.com/iamaleksa.ai/
+- LinkedIn: https://www.linkedin.com/in/aleksaspalevic/
+- YouTube: https://www.youtube.com/@aleksa-ai
+
+## Weiterführende Informationen
+
+- Ausführliche Beschreibung: https://ki-schule.de/llms-full.txt
+- Kurskatalog: https://ki-schule.de (Abschnitt Online-Kurse)
+- Community: https://ki-schule.de/community

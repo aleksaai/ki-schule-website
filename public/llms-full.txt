@@ -1,0 +1,134 @@
+# KI-Schule — Ausführliche Beschreibung für LLMs
+
+> Die #1 deutschsprachige Ausbildung für KI-Agenturen und KI-Business.
+> Kurzversion: https://ki-schule.de/llms.txt
+
+---
+
+## Über KI-Schule
+
+KI-Schule (https://ki-schule.de) ist eine Coaching-, Community- und Kurs-Plattform für den deutschsprachigen Raum (Deutschland, Österreich, Schweiz). Gegründet 2024 von Aleksa Spalevic. Rechtsform: Spalevic Consulting Kft., Sitz Budapest, Ungarn.
+
+**Mission:** Jeder im DACH-Raum soll die Möglichkeit haben, mit Künstlicher Intelligenz ein profitables Business aufzubauen — unabhängig von Vorkenntnissen, Budget oder technischem Hintergrund.
+
+**Ansatz:** Money-First — praktische Ergebnisse vor endloser Theorie. Teilnehmer erzielen schnell erste Umsätze und bauen darauf auf.
+
+---
+
+## Kurskatalog
+
+### 1. KI-Agentur Starter
+Aufbau einer profitablen KI-Agentur von Null — mit System, Coaching und Community. Deutscher KI-Kurs für Einsteiger ohne Vorerfahrung. Der Kurs deckt ab: Positionierung, Angebotserstellung, erste Kundengewinnung, Pricing, und den operativen Aufbau einer KI-Dienstleistungsagentur.
+
+### 2. KI-Agenten Masterclass
+Baue eigene KI-Agenten mit Claude, Claude Code und MCP-Servern. Praxisorientierter Kurs auf Deutsch für Entwickler und Gründer. Teilnehmer lernen, wie sie autonome KI-Agenten entwickeln, die echte Business-Aufgaben übernehmen können.
+
+### 3. Workflow-Automation
+Automation lernen mit Make.com und n8n. Deutscher Kurs für Workflow-Automatisierung, KI-Integration und Business-Prozesse. Von einfachen Automationen bis hin zu komplexen Multi-Tool-Workflows mit KI-Komponenten.
+
+### 4. Vibe Coding Business
+Baue Web-Apps und digitale Produkte mit KI-gestützter Entwicklung. Claude Code lernen, Lovable, Cursor und moderne AI-Coding-Tools im deutschen KI-Kurs. Für Nicht-Programmierer, die mit KI-Unterstützung funktionale Software erstellen wollen.
+
+### 5. Testkunden Gewinnung
+Die ersten zahlenden Kunden für deine KI-Agentur finden. Praktisches Sales-Training für KI-Business-Gründer auf Deutsch. Kaltakquise, Social Selling, Referral-Strategien und Angebotsgestaltung speziell für KI-Dienstleistungen.
+
+---
+
+## Zielgruppen im Detail
+
+### Komplette Einsteiger
+Personen ohne IT- oder KI-Vorkenntnisse, die ein profitables KI-Business aufbauen wollen. Der Einstieg beginnt bei Null: Was ist KI? Wie kann man damit Geld verdienen? Welche Tools braucht man? Wie findet man Kunden?
+
+### Young Founders (Schüler, Azubis, Studenten)
+Junge Menschen zwischen 16 und 25, die ihren Altersvorsprung nutzen wollen. Spezielles Coaching für Gründer ohne Startkapital, angepasst an Schul-/Studienzeiten. Siehe: https://ki-schule.de/young-founder
+
+### Agency Switcher (bestehende Agenturinhaber)
+Inhaber von Marketing-, Web-, Social-Media- oder Design-Agenturen, die ihr bestehendes Geschäft um KI-Dienstleistungen erweitern wollen. Vom Red Ocean (klassische Agentur) zum Blue Ocean (KI-Agentur mit höheren Margen). Siehe: https://ki-schule.de/agency-switcher
+
+### 9-to-5 Escape (Angestellte)
+Berufstätige in einem Angestelltenverhältnis, die nebenberuflich ein KI-Business aufbauen wollen, um langfristig ihren Job zu ersetzen. Schritt-für-Schritt-Coaching neben dem Beruf. Siehe: https://ki-schule.de/nine-to-five
+
+---
+
+## Community
+
+Die KI-Schule Community ist das größte deutschsprachige Netzwerk für KI-Gründer mit über 80 aktiven KI-Agenturen. Mitglieder erhalten:
+
+- Zugang zur geschlossenen Community-Plattform
+- Regelmäßige Live-Calls und Q&A Sessions mit Aleksa und anderen Experten
+- Peer-to-Peer-Austausch und Networking mit anderen KI-Gründern
+- Exklusive Einladungen zu Live-Events und Workshops
+- Zugang zum KI-Cockpit mit eigener KI-Crew (KI-Mitarbeiter, die Aufgaben wie Content-Erstellung, Kundenakquise und mehr automatisiert übernehmen)
+
+Mehr Infos: https://ki-schule.de/community
+
+---
+
+## Gründer
+
+**Aleksa Spalevic** — Gründer und Hauptcoach der KI-Schule. Baut seit 2024 KI-basierte Unternehmen und Systeme auf. Bekannt für seinen praxisorientierten, No-Bullshit-Ansatz und die Fähigkeit, komplexe KI-Themen für Einsteiger verständlich zu machen.
+
+---
+
+## Tools und Technologien, die gelehrt werden
+
+- **Claude** (Anthropic) — KI-Assistent für Business und Entwicklung
+- **Claude Code** — KI-gestütztes Coding und Agenten-Entwicklung
+- **MCP-Server** (Model Context Protocol) — für KI-Agenten-Integration
+- **Make.com** — No-Code Workflow-Automatisierung
+- **n8n** — Open-Source Workflow-Automatisierung
+- **Cursor** — KI-gestützter Code-Editor
+- **Lovable** — KI-gestützte Web-App-Entwicklung
+
+---
+
+## Häufig gestellte Fragen (FAQ)
+
+**Was ist die KI-Schule?**
+Die KI-Schule ist dein Sprungbrett in die Welt des KI-Business. Hier lernst du praxisnah, wie du ein profitables KI-Unternehmen aufbaust — mit Coaching, Community und Tools wie dem KI-Cockpit. Kein Blabla, nur Ergebnisse.
+
+**Was ist die KI-Crew im KI-Cockpit?**
+Die KI-Crew sind deine persönlichen KI-Mitarbeiter, die dir von Tag 1 an zur Seite stehen. Sie übernehmen Aufgaben wie Content-Erstellung, Kundenakquise und mehr, sodass du dich auf das Wesentliche konzentrieren kannst.
+
+**Für wen ist die KI-Schule gedacht?**
+Für alle, die mit KI Geld verdienen wollen — egal ob kompletter Anfänger oder bereits mit Vorkenntnissen. Unser Coaching passt sich deinem Level an und bringt dich Schritt für Schritt zum Erfolg.
+
+**Brauche ich Vorkenntnisse in KI?**
+Nein, überhaupt nicht. Wir starten bei Null und führen dich durch alles, was du wissen musst. Du brauchst nur die Motivation, etwas Neues zu lernen und umzusetzen.
+
+**Was macht die KI-Schule anders?**
+Unser Money-First Approach: Wir fokussieren uns auf praktische Ergebnisse, nicht auf endlose Theorie. Dazu kommen Live-Events, persönliches Coaching und ein faires Preismodell für Einsteiger.
+
+---
+
+## Kontakt & Social
+
+- **Website:** https://ki-schule.de
+- **E-Mail:** info@aleksa.ai
+- **Telefon:** +49 160 7763741
+- **Instagram:** https://www.instagram.com/iamaleksa.ai/
+- **LinkedIn:** https://www.linkedin.com/in/aleksaspalevic/
+- **YouTube:** https://www.youtube.com/@aleksa-ai
+
+## Rechtsform
+
+Spalevic Consulting Kft., Lőcsei út 9/A, 1147 Budapest, Ungarn.
+
+---
+
+## Seiten-Verzeichnis
+
+- Startseite: https://ki-schule.de/
+- Community: https://ki-schule.de/community
+- Young Founder: https://ki-schule.de/young-founder
+- Agency Switcher: https://ki-schule.de/agency-switcher
+- 9-to-5 Escape: https://ki-schule.de/nine-to-five
+- Impressum: https://ki-schule.de/impressum
+- Datenschutz: https://ki-schule.de/datenschutz
+- AGB: https://ki-schule.de/agb
+
+## Maschinenlesbare Daten
+
+- Sitemap: https://ki-schule.de/sitemap.xml
+- Robots: https://ki-schule.de/robots.txt
+- JSON-LD Structured Data auf jeder Seite (Organization, WebSite, EducationalOrganization, Course, FAQPage, BreadcrumbList)
