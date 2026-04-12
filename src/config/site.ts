@@ -6,7 +6,7 @@
 
 export const siteConfig = {
   /** Canonical Produktiv-URL ohne trailing Slash. */
-  siteUrl: "https://ki-schule.de",
+  siteUrl: "https://ki-hochschule.de",
 
   /** Marken- und Unternehmensdaten. */
   brand: {

@@ -2,7 +2,7 @@
 
 > Die #1 deutschsprachige Ausbildung für KI-Agenturen und KI-Business.
 
-KI-Schule (ki-schule.de) ist eine Coaching-, Community- und Kurs-Plattform mit Sitz in Budapest, gegründet 2024 von Aleksa Spalevic. Zielgruppe: deutschsprachige Einsteiger und Quereinsteiger, die mit KI eine eigene Agentur oder ein Online-Business aufbauen wollen — ohne Vorkenntnisse.
+KI-Schule (ki-hochschule.de) ist eine Coaching-, Community- und Kurs-Plattform mit Sitz in Budapest, gegründet 2024 von Aleksa Spalevic. Zielgruppe: deutschsprachige Einsteiger und Quereinsteiger, die mit KI eine eigene Agentur oder ein Online-Business aufbauen wollen — ohne Vorkenntnisse.
 
 ## Was wir lehren
 
@@ -33,7 +33,7 @@ Deutsch (DACH-Raum). Alle Kurse, Coaching-Sessions und Community-Inhalte auf Deu
 
 ## Kontakt
 
-- Website: https://ki-schule.de
+- Website: https://ki-hochschule.de
 - E-Mail: info@aleksa.ai
 - Instagram: https://www.instagram.com/iamaleksa.ai/
 - LinkedIn: https://www.linkedin.com/in/aleksaspalevic/
@@ -41,6 +41,6 @@ Deutsch (DACH-Raum). Alle Kurse, Coaching-Sessions und Community-Inhalte auf Deu
 
 ## Weiterführende Informationen
 
-- Ausführliche Beschreibung: https://ki-schule.de/llms-full.txt
-- Kurskatalog: https://ki-schule.de (Abschnitt Online-Kurse)
-- Community: https://ki-schule.de/community
+- Ausführliche Beschreibung: https://ki-hochschule.de/llms-full.txt
+- Kurskatalog: https://ki-hochschule.de (Abschnitt Online-Kurse)
+- Community: https://ki-hochschule.de/community

@@ -34,4 +34,4 @@ User-agent: *
 Allow: /
 Disallow: /coming-soon
 
-Sitemap: https://ki-schule.de/sitemap.xml
+Sitemap: https://ki-hochschule.de/sitemap.xml

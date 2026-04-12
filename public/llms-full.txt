@@ -1,13 +1,13 @@
 # KI-Schule — Ausführliche Beschreibung für LLMs
 
 > Die #1 deutschsprachige Ausbildung für KI-Agenturen und KI-Business.
-> Kurzversion: https://ki-schule.de/llms.txt
+> Kurzversion: https://ki-hochschule.de/llms.txt
 
 ---
 
 ## Über KI-Schule
 
-KI-Schule (https://ki-schule.de) ist eine Coaching-, Community- und Kurs-Plattform für den deutschsprachigen Raum (Deutschland, Österreich, Schweiz). Gegründet 2024 von Aleksa Spalevic. Rechtsform: Spalevic Consulting Kft., Sitz Budapest, Ungarn.
+KI-Schule (https://ki-hochschule.de) ist eine Coaching-, Community- und Kurs-Plattform für den deutschsprachigen Raum (Deutschland, Österreich, Schweiz). Gegründet 2024 von Aleksa Spalevic. Rechtsform: Spalevic Consulting Kft., Sitz Budapest, Ungarn.
 
 **Mission:** Jeder im DACH-Raum soll die Möglichkeit haben, mit Künstlicher Intelligenz ein profitables Business aufzubauen — unabhängig von Vorkenntnissen, Budget oder technischem Hintergrund.
 
@@ -40,13 +40,13 @@ Die ersten zahlenden Kunden für deine KI-Agentur finden. Praktisches Sales-Trai
 Personen ohne IT- oder KI-Vorkenntnisse, die ein profitables KI-Business aufbauen wollen. Der Einstieg beginnt bei Null: Was ist KI? Wie kann man damit Geld verdienen? Welche Tools braucht man? Wie findet man Kunden?
 
 ### Young Founders (Schüler, Azubis, Studenten)
-Junge Menschen zwischen 16 und 25, die ihren Altersvorsprung nutzen wollen. Spezielles Coaching für Gründer ohne Startkapital, angepasst an Schul-/Studienzeiten. Siehe: https://ki-schule.de/young-founder
+Junge Menschen zwischen 16 und 25, die ihren Altersvorsprung nutzen wollen. Spezielles Coaching für Gründer ohne Startkapital, angepasst an Schul-/Studienzeiten. Siehe: https://ki-hochschule.de/young-founder
 
 ### Agency Switcher (bestehende Agenturinhaber)
-Inhaber von Marketing-, Web-, Social-Media- oder Design-Agenturen, die ihr bestehendes Geschäft um KI-Dienstleistungen erweitern wollen. Vom Red Ocean (klassische Agentur) zum Blue Ocean (KI-Agentur mit höheren Margen). Siehe: https://ki-schule.de/agency-switcher
+Inhaber von Marketing-, Web-, Social-Media- oder Design-Agenturen, die ihr bestehendes Geschäft um KI-Dienstleistungen erweitern wollen. Vom Red Ocean (klassische Agentur) zum Blue Ocean (KI-Agentur mit höheren Margen). Siehe: https://ki-hochschule.de/agency-switcher
 
 ### 9-to-5 Escape (Angestellte)
-Berufstätige in einem Angestelltenverhältnis, die nebenberuflich ein KI-Business aufbauen wollen, um langfristig ihren Job zu ersetzen. Schritt-für-Schritt-Coaching neben dem Beruf. Siehe: https://ki-schule.de/nine-to-five
+Berufstätige in einem Angestelltenverhältnis, die nebenberuflich ein KI-Business aufbauen wollen, um langfristig ihren Job zu ersetzen. Schritt-für-Schritt-Coaching neben dem Beruf. Siehe: https://ki-hochschule.de/nine-to-five
 
 ---
 
@@ -60,7 +60,7 @@ Die KI-Schule Community ist das größte deutschsprachige Netzwerk für KI-Grün
 - Exklusive Einladungen zu Live-Events und Workshops
 - Zugang zum KI-Cockpit mit eigener KI-Crew (KI-Mitarbeiter, die Aufgaben wie Content-Erstellung, Kundenakquise und mehr automatisiert übernehmen)
 
-Mehr Infos: https://ki-schule.de/community
+Mehr Infos: https://ki-hochschule.de/community
 
 ---
 
@@ -103,7 +103,7 @@ Unser Money-First Approach: Wir fokussieren uns auf praktische Ergebnisse, nicht
 
 ## Kontakt & Social
 
-- **Website:** https://ki-schule.de
+- **Website:** https://ki-hochschule.de
 - **E-Mail:** info@aleksa.ai
 - **Telefon:** +49 160 7763741
 - **Instagram:** https://www.instagram.com/iamaleksa.ai/
@@ -118,17 +118,17 @@ Spalevic Consulting Kft., Lőcsei út 9/A, 1147 Budapest, Ungarn.
 
 ## Seiten-Verzeichnis
 
-- Startseite: https://ki-schule.de/
-- Community: https://ki-schule.de/community
-- Young Founder: https://ki-schule.de/young-founder
-- Agency Switcher: https://ki-schule.de/agency-switcher
-- 9-to-5 Escape: https://ki-schule.de/nine-to-five
-- Impressum: https://ki-schule.de/impressum
-- Datenschutz: https://ki-schule.de/datenschutz
-- AGB: https://ki-schule.de/agb
+- Startseite: https://ki-hochschule.de/
+- Community: https://ki-hochschule.de/community
+- Young Founder: https://ki-hochschule.de/young-founder
+- Agency Switcher: https://ki-hochschule.de/agency-switcher
+- 9-to-5 Escape: https://ki-hochschule.de/nine-to-five
+- Impressum: https://ki-hochschule.de/impressum
+- Datenschutz: https://ki-hochschule.de/datenschutz
+- AGB: https://ki-hochschule.de/agb
 
 ## Maschinenlesbare Daten
 
-- Sitemap: https://ki-schule.de/sitemap.xml
-- Robots: https://ki-schule.de/robots.txt
+- Sitemap: https://ki-hochschule.de/sitemap.xml
+- Robots: https://ki-hochschule.de/robots.txt
 - JSON-LD Structured Data auf jeder Seite (Organization, WebSite, EducationalOrganization, Course, FAQPage, BreadcrumbList)
