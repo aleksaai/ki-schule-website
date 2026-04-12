@@ -1,22 +1,13 @@
 # Netlify Build-Konfiguration für KI-Schule
 #
-# Build-Befehl: Vite baut die SPA, danach rendert Playwright jede
-# öffentliche Route vorab als statisches HTML (für SEO-Crawler).
-# Das Ergebnis liegt komplett in dist/.
-#
-# ACHTUNG: Playwright braucht Chromium. Auf Netlify muss das Build-Image
-# Chromium unterstützen. Falls der Build scheitert, weil Chromium nicht
-# verfügbar ist, gibt es zwei Optionen:
-#   1. npx playwright install --with-deps chromium  als Teil des Builds
-#   2. Lokal build:ssg laufen lassen und dist/ direkt deployen
-#
-# Die sicherste Variante ist aktuell: lokal `npm run build:ssg` laufen
-# lassen und bei Netlify nur `npm run build` (ohne Prerender) setzen,
-# weil die prerenderten HTML-Dateien bereits im dist/ Verzeichnis liegen,
-# das Netlify direkt served.
+# Build-Befehl: Vite baut die SPA, danach installiert Playwright
+# Chromium und rendert jede öffentliche Route vorab als statisches
+# HTML (für Google, LLMs und Social-Crawler). Das Ergebnis liegt
+# komplett in dist/ — jede Route hat eine eigene index.html mit
+# vollem Content, Meta-Tags und JSON-LD.
 
 [build]
-  command = "npm run build"
+  command = "npm run build && npx playwright install --with-deps chromium && node scripts/prerender.mjs"
   publish = "dist"
 
 # Node 18+ für Vite 5 und React 18
