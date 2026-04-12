@@ -7,7 +7,7 @@
 # vollem Content, Meta-Tags und JSON-LD.
 
 [build]
-  command = "npm run build && npx playwright install --with-deps chromium && node scripts/prerender.mjs"
+  command = "npm run build && npx playwright install chromium && node scripts/prerender.mjs"
   publish = "dist"
 
 # Node 18+ für Vite 5 und React 18
